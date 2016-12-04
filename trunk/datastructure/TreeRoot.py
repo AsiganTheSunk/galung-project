@@ -1,16 +1,17 @@
 #!/usr/bin/python
 
-from Metadata import Metada
-from Metadata import ExtendedMetada
+import re
+
+from Index import Index
 from Node import Node
 
 class TreeRoot(object):
 
     def __init__(self):
+        self.dictionary = None
         self.nodes = []
         self.node_count = -1
 
-    @property
     def get_nodes(self):
         return self.nodes
 
@@ -36,6 +37,31 @@ class TreeRoot(object):
         return node
 
 
+    def season_show_index (self, key, seasons):
+        index = Index(keyword=key)
+        found = []
+        for item in self.nodes:
+            try:
+                for i in range(1,seasons):
+                    try:
+                        expression = key+' S0'+str(i)
+                        aux = re.search(re.escape(expression), item.basename).group(0)
+                        if aux:
+                           found.append(aux)
+                    except:
+                        continue
+                index.nodes.append(item)
+            except:
+                continue
+
+        total = (str(len(set(found))))
+        print ('[SHOW]: '+key+' [SEASONS]:('+total+'/'+str(seasons)+')')
+
+
+
+
+
+
     def search(self, basename, parent_basename=None):
         node = None
         nodeList = []
@@ -51,6 +77,14 @@ class TreeRoot(object):
             return [node]
 
 
+    def update_node_basename (self, basename=None, new_basename=None, parent_basename=None):
+        nodeList = self.search(basename=basename)[0]
+        #parentNode =  self.search(nodeList.parent_basename)
+        nodeList.basename= new_basename
+        for child in nodeList.children:
+            child.parent_basename = new_basename
+
+
     def tree(self, basename):
         subtrees = self.search(basename)[0].children
         for i, val in enumerate(subtrees):
@@ -64,11 +98,11 @@ class TreeRoot(object):
                 self.subtree(nodeList[i].basename, nodeList[i].parent_basename)
         else:
             nodeList = self.search(basename, parent_basename)[0]
-            print 'identifier: '+str(nodeList.identifier), 'basename: '+str(nodeList.basename)
+            print ('identifier: '+str(nodeList.identifier), 'basename: '+str(nodeList.basename))
             if nodeList.children is not []:
                 for child in nodeList.children:
                     self.subtree(child.basename, child.parent_basename)
 
     def display(self):
         for item in self.nodes:
-            print '[ID]: '+ str(item.identifier)+' [PATH]: '+str(item.parent_basename)+' ./'+str(item.basename)
+            print ('[ID]: '+ str(item.identifier)+' [PATH]: '+str(item.parent_basename)+' ./'+str(item.basename))
