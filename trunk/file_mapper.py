@@ -26,12 +26,16 @@ basedir = os.getcwd()+'/temp'
 # esto llamara a subprocess y lanzara la funcion
 directory_dict = {}
 
+from TreeRoot import TreeRoot
+from Node import Node
 
 def directory_mapper(path=None, verbose=None):
     path = basedir
+    #t = rTree_Root()
     for root, directories, files in os.walk(path):
         for directory in directories:
             try:
+                #t.add_node(basename=str(os.path.basename(directory)), parent_basename=str(os.path.basename(root)))
                 if(check_season_directory(directory)):
                     directory_dict[str(os.path.abspath(os.path.join(root,directory)))] = (FLAGS.SEASON_DIRECTORY_FLAG)
                 elif(check_subtitles_directory(directory)):
@@ -41,47 +45,72 @@ def directory_mapper(path=None, verbose=None):
                 else:
                     directory_dict[str(os.path.abspath(os.path.join(root,directory)))] = (FLAGS.SHOW_DIRECTORY_FLAG)
             except Exception as e:
+                print 'PETADA'
                 continue
+
         for file in files:
             try:
+                #t.add_node(basename=str(os.path.basename(file)), parent_basename=str(os.path.basename(root)))
                 if (check_unwanted(file)):
                     directory_dict[str(os.path.abspath(os.path.join(root,file)))] = (FLAGS.TRASH_FLAG)
+                elif(check_subtitles(file)):
+                    directory_dict[str(os.path.abspath(os.path.join(root,file)))] = (FLAGS.SUBTITLE_FLAG)
                 elif(check_season(file)):
                     directory_dict[str(os.path.abspath(os.path.join(root,file)))] = (FLAGS.SHOW_FLAG)
                 elif(check_film_type(file)):
                     directory_dict[str(os.path.abspath(os.path.join(root,file)))] = (FLAGS.FILM_FLAG)
-                elif(check_subtitles(file)):
-                    directory_dict[str(os.path.abspath(os.path.join(root,file)))] = (FLAGS.SUBTITLE_FLAG)
             except Exception as e:
                 continue
 
-
     list_mapped_directory (directory=directory_dict)
+    #t.display()
 
 
 def list_mapped_directory (directory=None):
     try:
-        for item in sorted(directory_dict):
-            print 'item_flag: '+directory_dict[item], 'item: '+item
+        t2 = TreeRoot()
+        t2.add_node(basename=str(os.path.basename(basedir)))
+        for item in sorted(directory):
+            aux = len(str(os.path.basename(item)))
+            temp = item[:-aux-1]
+            t2.add_node(basename=str(os.path.basename(item)),parent_basename=str(os.path.basename(temp)))
+            print 'item_flag: '+directory[item], 'item: '+str(os.path.basename(item)), 'parent: '+ str(item[:-aux-1])
+        #t2.display()
+        #t2.subtree('Game.of.Thrones [Season 1]')
+        #todo probar caso de ser vacio
+
     except Exception as e:
-        return
+        print e
 
 
-def run(verbose=None):
+def check_unwanted_files(path=None):
+    statinfo = os.stat(path)
+    print str(int(statinfo.st_size)*1024*1024)
+
+
+
+def run(verbose=None, debug=None):
     for item in sorted(directory_dict):
         usefull_path = retrieve_usefull_path (path=item,verbose=verbose)
-        new_directory_name = prettify_show(path=usefull_path, verbose=verbose, file_flag=directory_dict[item])
+        new_directory_name = prettify_show(path=usefull_path, verbose=verbose, debug=debug, file_flag=directory_dict[item])
+        if(debug):
+            print '[DEBUG]: CURRENT ITEM: '+usefull_path
+
         #new_path = os.path.join(item.replace(os.path.basename(item), ''), new_directory_name)
         #rename(path= item, new_path=new_path)
         #update_directory_dict(item, os.path.join(item.replace(os.path.basename(item), ''), new_directory_name))
         #elif(int(directory_dict[item]) == FLAGS.SHOW_FLAG):
         #    print 'SHOW_FLAG'
 
+
 # No te vuelvas loco, falta por recorrer los sub directorios
-def run2(verbose=None):
+def run2(verbose=None, debug=None):
     for item in sorted(directory_dict):
         usefull_path = retrieve_usefull_path (path=item,verbose=verbose)
-        new_directory_name = prettify_film(path=usefull_path, verbose=verbose, file_flag=directory_dict[item])
+        new_directory_name = prettify_film(path=usefull_path, verbose=verbose, debug=debug, file_flag=directory_dict[item])
+        if(debug):
+            print '[DEBUG]: CURRENT ITEM: '+usefull_path
+
         #new_path = os.path.join(item.replace(os.path.basename(item), ''), new_directory_name)
         #rename(path= item, new_path=new_path)
         #update_directory_dict(item, os.path.join(item.replace(os.path.basename(item), ''), new_directory_name))
@@ -100,6 +129,7 @@ def update_directory_dict (old_path=None, new_path=None, verbose=None):
     except:
         return
 
+
 def rename(path=None, new_path=None):
     try:
         os.rename(path, new_path)
@@ -107,6 +137,7 @@ def rename(path=None, new_path=None):
         return
     else:
         return
+
 
 def prettify_string (path=None):
     try:
@@ -116,46 +147,79 @@ def prettify_string (path=None):
     else:
         return new_path
 
-# FALTA POR HACER COSITAS EN EL RENAME
-def prettify_film(path=None, verbose=None, file_flag=None, deep_search=None):
+
+def prettify_film(path=None, verbose=None, file_flag=None, debug=None, deep_search=None):
     pretty_film = ''
     try:
-        print
+        if verbose:
+            print '\n******************************************************'
+            print '[INFO]: FILE_FLAG: ' + file_flag
+
+
         film_name = prettify_string(retrieve_film_name(path=path, verbose=verbose))
         film_year = retrieve_film_year(path=path, verbose=verbose)
         film_flag = str(retrieve_film_flags(path=path,verbose=verbose)).replace('.',' ')
+        retrieve_language (path=path, verbose=verbose)
         extension = retrieve_extension(path=path, verbose=verbose)
+        language = retrieve_language(path=path, verbose=verbose)
+        #unwanted = retrieve_unwanted(path=path, verbose=verbose)
 
-        if(deep_search):
-            audio = retrieve_audio(path=path, verbose=verbose)
-            codec = retrieve_codec(path=path, verbose=verbose)
-            source = retrieve_source(path=path, verbose=verbose)
+        #if (file_flag in FLAGS.SUBTITLE_DIRECTORY_FLAG):
+        subtitle = retrieve_subtitles_directory(path=path, verbose=verbose)
 
-        pretty_film = rebuild_name(show_name=film_name, film_year=film_year, film_flag=film_flag,extension=extension, verbose=verbose, file_flag=file_flag)
+        #if(deep_search):
+        #    codec = retrieve_codec(path=path, verbose=verbose)
+        #    audio = retrieve_audio(path=path, verbose=verbose)
+        #    source = retrieve_source(path=path, verbose=verbose)
+
+        if(debug):
+            print '[DEBUG]: '+str(film_name), str(film_year), str(film_flag), str(extension), str(language), str(subtitle)
+
+        pretty_film = rebuild_name(show_name=film_name, film_year=film_year, film_flag=film_flag, extension=extension, subtitle=subtitle,
+                                   language = language, verbose=verbose, file_flag=file_flag, debug=debug)
     except Exception as e:
+        print e
         return
     else:
         return pretty_film
 
 
-def prettify_show(path=None, verbose=None, file_flag=None, deep_search=None):
+def prettify_show(path=None, verbose=None, file_flag=None, debug=None, deep_search=None):
     pretty_show=''
     try:
-        show = prettify_string(retrieve_show_name(path=path, verbose=verbose))
+        if verbose:
+            print '\n******************************************************'
+            print '[INFO]: FILE_FLAG: ' + file_flag
+
+        show = prettify_string(retrieve_show_name(path=path, verbose=verbose,file_flag=file_flag))
         episode = retrieve_episode(path=path, verbose=verbose)
-        season = retrieve_season(path=path, verbose=verbose)
+
+        if (file_flag in FLAGS.SEASON_DIRECTORY_FLAG):
+            season = retrieve_season_directory(path=path, verbose=verbose)
+        else:
+            season = retrieve_season(path=path, verbose=verbose)
+
+        #if (file_flag in FLAGS.SUBTITLE_DIRECTORY_FLAG):
+        subtitle = retrieve_subtitles_directory(path=path, verbose=verbose)
+
         quality = retrieve_quality(path=path, verbose=verbose)
         episode_name = retrieve_episode_name (show_name=show,season=season,episode=episode,verbose=verbose)
         extension = retrieve_extension(path=path, verbose=verbose)
+        language = retrieve_language (path=path, verbose=verbose)
+        #unwanted = retrieve_unwanted(path=path, verbose=verbose)
 
-        if(deep_search):
-            codec = retrieve_codec(path=path, verbose=verbose)
-            audio = retrieve_audio(path=path, verbose=verbose)
-            uploader = retrieve_uploader(path=path, verbose=verbose)
-            source = retrieve_source(path=path, verbose=verbose)
-
-        pretty_show = rebuild_name (season=season, episode=episode, quality=quality, show_name=show, episode_name=episode_name, extension=extension, verbose=verbose, file_flag=file_flag)
+        #if(deep_search):
+        #    codec = retrieve_codec(path=path, verbose=verbose)
+        #    audio = retrieve_audio(path=path, verbose=verbose)
+        #    uploader = retrieve_uploader(path=path, verbose=verbose)
+        #    source = retrieve_source(path=path, verbose=verbose)
+        if(debug):
+            print '[DEBUG]: '+str(show), str(episode_name), str(episode), str(season), str(quality), str(extension)
+        pretty_show = rebuild_name (show_name=show, season=season, episode=episode, quality=quality, subtitle=subtitle,
+                                    episode_name=episode_name, extension=extension, language=language,
+                                    verbose=verbose, file_flag=file_flag, debug=debug)
     except Exception as e:
+        print e
         return
     else:
         return pretty_show
@@ -168,26 +232,40 @@ def retrieve_usefull_path (path=None, verbose=None):
 
 
 def rebuild_name (show_name=None, episode_name=None, season=None, episode=None, quality=None, extension=None,
-                  uploader=None, source=None, film_year=None, film_flag=None,verbose=None, file_flag=None):
-    new_name=''
-    #print 'show: '+str(show_name), str(episode_name), str(episode), str(season), str(quality), str(extension)
+                  uploader=None, source=None, film_year=None, film_flag=None, language=None, subtitle=None,
+                  verbose=None, file_flag=None, debug=None):
+    #new_name=''
+    if(debug):
+        print '[DEBUG]: '+str(show_name), str(episode_name), str(episode), str(season), str(quality), str(extension), \
+            str(uploader), str(source), str(film_year), str(film_flag), str(language), str(subtitle)
     try:
         if(file_flag in FLAGS.SHOW_DIRECTORY_FLAG):
             if (episode_name in ''):
                 new_name = str(show_name)+' '+ str(season) + str(episode)+'['+str(quality)+']'
             else:
                 new_name = str(show_name)+' '+ str(season) + str(episode)+' - '+str(episode_name)+' - '+'['+str(quality)+']'
+
         elif(file_flag in FLAGS.SHOW_FLAG):
             if (episode_name in ''):
                 new_name = str(show_name)+' '+ str(season) + str(episode)+'['+str(quality)+']'+str(extension)
             else:
                 new_name = str(show_name)+' '+ str(season) + str(episode)+' - '+str(episode_name)+' - '+'['+str(quality)+']'+str(extension)
+
         elif(file_flag in FLAGS.TRASH_FLAG):
-            print 'ITS TRASH TIME'
+                new_name =  'To Be Removed!!'
+
         elif(file_flag in FLAGS.SUBTITLE_FLAG):
-            new_name = str(show_name)+' '+ str(season) + str(episode)+' - '+str(episode_name)+str(extension)
+            if (language in ''):
+                new_name = str(show_name)+str(extension)
+            else:
+                new_name = str(show_name)+' ('+str(language)+') '+str(extension)
+
+        elif(file_flag in FLAGS.SUBTITLE_DIRECTORY_FLAG):
+                new_name = str(subtitle)
+
         elif(file_flag in FLAGS.SEASON_DIRECTORY_FLAG):
-            new_name = str(show_name)+' '+'['+str(season)+']'
+                new_name = str(show_name)+' '+'['+str(season)+']'
+
         elif(file_flag in FLAGS.FILM_DIRECTORY_FLAG):
             if (film_flag in ''):
                 new_name = str(show_name)+' ('+str(film_year)+')'
@@ -198,11 +276,12 @@ def rebuild_name (show_name=None, episode_name=None, season=None, episode=None, 
                 new_name = str(show_name)+' ('+str(film_year)+')'+str(extension)
             else:
                 new_name = str(show_name)+' ('+str(film_year)+') '+str(film_flag)+str(extension)
+
     except Exception as e:
-        return
+        print e
     else:
         if (verbose):
-            print '[INFO]: REBUILDED NAME: >> '+new_name
+            print '[INFO]: REBUILDED NAME: '+new_name
         return new_name
 
 
@@ -251,7 +330,6 @@ def check_season (path=None):
         return True
 
 
-
 def check_unwanted (path=None):
     try:
         re.search('(\.nfo)|(\.txt)', path).group(0)
@@ -259,6 +337,7 @@ def check_unwanted (path=None):
         return False
     else:
         return True
+
 
 def check_film_type (path=None):
     try:
@@ -284,7 +363,7 @@ def retrieve_quality (path=None, verbose=None):
 
 def retrieve_episode (path=None, verbose=None):
     try:
-        episode = re.search ('([e])\d{2}', path,re.IGNORECASE).group(0)
+        episode = re.search ('([e])\d{2,3}', path,re.IGNORECASE).group(0)
     except Exception as e:
         episode = ''
         return episode
@@ -296,7 +375,8 @@ def retrieve_episode (path=None, verbose=None):
 
 def retrieve_season_directory (path=None, verbose=None):
     try:
-        season_directory = re.search('(\(|\[)([S-s][E-e][A-a][S-s][O-o][N-n](.*)(\]|\)))', path).group(0)
+        #re.search ('([s]\d{1,2})([e]\d{2,3})?!', path, re.IGNORECASE)
+        season_directory = re.search('(((\(|\[)?)season)(\-|\s|\.)?(\d{1,2})((\)|\])?)', path, re.IGNORECASE).group(0)
     except Exception as e:
         season_directory =''
         return season_directory
@@ -308,7 +388,7 @@ def retrieve_season_directory (path=None, verbose=None):
 
 def retrieve_season (path=None, verbose=None):
     try:
-        season = re.search('([s]\d{1,2})',path,re.IGNORECASE).group(0)
+        season = re.search('([s]\d{2})',path,re.IGNORECASE).group(0)
         #season = re.search ('([S-s][E-e][A-a][S-s][O-o][N-n](.*)(\d))', path).group(0)
     except Exception as e:
         season = ''
@@ -381,16 +461,42 @@ def retrieve_uploader (path=None, verbose=None):
                 print ('[INFO]: UPLOADER: '+uploader)
             return uploader
 
+
 def retrieve_language (path=None, verbose=None):
     try:
-        language = re.search('en|es', path, re.IGNORECASE).group(0)
+        language = re.search('(\()(en(glish)?)(\))|(\()(es|(spanish))(\))', path, re.IGNORECASE).group(0)
     except Exception as e:
         language = ''
         return language
     else:
         if(verbose):
             print '[INFO]: LANGUAGE: '+language
-        return language
+        return language[1:-1]
+
+
+def retrieve_unwanted (path=None, verbose=None):
+    try:
+        unwanted = re.search('(((\.txt)|(\.nfo))$)', path).group(0)
+    except Exception as e:
+        unwanted = ''
+        return unwanted
+    else:
+        unwanted = path
+        if (verbose):
+            print '[INFO]: SUBTITLE: '+unwanted
+        return unwanted
+
+
+def retrieve_subtitles_directory (path=None, verbose=None):
+    try:
+        subtitle_directory = re.search('((sub)|(subs)|(subtitle)|(subtitles))', path, re.IGNORECASE).group(0)
+    except Exception as e:
+        subtitle_directory=''
+        return subtitle_directory
+    else:
+        if (verbose):
+            print '[INFO]: SUBTITLE: '+subtitle_directory
+        return subtitle_directory
 
 
 def retrieve_subtitles (path=None, verbose=None):
@@ -442,11 +548,14 @@ def retrieve_film_year (path=None, verbose=None):
         return film_year
 
 
-def retrieve_show_name (path=None, verbose=None):
+def retrieve_show_name (path=None, verbose=None, file_flag=None):
     try:
-        #(((\(|\[)?)([s])(eason)?)(\-|\s|\.)?(\d{1,2})((\)|\])?)
-        season = re.search('([s]\d{1,2})',path,re.IGNORECASE).group(0)
-        show_name = re.search('(.*)([s]\d{1,2})', path,re.IGNORECASE).group(0)[:-len(season)]
+        if(file_flag in FLAGS.SEASON_DIRECTORY_FLAG):
+            aux_lenth = re.search('((\(|\[)?)season(\-|\s|\.)?(\d{1,2})((\)|\])?)', path, re.IGNORECASE).group(0)
+            show_name = re.search('((.*)((\(|\[)?)season(\-|\s|\.)?(\d{1,2})((\)|\])?))', path, re.IGNORECASE).group(0)[:-len(aux_lenth)]
+        else:
+            aux_lenth = re.search('([s]\d{1,2})',path,re.IGNORECASE).group(0)
+            show_name = re.search('(.*)([s]\d{1,2})', path,re.IGNORECASE).group(0)[:-len(aux_lenth)]
     except Exception as e:
         show_name = ''
         return show_name
@@ -476,6 +585,7 @@ def validate_show_season_directory(path=None, verbose=None):
         season_directory = re.search('((\(|\[)?(season(.*)?(\d{1,2}))(\)|\])?)',path,re.IGNORECASE).group(0)
     except Exception as e:
         return False
+
 
 def validate_show_name(path=None, verbose=None):
     try:
@@ -514,9 +624,8 @@ def remove_trash (path, verbose=None):
 
 
 def main():
-    verbose=True
     directory_mapper()
-    run(verbose)
+    #run(verbose=True, debug=True)
 
 
 if __name__ == '__main__':
