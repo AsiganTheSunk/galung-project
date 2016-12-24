@@ -1,10 +1,9 @@
-#!/usr/bin/python
-#glob, fmatch
+# glob, fmatch
 
 
-class Metadata ():
+class Metadata:
     def __init__(self, name=None, year=None, ename=None, season=None, episode=None, quality=None, film_flag=None, language=None,
-          subtitle=None, uploader=None,  source=None, extension=None, file_flag=None):
+                 subtitle=None, uploader=None,  source=None, extension=None, file_flag=None, audio=None, codec=None):
 
         self.name = name
         self.ename = ename
@@ -18,13 +17,14 @@ class Metadata ():
         self.film_flag = film_flag
         self.language = language
         self.subtitle = subtitle
+        self.audio = audio
+        self.codec = codec
         self.file_flag = file_flag
 
-    def extended_metadata(self,director=None, actors=None, genre=None, duration=None, chapters=None):
+    def extended_metadata(self, director=None, actors=None, genre=None, duration=None, chapters=None):
         return ExtendedMetada(self.name, self.ename, self.season, self.episode, self.quality, self.extension, self.uploader,
                               self.source, self.year, self.film_flag, self.language, self.subtitle, self.file_flag,
-                              director=director, actors=actors, genre=genre, duration= duration, chapters=chapters)
-
+                              director=director, actors=actors, genre=genre, duration=duration, chapters=chapters)
 
     def get_name(self):
         return self.name
@@ -50,8 +50,8 @@ class Metadata ():
     def get_year(self):
         return self.year
 
-    def get_film_tag(self):
-        return self.film_tag
+    def get_film_flag(self):
+        return self.film_flag
 
     def get_language(self):
         return self.language
@@ -61,7 +61,6 @@ class Metadata ():
 
     def get_uploader(self):
         return self.uploader
-
 
     def set_name(self, name):
         self.name = name
@@ -87,7 +86,7 @@ class Metadata ():
     def set_year(self, year):
         self.year = year
 
-    def set_film_tag(self, film_tag):
+    def set_film_flag(self, film_tag):
         self.film_flag = film_tag
 
     def set_language(self, language):
@@ -99,11 +98,17 @@ class Metadata ():
     def set_uploader(self, uploader):
         self.uploader = uploader
 
-class ExtendedMetada (Metadata):
+    def set_audio(self, audio):
+        self.audio = audio
 
-    def __init__ (self, name=None, year=None, ename=None, season=None, episode=None, quality=None, film_flag=None,
-                  language=None, subtitle=None, uploader=None,  source=None, extension=None, file_flag=None,
-                  director=None, actors=None, genre=None, duration= None, chapters=None):
+    def set_codec(self, codec):
+        self.codec = codec
+
+
+class ExtendedMetada (Metadata):
+    def __init__(self, name=None, year=None, ename=None, season=None, episode=None, quality=None, film_flag=None,
+                 language=None, subtitle=None, uploader=None,  source=None, extension=None, file_flag=None,
+                 director=None, actors=None, genre=None, duration=None, chapters=None):
 
         self.director = director
         self.actors = actors
@@ -111,9 +116,9 @@ class ExtendedMetada (Metadata):
         self.duration = duration
         self.chapters = chapters
 
-        Metadata.__init__ (self, name=name, year=year, ename=ename, season=season, episode=episode, quality=quality, film_flag=film_flag, language=language,
-          subtitle=subtitle, uploader=uploader,  source=source, extension=extension, file_flag=file_flag)
-
+        Metadata.__init__(self, name=name, year=year, ename=ename, season=season, episode=episode, quality=quality,
+                          film_flag=film_flag, language=language, subtitle=subtitle, uploader=uploader,  source=source,
+                          extension=extension, file_flag=file_flag)
 
     def get_director(self):
         return self.director
@@ -130,7 +135,6 @@ class ExtendedMetada (Metadata):
     def get_chapters(self):
         return self.chapters
 
-
     def set_director(self, director):
         self.director = director
 
@@ -145,5 +149,3 @@ class ExtendedMetada (Metadata):
 
     def set_chapters(self, chapters):
         self.chapters = chapters
-
-

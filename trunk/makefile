@@ -1,4 +1,4 @@
-.PHONY: build clean
+.PHONY: build clean build-addon build-movie build-serie build-anime
 
 build-movie:
 	#Directory, File: Default Test (BlueRay)
@@ -59,7 +59,7 @@ build-serie:
 	mkdir -p ~/TFG/testlibrary/'Game.Of.Thrones.S01E05.1080p.BluRay.x265-PODO[rartv]'/'subtitles'
 	touch ~/TFG/testlibrary/'Game.Of.Thrones.S01E05.1080p.BluRay.x265-PODO[rartv]'/'subtitles'/'Game.Of.Thrones.S01.E05(english).str'
 	touch ~/TFG/testlibrary/'Game.Of.Thrones.S01E05.1080p.BluRay.x265-PODO[rartv]'/'subtitles'/'Game.Of.Thrones.S01.E05(es).str'
-
+	
 	#Directory, File: Default
 	mkdir -p ~/TFG/testlibrary/'Teen.Wolf.S01E05.1080p.BluRay.x265-PODO[rartv]'/
 	touch ~/TFG/testlibrary/'Teen.Wolf.S01E05.1080p.BluRay.x265-PODO[rartv]'/'Teen.Wolf.S01E05.1080p.mkv'
@@ -77,12 +77,46 @@ build-serie:
 	#mkdir -p ~/TFG/testlibrary/'Krystal-The.Black Stripper-S02E01-The.dAy.0f.7he stripper.720p[rartv]'/'sub'
 	#touch ~/TFG/testlibrary/'Krystal-The.Black Stripper-S02E01-The.dAy.0f.7he stripper.720p[rartv]'/'sub'/'Krystal-The.Black Stripper-S02E01(es).str'
 	
-#build-chaos:
+build-anime:
+	mkdir -p ~/TFG/testlibrary/'[PuyaSubs!] Yuri!!! On ICE - 11 [720p][663F641B]'/
+	touch ~/TFG/testlibrary/'[PuyaSubs!] Yuri!!! On ICE - 11 [720p][663F641B]'/'[PuyaSubs!] Yuri!!! On ICE - 11 [720p][663F641B].mkv'
+	mkdir -p ~/TFG/testlibrary/'[PuyaSubs!] Yuri!!! On ICE - 11 [720p][663F641B]'/'subs'/
+	touch ~/TFG/testlibrary/'[PuyaSubs!] Yuri!!! On ICE - 11 [720p][663F641B]'/'subs'/'subtitles_(eng).srt'
+	
+	mkdir -p ~/TFG/testlibrary/'[Krosis] Getsuyoubi no Tawawa - 10 [1E0FA286]'/
+	touch ~/TFG/testlibrary/'[Krosis] Getsuyoubi no Tawawa - 10 [1E0FA286]'/'[Krosis] Getsuyoubi no Tawawa - 10 [1E0FA286].mkv'
+	mkdir -p ~/TFG/testlibrary/'[Krosis] Getsuyoubi no Tawawa - 10 [1E0FA286]'/'subs'/
+	touch ~/TFG/testlibrary/'[Krosis] Getsuyoubi no Tawawa - 10 [1E0FA286]'/'subs'/'subtitles.(eng).srt'	
+	
+	mkdir -p ~/TFG/testlibrary/'[HorribleSubs] One Piece - 768 [1080p]'/
+	touch ~/TFG/testlibrary/'[HorribleSubs] One Piece - 768 [1080p]'/'[HorribleSubs] One Piece - 768 [1080p].mkv'
+	mkdir -p ~/TFG/testlibrary/'[HorribleSubs] One Piece - 768 [1080p]'/'subs'/
+	touch ~/TFG/testlibrary/'[HorribleSubs] One Piece - 768 [1080p]'/'subs'/'subtitles_coco(eng).srt'
+	
+	mkdir -p ~/TFG/testlibrary/'[Ohys-Raws] Detective Conan - 842 (NTV 1280x720 x264 AAC)'/
+	touch ~/TFG/testlibrary/'[Ohys-Raws] Detective Conan - 842 (NTV 1280x720 x264 AAC)'/'[Ohys-Raws] Detective Conan - 842 (NTV 1280x720 x264 AAC).mp4'
+	mkdir -p ~/TFG/testlibrary/'[Ohys-Raws] Detective Conan - 842 (NTV 1280x720 x264 AAC)'/'subs'/
+	touch ~/TFG/testlibrary/'[Ohys-Raws] Detective Conan - 842 (NTV 1280x720 x264 AAC)'/'subs'/'subtitles(eng).srt'
+	
+	mkdir -p ~/TFG/testlibrary/'[Dcms-Fansubs] Detective Conan Episode 840 [1080p]'/
+	touch ~/TFG/testlibrary/'[Dcms-Fansubs] Detective Conan Episode 840 [1080p]'/'[Dcms-Fansubs] Detective Conan Episode 840 [1080p].mkv'
+	mkdir -p ~/TFG/testlibrary/'[Dcms-Fansubs] Detective Conan Episode 840 [1080p]'/'subs'/
+	touch ~/TFG/testlibrary/'[Dcms-Fansubs] Detective Conan Episode 840 [1080p]'/'subs'/'subtitles_coco(eng).srt'
+	
+	#Number on name
+	mkdir -p ~/TFG/testlibrary/'[HorribleSubs] Mob Psycho 100 - 12 [1080p]'/
+	touch ~/TFG/testlibrary/'[HorribleSubs] Mob Psycho 100 - 12 [1080p]'/'Mob Psycho 100 - 12 [1080p].mkv'
+	mkdir -p ~/TFG/testlibrary/'[HorribleSubs] Mob Psycho 100 - 12 [1080p]'/'subs'/
+	touch ~/TFG/testlibrary/'[HorribleSubs] Mob Psycho 100 - 12 [1080p]'/'subs'/'subtitles(eng).srt'
+
+build-addon:
+	rm -f ~/TFG/trunk/addon/'script.galung.project.zip'
+	zip -r ~/TFG/trunk/addon/script.galung.project.zip ~/TFG/trunk/addon/script.galung.project/
 
 build-all:
 	make build-movie
 	make build-serie
-	#build-chaos
+	make build-anime
 
 clean:
 	rm -rf ~/TFG/testlibrary/*
