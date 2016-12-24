@@ -1,9 +1,8 @@
 # glob, fmatch
 
-
 class Metadata:
-    def __init__(self, name=None, year=None, ename=None, season=None, episode=None, quality=None, film_flag=None, language=None,
-                 subtitle=None, uploader=None,  source=None, extension=None, file_flag=None, audio=None, codec=None):
+    def __init__(self, name='', year='', ename='', season='', episode='', quality='', film_flag='', language='',
+                 subtitle='', uploader='',  source='', extension='', file_flag='', audio='', codec=''):
 
         self.name = name
         self.ename = ename
@@ -21,10 +20,16 @@ class Metadata:
         self.codec = codec
         self.file_flag = file_flag
 
-    def extended_metadata(self, director=None, actors=None, genre=None, duration=None, chapters=None):
+    def extended_metadata(self, director='', actors='', genre='', duration='', chapters=''):
         return ExtendedMetada(self.name, self.ename, self.season, self.episode, self.quality, self.extension, self.uploader,
                               self.source, self.year, self.film_flag, self.language, self.subtitle, self.file_flag,
                               director=director, actors=actors, genre=genre, duration=duration, chapters=chapters)
+
+    def fill_empty_fields(self):
+        if self.name == '': self.name='Null'
+        if self.ename == '': self.ename='Null'
+        if self.season == '': self.name='Null'
+        if self.episode == '': self.name='Null'
 
     def get_name(self):
         return self.name
@@ -62,6 +67,9 @@ class Metadata:
     def get_uploader(self):
         return self.uploader
 
+    def get_file_flag(self):
+        return self.file_flag
+
     def set_name(self, name):
         self.name = name
 
@@ -86,8 +94,8 @@ class Metadata:
     def set_year(self, year):
         self.year = year
 
-    def set_film_flag(self, film_tag):
-        self.film_flag = film_tag
+    def set_film_flag(self, film_flag):
+        self.film_flag = film_flag
 
     def set_language(self, language):
         self.language = language
@@ -104,11 +112,13 @@ class Metadata:
     def set_codec(self, codec):
         self.codec = codec
 
+    def set_file_flag(self,file_flag):
+        self.file_flag = file_flag
 
 class ExtendedMetada (Metadata):
-    def __init__(self, name=None, year=None, ename=None, season=None, episode=None, quality=None, film_flag=None,
-                 language=None, subtitle=None, uploader=None,  source=None, extension=None, file_flag=None,
-                 director=None, actors=None, genre=None, duration=None, chapters=None):
+    def __init__(self, name='', year='', ename='', season='', episode='', quality='', film_flag='',
+                 language='', subtitle='', uploader='',  source='', extension='', file_flag='',
+                 director='', actors='', genre='', duration='', chapters=''):
 
         self.director = director
         self.actors = actors

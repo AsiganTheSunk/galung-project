@@ -1,4 +1,4 @@
-.PHONY: build clean build-addon build-movie build-serie build-anime
+.PHONY: build clean build-addon build-movie build-serie build-anime build-subs
 
 build-movie:
 	#Directory, File: Default Test (BlueRay)
@@ -51,31 +51,32 @@ build-serie:
 	mkdir -p ~/TFG/testlibrary/'Game.of.Thrones [Season 1]'/'Game.Of.Thrones.S01E03.1080p.BluRay.x265-PODO[rartv]'/
 	touch ~/TFG/testlibrary/'Game.of.Thrones [Season 1]'/'Game.Of.Thrones.S01E03.1080p.BluRay.x265-PODO[rartv]'/'Game.Of.Thrones.S01E03.1080p.mkv'
 	mkdir -p ~/TFG/testlibrary/'Game.of.Thrones [Season 1]'/'Game.Of.Thrones.S01E03.1080p.BluRay.x265-PODO[rartv]'/'subtitles'
-	touch ~/TFG/testlibrary/'Game.of.Thrones [Season 1]'/'Game.Of.Thrones.S01E03.1080p.BluRay.x265-PODO[rartv]'/'subtitles'/'Game.Of.Thrones.s01.e03(english).str'
+	#touch ~/TFG/testlibrary/'Game.of.Thrones [Season 1]'/'Game.Of.Thrones.S01E03.1080p.BluRay.x265-PODO[rartv]'/'subtitles'/'Game.Of.Thrones.s01.e03(english).srt'
 	
 	#Directory, File: Retrieving Lost Episode Test
 	mkdir -p ~/TFG/testlibrary/'Game.Of.Thrones.S01E05.1080p.BluRay.x265-PODO[rartv]'/
 	touch ~/TFG/testlibrary/'Game.Of.Thrones.S01E05.1080p.BluRay.x265-PODO[rartv]'/'Game.Of.Thrones.S01E05.1080p.mkv'
 	mkdir -p ~/TFG/testlibrary/'Game.Of.Thrones.S01E05.1080p.BluRay.x265-PODO[rartv]'/'subtitles'
-	touch ~/TFG/testlibrary/'Game.Of.Thrones.S01E05.1080p.BluRay.x265-PODO[rartv]'/'subtitles'/'Game.Of.Thrones.S01.E05(english).str'
-	touch ~/TFG/testlibrary/'Game.Of.Thrones.S01E05.1080p.BluRay.x265-PODO[rartv]'/'subtitles'/'Game.Of.Thrones.S01.E05(es).str'
+	#touch ~/TFG/testlibrary/'Game.Of.Thrones.S01E05.1080p.BluRay.x265-PODO[rartv]'/'subtitles'/'Game.Of.Thrones.S01.E05(english).srt'
+	#touch ~/TFG/testlibrary/'Game.Of.Thrones.S01E05.1080p.BluRay.x265-PODO[rartv]'/'subtitles'/'Game.Of.Thrones.S01.E05(es).srt'
 	
 	#Directory, File: Default
 	mkdir -p ~/TFG/testlibrary/'Teen.Wolf.S01E05.1080p.BluRay.x265-PODO[rartv]'/
 	touch ~/TFG/testlibrary/'Teen.Wolf.S01E05.1080p.BluRay.x265-PODO[rartv]'/'Teen.Wolf.S01E05.1080p.mkv'
 	mkdir -p ~/TFG/testlibrary/'Teen.Wolf.S01E05.1080p.BluRay.x265-PODO[rartv]'/'subtitles'
-	touch ~/TFG/testlibrary/'Teen.Wolf.S01E05.1080p.BluRay.x265-PODO[rartv]'/'subtitles'/'Teen.Wolf.S01.E05(english).str'
-	touch ~/TFG/testlibrary/'Teen.Wolf.S01E05.1080p.BluRay.x265-PODO[rartv]'/'subtitles'/'Teen.Wolf.S01.E05(es).str'
+	#touch ~/TFG/testlibrary/'Teen.Wolf.S01E05.1080p.BluRay.x265-PODO[rartv]'/'subtitles'/'Teen.Wolf.S01.E05(english).srt'
+	#touch ~/TFG/testlibrary/'Teen.Wolf.S01E05.1080p.BluRay.x265-PODO[rartv]'/'subtitles'/'Teen.Wolf.S01.E05(es).srt'
 
 	#Directory, File: Retrieving Repetead Lost Episode Test
 	#mkdir -p ~/TFG/testlibrary/'Game.Of.Thrones.S01E01.1080p.BluRay.x265-PODO[rartv]'/'Game.Of.Thrones.S01E01.1080p.mkv'
 	
 	#Directory, Subdirectory, File: Unkonwn Show
 	#mkdir -p ~/TFG/testlibrary/'Krystal-The.Black Stripper-S02E01-The.dAy.0f.7he stripper.720p[rartv]'
+
 	#touch ~/TFG/testlibrary/'Krystal-The.Black Stripper-S02E01-The.dAy.0f.7he stripper.720p[rartv]'/'System.nfo'
 	#touch ~/TFG/testlibrary/'Krystal-The.Black Stripper-S02E01-The.dAy.0f.7he stripper.720p[rartv]'/'rartv.txt'
 	#mkdir -p ~/TFG/testlibrary/'Krystal-The.Black Stripper-S02E01-The.dAy.0f.7he stripper.720p[rartv]'/'sub'
-	#touch ~/TFG/testlibrary/'Krystal-The.Black Stripper-S02E01-The.dAy.0f.7he stripper.720p[rartv]'/'sub'/'Krystal-The.Black Stripper-S02E01(es).str'
+	#touch ~/TFG/testlibrary/'Krystal-The.Black Stripper-S02E01-The.dAy.0f.7he stripper.720p[rartv]'/'sub'/'Krystal-The.Black Stripper-S02E01(es).srt'
 	
 build-anime:
 	mkdir -p ~/TFG/testlibrary/'[PuyaSubs!] Yuri!!! On ICE - 11 [720p][663F641B]'/
@@ -98,6 +99,7 @@ build-anime:
 	mkdir -p ~/TFG/testlibrary/'[Ohys-Raws] Detective Conan - 842 (NTV 1280x720 x264 AAC)'/'subs'/
 	touch ~/TFG/testlibrary/'[Ohys-Raws] Detective Conan - 842 (NTV 1280x720 x264 AAC)'/'subs'/'subtitles(eng).srt'
 	
+	#CASO PARTICULAR DEL PUTO ANIME con Episode
 	mkdir -p ~/TFG/testlibrary/'[Dcms-Fansubs] Detective Conan Episode 840 [1080p]'/
 	touch ~/TFG/testlibrary/'[Dcms-Fansubs] Detective Conan Episode 840 [1080p]'/'[Dcms-Fansubs] Detective Conan Episode 840 [1080p].mkv'
 	mkdir -p ~/TFG/testlibrary/'[Dcms-Fansubs] Detective Conan Episode 840 [1080p]'/'subs'/
@@ -109,9 +111,14 @@ build-anime:
 	mkdir -p ~/TFG/testlibrary/'[HorribleSubs] Mob Psycho 100 - 12 [1080p]'/'subs'/
 	touch ~/TFG/testlibrary/'[HorribleSubs] Mob Psycho 100 - 12 [1080p]'/'subs'/'subtitles(eng).srt'
 
+build-subs:
+	cp -ar ~/TFG/subs ~/TFG/testlibrary/
+
+
 build-addon:
 	rm -f ~/TFG/trunk/addon/'script.galung.project.zip'
 	zip -r ~/TFG/trunk/addon/script.galung.project.zip ~/TFG/trunk/addon/script.galung.project/
+
 
 build-all:
 	make build-movie

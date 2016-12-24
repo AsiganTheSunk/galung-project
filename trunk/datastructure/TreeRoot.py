@@ -1,8 +1,8 @@
 import re
 from trunk.filemapper import retrieve_module as rmod
+from trunk.datastructure.Metadata import Metadata
 from Index import Index
 from Node import Node
-from Metadata import Metadata
 
 class TreeRoot(object):
     def __init__(self):
@@ -19,18 +19,19 @@ class TreeRoot(object):
     def add_node_count(self):
         self.node_count += 1
 
-    def add_node(self, basename, parent_basename=None, verbose=None):
+    def add_node(self, basename, metadata=None, parent_basename=None, debug=None):
         self.add_node_count()
-        node = Node(basename, self.node_count)
+        if metadata is None: metadata = Metadata()
+        node = Node(basename, self.node_count, metadata)
         node.parent_basename = parent_basename
-        if verbose:
+        if debug:
             print ('[ADDED]: - basename:'+str(node.basename), ' --- parent_basename: '+str(node.parent_basename))
         if parent_basename is not None:
-            nodo = self.search(parent_basename)
-            nodo[len(nodo)-1].add_child(node)
-            if verbose:
-                print ('[PARENT]: - ID(' + str(nodo[len(nodo)-1].identifier)+') '+str(nodo[len(nodo)-1].basename))
-                print ('[_CHILD]: COUNT('+str(len(nodo[len(nodo)-1].children))+') - ID(' + str(node.identifier)+') '+str(node.basename))
+            pnode = self.search(parent_basename)
+            pnode[len(pnode)-1].add_child(node)
+            if debug:
+                print ('[PARENT]: - ID(' + str(pnode[len(pnode)-1].identifier)+') '+str(pnode[len(pnode)-1].basename))
+                print ('[_CHILD]: COUNT('+str(len(pnode[len(pnode)-1].children))+') - ID(' + str(node.identifier)+') '+str(node.basename))
         self.nodes.append(node)
         return node
 
@@ -98,6 +99,27 @@ class TreeRoot(object):
 
         total = (str(len(set(found))))
         print ('[SHOW]: '+key+' [SEASONS]:('+total+'/'+str(seasons)+')')
+
+
+    # todo caso de node list, como discriminar, apano para reconstruir el path devuelto
+    def get_full_path (self, path , source=None, aux=None):
+        if source is None: source = path
+        if aux is None: aux = ''
+        node = self.search(path)
+        node = node[len(node)-1]
+
+        if node.parent_basename is not None:
+            aux += '/' + str(node.basename)
+            return self.get_full_path(node.parent_basename, source, aux)
+
+
+        aux += '/' + str(node.basename)
+        list = aux.split('/')
+        temp = ''
+        for i in range (len(list)-1, 0, -1):
+            temp += '/' + list[i]
+        return temp
+
 
     def create_season_index (self):
         index = Index()

@@ -4,12 +4,12 @@ from Metadata import Metadata
 from Metadata import ExtendedMetada
 
 class Node:
-    def __init__(self, basename, identifier):
+    def __init__(self, basename, identifier, metadata):
         self.identifier = identifier
         self.basename = basename
         self.parent_basename = None
         self.children = []
-        self.metada = Metadata()
+        self.metadata = metadata
 
     def get_identifier(self):
         return self.identifier
@@ -24,5 +24,5 @@ class Node:
         self.children.append(child)
 
     def get_metadata(self):
-        return self.metada
+        return self.metadata
 

@@ -1,7 +1,12 @@
+import os
 import re
 import tvdb_api
 from enum import Enum
-
+from langdetect import DetectorFactory
+from langdetect import detect_langs
+from langdetect import detect
+import pysrt
+import chardet
 
 class FLAGS(Enum):
     LIBRARY_DIRECTORY_FLAG = '0'  # Library
@@ -14,7 +19,8 @@ class FLAGS(Enum):
     FILM_FLAG = '7'  # Multimedia file (.mk, .mp4):
     UNKOWN_FLAG = '8'  # Unkown File Type:
     TRASH_FLAG = '9'  # Unwanted File
-
+    ANIME_DIRECTORY_FLAG = '10'
+    ANIME_FLAG = '11'
 
 quality_list = ['BRRip', 'HDRip', 'BluRay', 'DvdRip', 'WEBDL']
 uploader_list = ['FUM', 'DIMENSION', 'PODO', 'HorribleSubs', 'AnimeRG', 'ROVERS']
@@ -26,10 +32,17 @@ def retrieve_quality(path=None, verbose=None):
         quality = re.search('(\d{3,4}p)', path).group(0)
     except Exception as e:
         try:
-            quality = re.search('BRRip|HDRip|BluRay|DvdRip|WEBDL', path, re.IGNORECASE).group(0)
+            quality = re.search('BRRip|HDRip|BluRay|DvdRip|WEB(\-)?DL|WEB(\-)?Rip|HDtv', path, re.IGNORECASE).group(0)
         except Exception as e:
-            quality = ''
-            return quality
+            try:
+                quality = re.search('\d{4}x\d{3,4}', path, re.IGNORECASE).group(0)
+            except Exception as e:
+                quality = ''
+                return quality
+            else:
+                if(verbose):
+                    print ('[INFO]: QUALITY_RES: ' + quality)
+                return quality[5:] + 'p'
         else:
             if(verbose):
                 print ('[INFO]: QUALITY_NAME: ' + quality)
@@ -39,6 +52,7 @@ def retrieve_quality(path=None, verbose=None):
             print ('[INFO]: QUALITY:' + quality)
         return quality
 
+
 def retrieve_episode(path=None, verbose=None):
     try:
         episode = re.search ('([e])\d{2,3}', path, re.IGNORECASE).group(0)
@@ -46,6 +60,7 @@ def retrieve_episode(path=None, verbose=None):
         episode = ''
         return episode
     else:
+        episode = episode[1:]
         if verbose:
             print ('[INFO]: EPISODE: ' + episode)
         return episode
@@ -53,14 +68,16 @@ def retrieve_episode(path=None, verbose=None):
 
 def retrieve_season_directory(path=None, verbose=None):
     try:
-        season_directory = re.search('(((\(|\[)?)season)(\-|\s|\.)?(\d{1,2})((\)|\])?)', path, re.IGNORECASE).group(0)
+        season_directory = re.search('(\(|\[)?s(eason)?(\-|\s|\.)?(\d{1,2})(\)|\])?', path, re.IGNORECASE).group(0)
+        season = re.search('\d{1,2}', season_directory, re.IGNORECASE).group(0)
     except Exception as e:
-        season_directory = ''
-        return season_directory
+        season = ''
+        return season
     else:
+        season = str(int(season))
         if verbose:
-            print ('[INFO]: SEASON_DIRECTORY: '+ season_directory)
-        return season_directory
+            print ('[INFO]: SEASON_DIRECTORY: '+ season)
+        return season
 
 
 def retrieve_season(path=None, verbose=None):
@@ -70,6 +87,7 @@ def retrieve_season(path=None, verbose=None):
         season = ''
         return season
     else:
+        season = season[1:]
         if verbose:
             print ('[INFO]: SEASON: ' + season)
         return season
@@ -102,7 +120,7 @@ def retrieve_codec(path=None, verbose=None):
 def retrieve_extension(path=None, verbose=None):
     try:
         # if (os.path.isfile(path)):
-        extension = re.search('(((\.mkv)|(\.mp4)|(\.str)|(\.sub))$)', path).group(0)
+        extension = re.search('(\.mkv|\.mp4|\.srt|\.sub)', path).group(0)
     except Exception as e:
         extension = ''
         return extension
@@ -177,7 +195,7 @@ def retrieve_subtitles_directory(path=None, verbose=None):
 
 def retrieve_subtitles(path=None, verbose=None):
     try:
-        subtitles = re.search('(((\.str)|(\.sub))$)', path).group(0)
+        subtitles = re.search('(\.str|\.sub)$', path).group(0)
     except Exception as e:
         subtitles = ''
         return subtitles
@@ -189,7 +207,7 @@ def retrieve_subtitles(path=None, verbose=None):
 
 def retrieve_film_flags(path=None, verbose=None):
     try:
-        film_flag = re.search('(EXTENDED(.*)?CUT|REMASTERED)', path, re.IGNORECASE).group(0)
+        film_flag = re.search('(EXTENDED(.*)?CUT)|REMASTERED', path, re.IGNORECASE).group(0)
     except Exception as e:
         film_flag = ''
         return film_flag
@@ -227,8 +245,8 @@ def retrieve_film_year(path=None, verbose=None):
 def retrieve_show_name(path=None, verbose=None, file_flag=None):
     try:
         if int(file_flag) == int(FLAGS.SEASON_DIRECTORY_FLAG):
-            aux_lenth = re.search('((\(|\[)?)season(\-|\s|\.)?(\d{1,2})((\)|\])?)', path, re.IGNORECASE).group(0)
-            show_name = re.search('((.*)((\(|\[)?)season(\-|\s|\.)?(\d{1,2})((\)|\])?))', path, re.IGNORECASE).group(0)[:-len(aux_lenth)]
+            aux_lenth = re.search('(\(|\[)?s(eason)?(\-|\s|\.)?(\d{1,2})(\)|\])?', path, re.IGNORECASE).group(0)
+            show_name = re.search('(.*)(\(|\[)?s(eason)?(\-|\s|\.)?(\d{1,2})(\)|\])?', path, re.IGNORECASE).group(0)[:-len(aux_lenth)]
         else:
             aux_lenth = re.search('([s]\d{1,2})', path, re.IGNORECASE).group(0)
             show_name = re.search('(.*)([s]\d{1,2})', path, re.IGNORECASE).group(0)[:-len(aux_lenth)]
@@ -244,7 +262,7 @@ def retrieve_show_name(path=None, verbose=None, file_flag=None):
 def retrieve_episode_name(show_name=None, season=None, episode=None, verbose=None):
     try:
         t = tvdb_api.Tvdb()
-        episode = t[show_name][int(season[1:])][int(episode[1:])]
+        episode = t[show_name][int(season)][int(episode)]
     except Exception as e:
         episode_name = ''
         return episode_name
@@ -273,51 +291,72 @@ def retrieve_number_of_seasons(key=None):
     except Exception as e:
         return season_count
 
-# todo Episode, Subber, Name=len(Subber):Name:-2
-# '- \d{0,3}|E\w{0,6}\s\d{0,3}'
-# '\[(HorribleSubs|Dcms-Fansubs|Ohys-Raws)\]'
-#  (\w+.*?)\s-
-# '\d{4}x\d{3,4}'
-
-# check if anime dir -> \[(\w+-?)*\](\s\w+)*\s(.?\s)?(\d{0,3}|E\w{0,6}.?\d{0,3})\s\(?\[?(\d{3,4}p|.*)\)?\]?
-# check if anime file ->  \[(\w+-?)*\](\s\w+)*\s(.?\s)?(\d{0,3}|E\w{0,6}.?\d{0,3})\s\(?\[?(\d{3,4}p|.*)\)?\]?(.mp4|.mkv)
-
-
-# esto ultimo en caso de 1280x720 -> esto es restar (\d{4}x):
-# todo añadir esto a quality
-
-def check_anime_dir():
-    try:
-        print
-    except:
-        return False
-    else:
-        return True
-
-
-def check_anime_show():
-    try:
-        print
-    except:
-        return False
-    else:
-        return True
-
 
 def retrieve_anime_name(path=None, verbose=None):
     try:
-        print
-    except:
-        return
+        header = len(re.search('\[(HorribleSubs|Krosis|Dcms-Fansubs|Ohys-Raws|PuyaSubs!)\]', path, re.IGNORECASE).group(0)) + 1
+        tail = re.search('\[(\w+.*?)\s-', path, re.IGNORECASE).group(0)
+    except Exception as e:
+        try:
+            tail = re.search('\[(\w+.*?)E(pisode)(\-|\.|\s)?(\d{2,3})', path, re.IGNORECASE).group(0)
+            core = len(re.search('E(pisode)(\-|\.|\s)?(\d{2,3})', path, re.IGNORECASE).group(0))
+        except Exception as e:
+            name = ''
+            return name
+        else:
+            name = tail[header:-core]
+            return name
     else:
-        return
+        name = tail[header:-2]
+        if verbose:
+            print('[INFO]: ANIME NAME: ' + name)
+        return name
 
 
 def retrieve_anime_episode(path=None, verbose=None):
     try:
-        print
-    except:
-        return
+        episode = re.search('(\-\s\d{1,3})', path, re.IGNORECASE).group(0)
+    except Exception as e:
+        try:
+            episode = re.search('E(pisode)(\-|\.|\s)?(\d{2,3})', path, re.IGNORECASE).group(0)
+        except Exception as e:
+            episode = ''
+            return episode
+        else:
+            episode = episode[8:]
+            if verbose:
+                print('[INFO]: ANIME EPISODE: ' + episode)
+            return episode
     else:
-        return
+        episode = episode[2:]
+        if verbose:
+            print('[INFO]: ANIME EPISODE: ' + episode)
+        return episode
+
+
+def retrieve_str_language(path=None, verbose=None):
+    path = unicode(path, "utf-8")
+    DetectorFactory.seed = 0
+    lang = ''
+    aux = ''
+    try:
+        with open(str(path), 'r') as myfile:
+            data=myfile.read()
+            encoding = chardet.detect(data)
+            content = pysrt.open(path, encoding=encoding['encoding'])
+
+            for i in range (0,15,1):
+                aux += ' ' + content[i].text
+
+        lang = detect(aux)
+    except:
+        lang = ''
+        return lang
+    else:
+        return lang
+
+# todo checking subtitle dir y file, validacion de todos los tipos de directorio
+# todo creacion de indices y reordenacion
+# todo renombre de los ficheros
+# todo map a mongodb
 
