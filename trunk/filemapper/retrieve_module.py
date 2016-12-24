@@ -1,12 +1,11 @@
-import os
 import re
 import tvdb_api
 from enum import Enum
 from langdetect import DetectorFactory
-from langdetect import detect_langs
 from langdetect import detect
 import pysrt
 import chardet
+
 
 class FLAGS(Enum):
     LIBRARY_DIRECTORY_FLAG = '0'  # Library
@@ -21,6 +20,7 @@ class FLAGS(Enum):
     TRASH_FLAG = '9'  # Unwanted File
     ANIME_DIRECTORY_FLAG = '10'
     ANIME_FLAG = '11'
+
 
 quality_list = ['BRRip', 'HDRip', 'BluRay', 'DvdRip', 'WEBDL']
 uploader_list = ['FUM', 'DIMENSION', 'PODO', 'HorribleSubs', 'AnimeRG', 'ROVERS']
@@ -280,16 +280,16 @@ def map_show_seasons(obj):
             continue
 
 
-def retrieve_number_of_seasons(key=None):
+def retrieve_number_of_episodes_per_season(name=None, season=None):
     t = tvdb_api.Tvdb()
-    season_count = 0
+    episode_count =  len(t[name][int(season)])
+    return episode_count
 
-    try:
-        for i in range(0, 30):
-            if t[key][i]:
-                season_count += 1
-    except Exception as e:
-        return season_count
+
+def retrieve_number_of_seasons(name=None):
+    t = tvdb_api.Tvdb()
+    season_count = len(t[name])
+    return season_count
 
 
 def retrieve_anime_name(path=None, verbose=None):
@@ -359,4 +359,3 @@ def retrieve_str_language(path=None, verbose=None):
 # todo creacion de indices y reordenacion
 # todo renombre de los ficheros
 # todo map a mongodb
-

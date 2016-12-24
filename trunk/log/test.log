@@ -21,7 +21,6 @@ filemapper.py ('item_flag: 4', 'path: /home/asigan/TFG/testlibrary/Teen.Wolf.S01
 tvdb_api.py Getting show game of thrones
 tvdb_api.py Searching for show game%20of%20thrones
 tvdb_api.py Retrieving URL http://thetvdb.com/api/GetSeries.php?seriesname=game%20of%20thrones&language=en
-tvdb_api.py URL http://thetvdb.com/api/GetSeries.php?seriesname=game%20of%20thrones&language=en was cached in /tmp/tvdb_api-u1000/3a34290584df1c7ef575de5f7499ca75.body
 tvdb_api.py Found series Game of Thrones
 tvdb_api.py Found series Hip Hop Tribe 2: Game of Thrones
 tvdb_api.py Found series Game of Thrones: Cartoon Parody
@@ -30,10 +29,8 @@ tvdb_api.py Got Game of Thrones, id 121361
 tvdb_api.py Configured language en override show language of en
 tvdb_api.py Getting all series data for 121361
 tvdb_api.py Retrieving URL http://thetvdb.com/api/0629B785CE550C8D/series/121361/en.xml
-tvdb_api.py URL http://thetvdb.com/api/0629B785CE550C8D/series/121361/en.xml was cached in /tmp/tvdb_api-u1000/019947b01a88ccc70fa5b4200842eb05.body
 tvdb_api.py Getting all episodes of 121361
 tvdb_api.py Retrieving URL http://thetvdb.com/api/0629B785CE550C8D/series/121361/all/en.xml
-tvdb_api.py URL http://thetvdb.com/api/0629B785CE550C8D/series/121361/all/en.xml was cached in /tmp/tvdb_api-u1000/7cf3d244ed2cb6b44e1ad2e0a3af18b8.body
 tvdb_api.py Got series id 121361
 filemapper.py standard metada
 filemapper.py ('Game Of Thrones', 'The Wolf and the Lion', '05', '01', '1080p', '', '')
@@ -71,7 +68,7 @@ filemapper.py ('Game Of Thrones', 'The Wolf and the Lion', '05', '01', '1080p', 
 filemapper.py  extended metada
 filemapper.py ('', '', '', '', '3', '', '')
 filemapper.py (Rebuilded Name: 
-[Item]: < Game Of Thrones 0105 - The Wolf and the Lion - [1080p].mkv >)
+[Item]: < Game Of Thrones S01E05 - The Wolf and the Lion - [1080p].mkv >)
 tvdb_api.py Getting show game of thrones
 tvdb_api.py Searching for show game%20of%20thrones
 tvdb_api.py Retrieving URL http://thetvdb.com/api/GetSeries.php?seriesname=game%20of%20thrones&language=en
@@ -96,7 +93,7 @@ filemapper.py ('', '', '', '', '1', '', '')
 filemapper.py (Rebuilded Name: 
 [Item]: < Game Of Thrones S01E05 - The Wolf and the Lion - [1080p] >)
 filemapper.py ('Tree: item_flag: 3', 'Iitem: Game.Of.Thrones.S01E05.1080p.mkv', 'Iparent: Game.Of.Thrones.S01E05.1080p.BluRay.x265-PODO[rartv]')
-filemapper.py ('Tree: item_flag: 3', 'Oitem: Game Of Thrones 0105 - The Wolf and the Lion - [1080p].mkv', 'Oparent: Game Of Thrones S01E05 - The Wolf and the Lion - [1080p]')
+filemapper.py ('Tree: item_flag: 3', 'Oitem: Game Of Thrones S01E05 - The Wolf and the Lion - [1080p].mkv', 'Oparent: Game Of Thrones S01E05 - The Wolf and the Lion - [1080p]')
 filemapper.py standard metada
 filemapper.py ('', '', '', '', '', '', '')
 filemapper.py  extended metada
@@ -195,7 +192,7 @@ filemapper.py ('Game Of Thrones', 'Winter Is Coming', '01', '01', '1080p', '.mkv
 filemapper.py  extended metada
 filemapper.py ('', '', '', '', '3', '', '')
 filemapper.py (Rebuilded Name: 
-[Item]: < Game Of Thrones 0101 - Winter Is Coming - [1080p].mkv >)
+[Item]: < Game Of Thrones S01E01 - Winter Is Coming - [1080p].mkv >)
 tvdb_api.py Getting show game of thrones
 tvdb_api.py Searching for show game%20of%20thrones
 tvdb_api.py Retrieving URL http://thetvdb.com/api/GetSeries.php?seriesname=game%20of%20thrones&language=en
@@ -220,7 +217,7 @@ filemapper.py ('', '', '', '', '1', '', '')
 filemapper.py (Rebuilded Name: 
 [Item]: < Game Of Thrones S01E01 - Winter Is Coming - [1080p] >)
 filemapper.py ('Tree: item_flag: 3', 'Iitem: Game.Of.Thrones.S01E01.1080p.mkv', 'Iparent: Game.Of.Thrones.S01E01.1080p.BluRay.x265-PODO[rartv]')
-filemapper.py ('Tree: item_flag: 3', 'Oitem: Game Of Thrones 0101 - Winter Is Coming - [1080p].mkv', 'Oparent: Game Of Thrones S01E01 - Winter Is Coming - [1080p]')
+filemapper.py ('Tree: item_flag: 3', 'Oitem: Game Of Thrones S01E01 - Winter Is Coming - [1080p].mkv', 'Oparent: Game Of Thrones S01E01 - Winter Is Coming - [1080p]')
 tvdb_api.py Getting show game of thrones
 tvdb_api.py Searching for show game%20of%20thrones
 tvdb_api.py Retrieving URL http://thetvdb.com/api/GetSeries.php?seriesname=game%20of%20thrones&language=en
@@ -274,7 +271,7 @@ filemapper.py ('Game Of Thrones', 'The Kingsroad', '02', '01', '1080p', '.mkv', 
 filemapper.py  extended metada
 filemapper.py ('', '', '', '', '3', '', '')
 filemapper.py (Rebuilded Name: 
-[Item]: < Game Of Thrones 0102 - The Kingsroad - [1080p].mkv >)
+[Item]: < Game Of Thrones S01E02 - The Kingsroad - [1080p].mkv >)
 tvdb_api.py Getting show game of thrones
 tvdb_api.py Searching for show game%20of%20thrones
 tvdb_api.py Retrieving URL http://thetvdb.com/api/GetSeries.php?seriesname=game%20of%20thrones&language=en
@@ -299,7 +296,7 @@ filemapper.py ('', '', '', '', '1', '', '')
 filemapper.py (Rebuilded Name: 
 [Item]: < Game Of Thrones S01E02 - The Kingsroad - [1080p] >)
 filemapper.py ('Tree: item_flag: 3', 'Iitem: Game.Of.Thrones.S01E02.1080p.mkv', 'Iparent: Game.Of.Thrones.S01E02.1080p.BluRay.x265-PODO[rartv]')
-filemapper.py ('Tree: item_flag: 3', 'Oitem: Game Of Thrones 0102 - The Kingsroad - [1080p].mkv', 'Oparent: Game Of Thrones S01E02 - The Kingsroad - [1080p]')
+filemapper.py ('Tree: item_flag: 3', 'Oitem: Game Of Thrones S01E02 - The Kingsroad - [1080p].mkv', 'Oparent: Game Of Thrones S01E02 - The Kingsroad - [1080p]')
 tvdb_api.py Getting show game of thrones
 tvdb_api.py Searching for show game%20of%20thrones
 tvdb_api.py Retrieving URL http://thetvdb.com/api/GetSeries.php?seriesname=game%20of%20thrones&language=en
@@ -353,7 +350,7 @@ filemapper.py ('Game Of Thrones', 'Lord Snow', '03', '01', '1080p', '.mkv', '')
 filemapper.py  extended metada
 filemapper.py ('', '', '', '', '3', '', '')
 filemapper.py (Rebuilded Name: 
-[Item]: < Game Of Thrones 0103 - Lord Snow - [1080p].mkv >)
+[Item]: < Game Of Thrones S01E03 - Lord Snow - [1080p].mkv >)
 tvdb_api.py Getting show game of thrones
 tvdb_api.py Searching for show game%20of%20thrones
 tvdb_api.py Retrieving URL http://thetvdb.com/api/GetSeries.php?seriesname=game%20of%20thrones&language=en
@@ -378,7 +375,7 @@ filemapper.py ('', '', '', '', '1', '', '')
 filemapper.py (Rebuilded Name: 
 [Item]: < Game Of Thrones S01E03 - Lord Snow - [1080p] >)
 filemapper.py ('Tree: item_flag: 3', 'Iitem: Game.Of.Thrones.S01E03.1080p.mkv', 'Iparent: Game.Of.Thrones.S01E03.1080p.BluRay.x265-PODO[rartv]')
-filemapper.py ('Tree: item_flag: 3', 'Oitem: Game Of Thrones 0103 - Lord Snow - [1080p].mkv', 'Oparent: Game Of Thrones S01E03 - Lord Snow - [1080p]')
+filemapper.py ('Tree: item_flag: 3', 'Oitem: Game Of Thrones S01E03 - Lord Snow - [1080p].mkv', 'Oparent: Game Of Thrones S01E03 - Lord Snow - [1080p]')
 filemapper.py standard metada
 filemapper.py ('', '', '', '', '', '', '')
 filemapper.py  extended metada
@@ -460,7 +457,7 @@ filemapper.py ('Game Of Thrones', 'The Red Woman', '01', '06', '1080p', '.mkv', 
 filemapper.py  extended metada
 filemapper.py ('', '', '', '', '3', '', '')
 filemapper.py (Rebuilded Name: 
-[Item]: < Game Of Thrones 0601 - The Red Woman - [1080p].mkv >)
+[Item]: < Game Of Thrones S06E01 - The Red Woman - [1080p].mkv >)
 filemapper.py standard metada
 filemapper.py ('Game Of Thrones', '', '', '6', '1080p', '', '')
 filemapper.py  extended metada
@@ -468,7 +465,7 @@ filemapper.py ('', '', '', '', '2', '', '')
 filemapper.py (Rebuilded Name: 
 [Item]: < Game Of Thrones [Season 6] >)
 filemapper.py ('Tree: item_flag: 3', 'Iitem: Game.of.Thrones.S06E01.1080p.BluRay.x264-ROVERS[rartv].mkv', 'Iparent: Game.of.Thrones.S06.1080p.BluRay.x264-ROVERS[rartv]')
-filemapper.py ('Tree: item_flag: 3', 'Oitem: Game Of Thrones 0601 - The Red Woman - [1080p].mkv', 'Oparent: Game Of Thrones [Season 6]')
+filemapper.py ('Tree: item_flag: 3', 'Oitem: Game Of Thrones S06E01 - The Red Woman - [1080p].mkv', 'Oparent: Game Of Thrones [Season 6]')
 tvdb_api.py Getting show game of thrones
 tvdb_api.py Searching for show game%20of%20thrones
 tvdb_api.py Retrieving URL http://thetvdb.com/api/GetSeries.php?seriesname=game%20of%20thrones&language=en
@@ -491,7 +488,7 @@ filemapper.py ('Game Of Thrones', 'Home', '02', '06', '1080p', '.mkv', '')
 filemapper.py  extended metada
 filemapper.py ('', '', '', '', '3', '', '')
 filemapper.py (Rebuilded Name: 
-[Item]: < Game Of Thrones 0602 - Home - [1080p].mkv >)
+[Item]: < Game Of Thrones S06E02 - Home - [1080p].mkv >)
 filemapper.py standard metada
 filemapper.py ('Game Of Thrones', '', '', '6', '1080p', '', '')
 filemapper.py  extended metada
@@ -499,7 +496,7 @@ filemapper.py ('', '', '', '', '2', '', '')
 filemapper.py (Rebuilded Name: 
 [Item]: < Game Of Thrones [Season 6] >)
 filemapper.py ('Tree: item_flag: 3', 'Iitem: Game.of.Thrones.S06E02.1080p.BluRay.x264-ROVERS[rartv].mkv', 'Iparent: Game.of.Thrones.S06.1080p.BluRay.x264-ROVERS[rartv]')
-filemapper.py ('Tree: item_flag: 3', 'Oitem: Game Of Thrones 0602 - Home - [1080p].mkv', 'Oparent: Game Of Thrones [Season 6]')
+filemapper.py ('Tree: item_flag: 3', 'Oitem: Game Of Thrones S06E02 - Home - [1080p].mkv', 'Oparent: Game Of Thrones [Season 6]')
 tvdb_api.py Getting show game of thrones
 tvdb_api.py Searching for show game%20of%20thrones
 tvdb_api.py Retrieving URL http://thetvdb.com/api/GetSeries.php?seriesname=game%20of%20thrones&language=en
@@ -522,7 +519,7 @@ filemapper.py ('Game Of Thrones', 'Oathbreaker', '03', '06', '1080p', '.mkv', ''
 filemapper.py  extended metada
 filemapper.py ('', '', '', '', '3', '', '')
 filemapper.py (Rebuilded Name: 
-[Item]: < Game Of Thrones 0603 - Oathbreaker - [1080p].mkv >)
+[Item]: < Game Of Thrones S06E03 - Oathbreaker - [1080p].mkv >)
 filemapper.py standard metada
 filemapper.py ('Game Of Thrones', '', '', '6', '1080p', '', '')
 filemapper.py  extended metada
@@ -530,7 +527,7 @@ filemapper.py ('', '', '', '', '2', '', '')
 filemapper.py (Rebuilded Name: 
 [Item]: < Game Of Thrones [Season 6] >)
 filemapper.py ('Tree: item_flag: 3', 'Iitem: Game.of.Thrones.S06E03.1080p.BluRay.x264-ROVERS[rartv].mkv', 'Iparent: Game.of.Thrones.S06.1080p.BluRay.x264-ROVERS[rartv]')
-filemapper.py ('Tree: item_flag: 3', 'Oitem: Game Of Thrones 0603 - Oathbreaker - [1080p].mkv', 'Oparent: Game Of Thrones [Season 6]')
+filemapper.py ('Tree: item_flag: 3', 'Oitem: Game Of Thrones S06E03 - Oathbreaker - [1080p].mkv', 'Oparent: Game Of Thrones [Season 6]')
 filemapper.py standard metada
 filemapper.py ('Game Of Thrones', '', '', '3', '', '', '')
 filemapper.py  extended metada
@@ -548,7 +545,6 @@ filemapper.py ('Tree: item_flag: 2', 'Oitem: Game Of Thrones [Season 3]', 'Opare
 tvdb_api.py Getting show teen wolf
 tvdb_api.py Searching for show teen%20wolf
 tvdb_api.py Retrieving URL http://thetvdb.com/api/GetSeries.php?seriesname=teen%20wolf&language=en
-tvdb_api.py URL http://thetvdb.com/api/GetSeries.php?seriesname=teen%20wolf&language=en was cached in /tmp/tvdb_api-u1000/47eb34a38d3a8061aa0d99c8bbe01459.body
 tvdb_api.py Found series Teen Wolf
 tvdb_api.py Found series Teen Wolf: The Animated Series
 tvdb_api.py Auto-selecting first search result using BaseUI
@@ -556,10 +552,8 @@ tvdb_api.py Got Teen Wolf, id 175001
 tvdb_api.py Configured language en override show language of en
 tvdb_api.py Getting all series data for 175001
 tvdb_api.py Retrieving URL http://thetvdb.com/api/0629B785CE550C8D/series/175001/en.xml
-tvdb_api.py URL http://thetvdb.com/api/0629B785CE550C8D/series/175001/en.xml was cached in /tmp/tvdb_api-u1000/ef1549af7959b1bd78a762713445cf68.body
 tvdb_api.py Getting all episodes of 175001
 tvdb_api.py Retrieving URL http://thetvdb.com/api/0629B785CE550C8D/series/175001/all/en.xml
-tvdb_api.py URL http://thetvdb.com/api/0629B785CE550C8D/series/175001/all/en.xml was cached in /tmp/tvdb_api-u1000/e9a04b1748e302ce3f1d890ef11ffc37.body
 tvdb_api.py Got series id 175001
 filemapper.py standard metada
 filemapper.py ('Teen Wolf', 'The Tell', '05', '01', '1080p', '', '')
@@ -596,7 +590,7 @@ filemapper.py ('Teen Wolf', 'The Tell', '05', '01', '1080p', '.mkv', '')
 filemapper.py  extended metada
 filemapper.py ('', '', '', '', '3', '', '')
 filemapper.py (Rebuilded Name: 
-[Item]: < Teen Wolf 0105 - The Tell - [1080p].mkv >)
+[Item]: < Teen Wolf S01E05 - The Tell - [1080p].mkv >)
 tvdb_api.py Getting show teen wolf
 tvdb_api.py Searching for show teen%20wolf
 tvdb_api.py Retrieving URL http://thetvdb.com/api/GetSeries.php?seriesname=teen%20wolf&language=en
@@ -620,7 +614,7 @@ filemapper.py ('', '', '', '', '1', '', '')
 filemapper.py (Rebuilded Name: 
 [Item]: < Teen Wolf S01E05 - The Tell - [1080p] >)
 filemapper.py ('Tree: item_flag: 3', 'Iitem: Teen.Wolf.S01E05.1080p.mkv', 'Iparent: Teen.Wolf.S01E05.1080p.BluRay.x265-PODO[rartv]')
-filemapper.py ('Tree: item_flag: 3', 'Oitem: Teen Wolf 0105 - The Tell - [1080p].mkv', 'Oparent: Teen Wolf S01E05 - The Tell - [1080p]')
+filemapper.py ('Tree: item_flag: 3', 'Oitem: Teen Wolf S01E05 - The Tell - [1080p].mkv', 'Oparent: Teen Wolf S01E05 - The Tell - [1080p]')
 filemapper.py standard metada
 filemapper.py ('', '', '', '', '', '', '')
 filemapper.py  extended metada
@@ -651,3 +645,300 @@ filemapper.py (Rebuilded Name:
 [Item]: < Teen Wolf S01E05 - The Tell - [1080p] >)
 filemapper.py ('Tree: item_flag: 4', 'Iitem: subtitles', 'Iparent: Teen.Wolf.S01E05.1080p.BluRay.x265-PODO[rartv]')
 filemapper.py ('Tree: item_flag: 4', 'Oitem: subtitles', 'Oparent: Teen Wolf S01E05 - The Tell - [1080p]')
+tvdb_api.py Getting show game of thrones
+tvdb_api.py Searching for show game%20of%20thrones
+tvdb_api.py Retrieving URL http://thetvdb.com/api/GetSeries.php?seriesname=game%20of%20thrones&language=en
+tvdb_api.py URL http://thetvdb.com/api/GetSeries.php?seriesname=game%20of%20thrones&language=en was cached in /tmp/tvdb_api-u1000/3a34290584df1c7ef575de5f7499ca75.body
+tvdb_api.py Found series Game of Thrones
+tvdb_api.py Found series Hip Hop Tribe 2: Game of Thrones
+tvdb_api.py Found series Game of Thrones: Cartoon Parody
+tvdb_api.py Auto-selecting first search result using BaseUI
+tvdb_api.py Got Game of Thrones, id 121361
+tvdb_api.py Configured language en override show language of en
+tvdb_api.py Getting all series data for 121361
+tvdb_api.py Retrieving URL http://thetvdb.com/api/0629B785CE550C8D/series/121361/en.xml
+tvdb_api.py URL http://thetvdb.com/api/0629B785CE550C8D/series/121361/en.xml was cached in /tmp/tvdb_api-u1000/019947b01a88ccc70fa5b4200842eb05.body
+tvdb_api.py Getting all episodes of 121361
+tvdb_api.py Retrieving URL http://thetvdb.com/api/0629B785CE550C8D/series/121361/all/en.xml
+tvdb_api.py URL http://thetvdb.com/api/0629B785CE550C8D/series/121361/all/en.xml was cached in /tmp/tvdb_api-u1000/7cf3d244ed2cb6b44e1ad2e0a3af18b8.body
+tvdb_api.py Got series id 121361
+tvdb_api.py Getting show game of thrones
+tvdb_api.py Searching for show game%20of%20thrones
+tvdb_api.py Retrieving URL http://thetvdb.com/api/GetSeries.php?seriesname=game%20of%20thrones&language=en
+tvdb_api.py URL http://thetvdb.com/api/GetSeries.php?seriesname=game%20of%20thrones&language=en was cached in /tmp/tvdb_api-u1000/3a34290584df1c7ef575de5f7499ca75.body
+tvdb_api.py Found series Game of Thrones
+tvdb_api.py Found series Hip Hop Tribe 2: Game of Thrones
+tvdb_api.py Found series Game of Thrones: Cartoon Parody
+tvdb_api.py Auto-selecting first search result using BaseUI
+tvdb_api.py Got Game of Thrones, id 121361
+tvdb_api.py Configured language en override show language of en
+tvdb_api.py Getting all series data for 121361
+tvdb_api.py Retrieving URL http://thetvdb.com/api/0629B785CE550C8D/series/121361/en.xml
+tvdb_api.py URL http://thetvdb.com/api/0629B785CE550C8D/series/121361/en.xml was cached in /tmp/tvdb_api-u1000/019947b01a88ccc70fa5b4200842eb05.body
+tvdb_api.py Getting all episodes of 121361
+tvdb_api.py Retrieving URL http://thetvdb.com/api/0629B785CE550C8D/series/121361/all/en.xml
+tvdb_api.py URL http://thetvdb.com/api/0629B785CE550C8D/series/121361/all/en.xml was cached in /tmp/tvdb_api-u1000/7cf3d244ed2cb6b44e1ad2e0a3af18b8.body
+tvdb_api.py Got series id 121361
+tvdb_api.py Getting show game of thrones
+tvdb_api.py Searching for show game%20of%20thrones
+tvdb_api.py Retrieving URL http://thetvdb.com/api/GetSeries.php?seriesname=game%20of%20thrones&language=en
+tvdb_api.py URL http://thetvdb.com/api/GetSeries.php?seriesname=game%20of%20thrones&language=en was cached in /tmp/tvdb_api-u1000/3a34290584df1c7ef575de5f7499ca75.body
+tvdb_api.py Found series Game of Thrones
+tvdb_api.py Found series Hip Hop Tribe 2: Game of Thrones
+tvdb_api.py Found series Game of Thrones: Cartoon Parody
+tvdb_api.py Auto-selecting first search result using BaseUI
+tvdb_api.py Got Game of Thrones, id 121361
+tvdb_api.py Configured language en override show language of en
+tvdb_api.py Getting all series data for 121361
+tvdb_api.py Retrieving URL http://thetvdb.com/api/0629B785CE550C8D/series/121361/en.xml
+tvdb_api.py URL http://thetvdb.com/api/0629B785CE550C8D/series/121361/en.xml was cached in /tmp/tvdb_api-u1000/019947b01a88ccc70fa5b4200842eb05.body
+tvdb_api.py Getting all episodes of 121361
+tvdb_api.py Retrieving URL http://thetvdb.com/api/0629B785CE550C8D/series/121361/all/en.xml
+tvdb_api.py URL http://thetvdb.com/api/0629B785CE550C8D/series/121361/all/en.xml was cached in /tmp/tvdb_api-u1000/7cf3d244ed2cb6b44e1ad2e0a3af18b8.body
+tvdb_api.py Got series id 121361
+tvdb_api.py Getting show game of thrones
+tvdb_api.py Searching for show game%20of%20thrones
+tvdb_api.py Retrieving URL http://thetvdb.com/api/GetSeries.php?seriesname=game%20of%20thrones&language=en
+tvdb_api.py URL http://thetvdb.com/api/GetSeries.php?seriesname=game%20of%20thrones&language=en was cached in /tmp/tvdb_api-u1000/3a34290584df1c7ef575de5f7499ca75.body
+tvdb_api.py Found series Game of Thrones
+tvdb_api.py Found series Hip Hop Tribe 2: Game of Thrones
+tvdb_api.py Found series Game of Thrones: Cartoon Parody
+tvdb_api.py Auto-selecting first search result using BaseUI
+tvdb_api.py Got Game of Thrones, id 121361
+tvdb_api.py Configured language en override show language of en
+tvdb_api.py Getting all series data for 121361
+tvdb_api.py Retrieving URL http://thetvdb.com/api/0629B785CE550C8D/series/121361/en.xml
+tvdb_api.py URL http://thetvdb.com/api/0629B785CE550C8D/series/121361/en.xml was cached in /tmp/tvdb_api-u1000/019947b01a88ccc70fa5b4200842eb05.body
+tvdb_api.py Getting all episodes of 121361
+tvdb_api.py Retrieving URL http://thetvdb.com/api/0629B785CE550C8D/series/121361/all/en.xml
+tvdb_api.py URL http://thetvdb.com/api/0629B785CE550C8D/series/121361/all/en.xml was cached in /tmp/tvdb_api-u1000/7cf3d244ed2cb6b44e1ad2e0a3af18b8.body
+tvdb_api.py Got series id 121361
+tvdb_api.py Getting show game of thrones
+tvdb_api.py Searching for show game%20of%20thrones
+tvdb_api.py Retrieving URL http://thetvdb.com/api/GetSeries.php?seriesname=game%20of%20thrones&language=en
+tvdb_api.py URL http://thetvdb.com/api/GetSeries.php?seriesname=game%20of%20thrones&language=en was cached in /tmp/tvdb_api-u1000/3a34290584df1c7ef575de5f7499ca75.body
+tvdb_api.py Found series Game of Thrones
+tvdb_api.py Found series Hip Hop Tribe 2: Game of Thrones
+tvdb_api.py Found series Game of Thrones: Cartoon Parody
+tvdb_api.py Auto-selecting first search result using BaseUI
+tvdb_api.py Got Game of Thrones, id 121361
+tvdb_api.py Configured language en override show language of en
+tvdb_api.py Getting all series data for 121361
+tvdb_api.py Retrieving URL http://thetvdb.com/api/0629B785CE550C8D/series/121361/en.xml
+tvdb_api.py URL http://thetvdb.com/api/0629B785CE550C8D/series/121361/en.xml was cached in /tmp/tvdb_api-u1000/019947b01a88ccc70fa5b4200842eb05.body
+tvdb_api.py Getting all episodes of 121361
+tvdb_api.py Retrieving URL http://thetvdb.com/api/0629B785CE550C8D/series/121361/all/en.xml
+tvdb_api.py URL http://thetvdb.com/api/0629B785CE550C8D/series/121361/all/en.xml was cached in /tmp/tvdb_api-u1000/7cf3d244ed2cb6b44e1ad2e0a3af18b8.body
+tvdb_api.py Got series id 121361
+tvdb_api.py Getting show game of thrones
+tvdb_api.py Searching for show game%20of%20thrones
+tvdb_api.py Retrieving URL http://thetvdb.com/api/GetSeries.php?seriesname=game%20of%20thrones&language=en
+tvdb_api.py URL http://thetvdb.com/api/GetSeries.php?seriesname=game%20of%20thrones&language=en was cached in /tmp/tvdb_api-u1000/3a34290584df1c7ef575de5f7499ca75.body
+tvdb_api.py Found series Game of Thrones
+tvdb_api.py Found series Hip Hop Tribe 2: Game of Thrones
+tvdb_api.py Found series Game of Thrones: Cartoon Parody
+tvdb_api.py Auto-selecting first search result using BaseUI
+tvdb_api.py Got Game of Thrones, id 121361
+tvdb_api.py Configured language en override show language of en
+tvdb_api.py Getting all series data for 121361
+tvdb_api.py Retrieving URL http://thetvdb.com/api/0629B785CE550C8D/series/121361/en.xml
+tvdb_api.py URL http://thetvdb.com/api/0629B785CE550C8D/series/121361/en.xml was cached in /tmp/tvdb_api-u1000/019947b01a88ccc70fa5b4200842eb05.body
+tvdb_api.py Getting all episodes of 121361
+tvdb_api.py Retrieving URL http://thetvdb.com/api/0629B785CE550C8D/series/121361/all/en.xml
+tvdb_api.py URL http://thetvdb.com/api/0629B785CE550C8D/series/121361/all/en.xml was cached in /tmp/tvdb_api-u1000/7cf3d244ed2cb6b44e1ad2e0a3af18b8.body
+tvdb_api.py Got series id 121361
+tvdb_api.py Getting show game of thrones
+tvdb_api.py Searching for show game%20of%20thrones
+tvdb_api.py Retrieving URL http://thetvdb.com/api/GetSeries.php?seriesname=game%20of%20thrones&language=en
+tvdb_api.py URL http://thetvdb.com/api/GetSeries.php?seriesname=game%20of%20thrones&language=en was cached in /tmp/tvdb_api-u1000/3a34290584df1c7ef575de5f7499ca75.body
+tvdb_api.py Found series Game of Thrones
+tvdb_api.py Found series Hip Hop Tribe 2: Game of Thrones
+tvdb_api.py Found series Game of Thrones: Cartoon Parody
+tvdb_api.py Auto-selecting first search result using BaseUI
+tvdb_api.py Got Game of Thrones, id 121361
+tvdb_api.py Configured language en override show language of en
+tvdb_api.py Getting all series data for 121361
+tvdb_api.py Retrieving URL http://thetvdb.com/api/0629B785CE550C8D/series/121361/en.xml
+tvdb_api.py URL http://thetvdb.com/api/0629B785CE550C8D/series/121361/en.xml was cached in /tmp/tvdb_api-u1000/019947b01a88ccc70fa5b4200842eb05.body
+tvdb_api.py Getting all episodes of 121361
+tvdb_api.py Retrieving URL http://thetvdb.com/api/0629B785CE550C8D/series/121361/all/en.xml
+tvdb_api.py URL http://thetvdb.com/api/0629B785CE550C8D/series/121361/all/en.xml was cached in /tmp/tvdb_api-u1000/7cf3d244ed2cb6b44e1ad2e0a3af18b8.body
+tvdb_api.py Got series id 121361
+tvdb_api.py Getting show game of thrones
+tvdb_api.py Searching for show game%20of%20thrones
+tvdb_api.py Retrieving URL http://thetvdb.com/api/GetSeries.php?seriesname=game%20of%20thrones&language=en
+tvdb_api.py URL http://thetvdb.com/api/GetSeries.php?seriesname=game%20of%20thrones&language=en was cached in /tmp/tvdb_api-u1000/3a34290584df1c7ef575de5f7499ca75.body
+tvdb_api.py Found series Game of Thrones
+tvdb_api.py Found series Hip Hop Tribe 2: Game of Thrones
+tvdb_api.py Found series Game of Thrones: Cartoon Parody
+tvdb_api.py Auto-selecting first search result using BaseUI
+tvdb_api.py Got Game of Thrones, id 121361
+tvdb_api.py Configured language en override show language of en
+tvdb_api.py Getting all series data for 121361
+tvdb_api.py Retrieving URL http://thetvdb.com/api/0629B785CE550C8D/series/121361/en.xml
+tvdb_api.py URL http://thetvdb.com/api/0629B785CE550C8D/series/121361/en.xml was cached in /tmp/tvdb_api-u1000/019947b01a88ccc70fa5b4200842eb05.body
+tvdb_api.py Getting all episodes of 121361
+tvdb_api.py Retrieving URL http://thetvdb.com/api/0629B785CE550C8D/series/121361/all/en.xml
+tvdb_api.py URL http://thetvdb.com/api/0629B785CE550C8D/series/121361/all/en.xml was cached in /tmp/tvdb_api-u1000/7cf3d244ed2cb6b44e1ad2e0a3af18b8.body
+tvdb_api.py Got series id 121361
+tvdb_api.py Getting show game of thrones
+tvdb_api.py Searching for show game%20of%20thrones
+tvdb_api.py Retrieving URL http://thetvdb.com/api/GetSeries.php?seriesname=game%20of%20thrones&language=en
+tvdb_api.py URL http://thetvdb.com/api/GetSeries.php?seriesname=game%20of%20thrones&language=en was cached in /tmp/tvdb_api-u1000/3a34290584df1c7ef575de5f7499ca75.body
+tvdb_api.py Found series Game of Thrones
+tvdb_api.py Found series Hip Hop Tribe 2: Game of Thrones
+tvdb_api.py Found series Game of Thrones: Cartoon Parody
+tvdb_api.py Auto-selecting first search result using BaseUI
+tvdb_api.py Got Game of Thrones, id 121361
+tvdb_api.py Configured language en override show language of en
+tvdb_api.py Getting all series data for 121361
+tvdb_api.py Retrieving URL http://thetvdb.com/api/0629B785CE550C8D/series/121361/en.xml
+tvdb_api.py URL http://thetvdb.com/api/0629B785CE550C8D/series/121361/en.xml was cached in /tmp/tvdb_api-u1000/019947b01a88ccc70fa5b4200842eb05.body
+tvdb_api.py Getting all episodes of 121361
+tvdb_api.py Retrieving URL http://thetvdb.com/api/0629B785CE550C8D/series/121361/all/en.xml
+tvdb_api.py URL http://thetvdb.com/api/0629B785CE550C8D/series/121361/all/en.xml was cached in /tmp/tvdb_api-u1000/7cf3d244ed2cb6b44e1ad2e0a3af18b8.body
+tvdb_api.py Got series id 121361
+tvdb_api.py Getting show teen wolf
+tvdb_api.py Searching for show teen%20wolf
+tvdb_api.py Retrieving URL http://thetvdb.com/api/GetSeries.php?seriesname=teen%20wolf&language=en
+tvdb_api.py URL http://thetvdb.com/api/GetSeries.php?seriesname=teen%20wolf&language=en was cached in /tmp/tvdb_api-u1000/47eb34a38d3a8061aa0d99c8bbe01459.body
+tvdb_api.py Found series Teen Wolf
+tvdb_api.py Found series Teen Wolf: The Animated Series
+tvdb_api.py Auto-selecting first search result using BaseUI
+tvdb_api.py Got Teen Wolf, id 175001
+tvdb_api.py Configured language en override show language of en
+tvdb_api.py Getting all series data for 175001
+tvdb_api.py Retrieving URL http://thetvdb.com/api/0629B785CE550C8D/series/175001/en.xml
+tvdb_api.py URL http://thetvdb.com/api/0629B785CE550C8D/series/175001/en.xml was cached in /tmp/tvdb_api-u1000/ef1549af7959b1bd78a762713445cf68.body
+tvdb_api.py Getting all episodes of 175001
+tvdb_api.py Retrieving URL http://thetvdb.com/api/0629B785CE550C8D/series/175001/all/en.xml
+tvdb_api.py URL http://thetvdb.com/api/0629B785CE550C8D/series/175001/all/en.xml was cached in /tmp/tvdb_api-u1000/e9a04b1748e302ce3f1d890ef11ffc37.body
+tvdb_api.py Got series id 175001
+tvdb_api.py Getting show teen wolf
+tvdb_api.py Searching for show teen%20wolf
+tvdb_api.py Retrieving URL http://thetvdb.com/api/GetSeries.php?seriesname=teen%20wolf&language=en
+tvdb_api.py URL http://thetvdb.com/api/GetSeries.php?seriesname=teen%20wolf&language=en was cached in /tmp/tvdb_api-u1000/47eb34a38d3a8061aa0d99c8bbe01459.body
+tvdb_api.py Found series Teen Wolf
+tvdb_api.py Found series Teen Wolf: The Animated Series
+tvdb_api.py Auto-selecting first search result using BaseUI
+tvdb_api.py Got Teen Wolf, id 175001
+tvdb_api.py Configured language en override show language of en
+tvdb_api.py Getting all series data for 175001
+tvdb_api.py Retrieving URL http://thetvdb.com/api/0629B785CE550C8D/series/175001/en.xml
+tvdb_api.py URL http://thetvdb.com/api/0629B785CE550C8D/series/175001/en.xml was cached in /tmp/tvdb_api-u1000/ef1549af7959b1bd78a762713445cf68.body
+tvdb_api.py Getting all episodes of 175001
+tvdb_api.py Retrieving URL http://thetvdb.com/api/0629B785CE550C8D/series/175001/all/en.xml
+tvdb_api.py URL http://thetvdb.com/api/0629B785CE550C8D/series/175001/all/en.xml was cached in /tmp/tvdb_api-u1000/e9a04b1748e302ce3f1d890ef11ffc37.body
+tvdb_api.py Got series id 175001
+tvdb_api.py Getting show teen wolf
+tvdb_api.py Searching for show teen%20wolf
+tvdb_api.py Retrieving URL http://thetvdb.com/api/GetSeries.php?seriesname=teen%20wolf&language=en
+tvdb_api.py URL http://thetvdb.com/api/GetSeries.php?seriesname=teen%20wolf&language=en was cached in /tmp/tvdb_api-u1000/47eb34a38d3a8061aa0d99c8bbe01459.body
+tvdb_api.py Found series Teen Wolf
+tvdb_api.py Found series Teen Wolf: The Animated Series
+tvdb_api.py Auto-selecting first search result using BaseUI
+tvdb_api.py Got Teen Wolf, id 175001
+tvdb_api.py Configured language en override show language of en
+tvdb_api.py Getting all series data for 175001
+tvdb_api.py Retrieving URL http://thetvdb.com/api/0629B785CE550C8D/series/175001/en.xml
+tvdb_api.py URL http://thetvdb.com/api/0629B785CE550C8D/series/175001/en.xml was cached in /tmp/tvdb_api-u1000/ef1549af7959b1bd78a762713445cf68.body
+tvdb_api.py Getting all episodes of 175001
+tvdb_api.py Retrieving URL http://thetvdb.com/api/0629B785CE550C8D/series/175001/all/en.xml
+tvdb_api.py URL http://thetvdb.com/api/0629B785CE550C8D/series/175001/all/en.xml was cached in /tmp/tvdb_api-u1000/e9a04b1748e302ce3f1d890ef11ffc37.body
+tvdb_api.py Got series id 175001
+tvdb_api.py Getting show teen wolf
+tvdb_api.py Searching for show teen%20wolf
+tvdb_api.py Retrieving URL http://thetvdb.com/api/GetSeries.php?seriesname=teen%20wolf&language=en
+tvdb_api.py URL http://thetvdb.com/api/GetSeries.php?seriesname=teen%20wolf&language=en was cached in /tmp/tvdb_api-u1000/47eb34a38d3a8061aa0d99c8bbe01459.body
+tvdb_api.py Found series Teen Wolf
+tvdb_api.py Found series Teen Wolf: The Animated Series
+tvdb_api.py Auto-selecting first search result using BaseUI
+tvdb_api.py Got Teen Wolf, id 175001
+tvdb_api.py Configured language en override show language of en
+tvdb_api.py Getting all series data for 175001
+tvdb_api.py Retrieving URL http://thetvdb.com/api/0629B785CE550C8D/series/175001/en.xml
+tvdb_api.py URL http://thetvdb.com/api/0629B785CE550C8D/series/175001/en.xml was cached in /tmp/tvdb_api-u1000/ef1549af7959b1bd78a762713445cf68.body
+tvdb_api.py Getting all episodes of 175001
+tvdb_api.py Retrieving URL http://thetvdb.com/api/0629B785CE550C8D/series/175001/all/en.xml
+tvdb_api.py URL http://thetvdb.com/api/0629B785CE550C8D/series/175001/all/en.xml was cached in /tmp/tvdb_api-u1000/e9a04b1748e302ce3f1d890ef11ffc37.body
+tvdb_api.py Got series id 175001
+tvdb_api.py Getting show teen wolf
+tvdb_api.py Searching for show teen%20wolf
+tvdb_api.py Retrieving URL http://thetvdb.com/api/GetSeries.php?seriesname=teen%20wolf&language=en
+tvdb_api.py URL http://thetvdb.com/api/GetSeries.php?seriesname=teen%20wolf&language=en was cached in /tmp/tvdb_api-u1000/47eb34a38d3a8061aa0d99c8bbe01459.body
+tvdb_api.py Found series Teen Wolf
+tvdb_api.py Found series Teen Wolf: The Animated Series
+tvdb_api.py Auto-selecting first search result using BaseUI
+tvdb_api.py Got Teen Wolf, id 175001
+tvdb_api.py Configured language en override show language of en
+tvdb_api.py Getting all series data for 175001
+tvdb_api.py Retrieving URL http://thetvdb.com/api/0629B785CE550C8D/series/175001/en.xml
+tvdb_api.py URL http://thetvdb.com/api/0629B785CE550C8D/series/175001/en.xml was cached in /tmp/tvdb_api-u1000/ef1549af7959b1bd78a762713445cf68.body
+tvdb_api.py Getting all episodes of 175001
+tvdb_api.py Retrieving URL http://thetvdb.com/api/0629B785CE550C8D/series/175001/all/en.xml
+tvdb_api.py URL http://thetvdb.com/api/0629B785CE550C8D/series/175001/all/en.xml was cached in /tmp/tvdb_api-u1000/e9a04b1748e302ce3f1d890ef11ffc37.body
+tvdb_api.py Got series id 175001
+tvdb_api.py Getting show teen wolf
+tvdb_api.py Searching for show teen%20wolf
+tvdb_api.py Retrieving URL http://thetvdb.com/api/GetSeries.php?seriesname=teen%20wolf&language=en
+tvdb_api.py URL http://thetvdb.com/api/GetSeries.php?seriesname=teen%20wolf&language=en was cached in /tmp/tvdb_api-u1000/47eb34a38d3a8061aa0d99c8bbe01459.body
+tvdb_api.py Found series Teen Wolf
+tvdb_api.py Found series Teen Wolf: The Animated Series
+tvdb_api.py Auto-selecting first search result using BaseUI
+tvdb_api.py Got Teen Wolf, id 175001
+tvdb_api.py Configured language en override show language of en
+tvdb_api.py Getting all series data for 175001
+tvdb_api.py Retrieving URL http://thetvdb.com/api/0629B785CE550C8D/series/175001/en.xml
+tvdb_api.py URL http://thetvdb.com/api/0629B785CE550C8D/series/175001/en.xml was cached in /tmp/tvdb_api-u1000/ef1549af7959b1bd78a762713445cf68.body
+tvdb_api.py Getting all episodes of 175001
+tvdb_api.py Retrieving URL http://thetvdb.com/api/0629B785CE550C8D/series/175001/all/en.xml
+tvdb_api.py URL http://thetvdb.com/api/0629B785CE550C8D/series/175001/all/en.xml was cached in /tmp/tvdb_api-u1000/e9a04b1748e302ce3f1d890ef11ffc37.body
+tvdb_api.py Got series id 175001
+tvdb_api.py Getting show teen wolf
+tvdb_api.py Searching for show teen%20wolf
+tvdb_api.py Retrieving URL http://thetvdb.com/api/GetSeries.php?seriesname=teen%20wolf&language=en
+tvdb_api.py URL http://thetvdb.com/api/GetSeries.php?seriesname=teen%20wolf&language=en was cached in /tmp/tvdb_api-u1000/47eb34a38d3a8061aa0d99c8bbe01459.body
+tvdb_api.py Found series Teen Wolf
+tvdb_api.py Found series Teen Wolf: The Animated Series
+tvdb_api.py Auto-selecting first search result using BaseUI
+tvdb_api.py Got Teen Wolf, id 175001
+tvdb_api.py Configured language en override show language of en
+tvdb_api.py Getting all series data for 175001
+tvdb_api.py Retrieving URL http://thetvdb.com/api/0629B785CE550C8D/series/175001/en.xml
+tvdb_api.py URL http://thetvdb.com/api/0629B785CE550C8D/series/175001/en.xml was cached in /tmp/tvdb_api-u1000/ef1549af7959b1bd78a762713445cf68.body
+tvdb_api.py Getting all episodes of 175001
+tvdb_api.py Retrieving URL http://thetvdb.com/api/0629B785CE550C8D/series/175001/all/en.xml
+tvdb_api.py URL http://thetvdb.com/api/0629B785CE550C8D/series/175001/all/en.xml was cached in /tmp/tvdb_api-u1000/e9a04b1748e302ce3f1d890ef11ffc37.body
+tvdb_api.py Got series id 175001
+tvdb_api.py Getting show teen wolf
+tvdb_api.py Searching for show teen%20wolf
+tvdb_api.py Retrieving URL http://thetvdb.com/api/GetSeries.php?seriesname=teen%20wolf&language=en
+tvdb_api.py URL http://thetvdb.com/api/GetSeries.php?seriesname=teen%20wolf&language=en was cached in /tmp/tvdb_api-u1000/47eb34a38d3a8061aa0d99c8bbe01459.body
+tvdb_api.py Found series Teen Wolf
+tvdb_api.py Found series Teen Wolf: The Animated Series
+tvdb_api.py Auto-selecting first search result using BaseUI
+tvdb_api.py Got Teen Wolf, id 175001
+tvdb_api.py Configured language en override show language of en
+tvdb_api.py Getting all series data for 175001
+tvdb_api.py Retrieving URL http://thetvdb.com/api/0629B785CE550C8D/series/175001/en.xml
+tvdb_api.py URL http://thetvdb.com/api/0629B785CE550C8D/series/175001/en.xml was cached in /tmp/tvdb_api-u1000/ef1549af7959b1bd78a762713445cf68.body
+tvdb_api.py Getting all episodes of 175001
+tvdb_api.py Retrieving URL http://thetvdb.com/api/0629B785CE550C8D/series/175001/all/en.xml
+tvdb_api.py URL http://thetvdb.com/api/0629B785CE550C8D/series/175001/all/en.xml was cached in /tmp/tvdb_api-u1000/e9a04b1748e302ce3f1d890ef11ffc37.body
+tvdb_api.py Got series id 175001
+tvdb_api.py Getting show teen wolf
+tvdb_api.py Searching for show teen%20wolf
+tvdb_api.py Retrieving URL http://thetvdb.com/api/GetSeries.php?seriesname=teen%20wolf&language=en
+tvdb_api.py URL http://thetvdb.com/api/GetSeries.php?seriesname=teen%20wolf&language=en was cached in /tmp/tvdb_api-u1000/47eb34a38d3a8061aa0d99c8bbe01459.body
+tvdb_api.py Found series Teen Wolf
+tvdb_api.py Found series Teen Wolf: The Animated Series
+tvdb_api.py Auto-selecting first search result using BaseUI
+tvdb_api.py Got Teen Wolf, id 175001
+tvdb_api.py Configured language en override show language of en
+tvdb_api.py Getting all series data for 175001
+tvdb_api.py Retrieving URL http://thetvdb.com/api/0629B785CE550C8D/series/175001/en.xml
+tvdb_api.py URL http://thetvdb.com/api/0629B785CE550C8D/series/175001/en.xml was cached in /tmp/tvdb_api-u1000/ef1549af7959b1bd78a762713445cf68.body
+tvdb_api.py Getting all episodes of 175001
+tvdb_api.py Retrieving URL http://thetvdb.com/api/0629B785CE550C8D/series/175001/all/en.xml
+tvdb_api.py URL http://thetvdb.com/api/0629B785CE550C8D/series/175001/all/en.xml was cached in /tmp/tvdb_api-u1000/e9a04b1748e302ce3f1d890ef11ffc37.body
+tvdb_api.py Got series id 175001

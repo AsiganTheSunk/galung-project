@@ -40,7 +40,7 @@ def directory_mapper(path=None, verbose=None):
         item_count += len(directories)
 
 
-    for root, directories, files in tqdm(os.walk(path), total=item_count, desc='Mapping Folder', ncols=122, unit=' items'):
+    for root, directories, files in tqdm(os.walk(path), total=item_count, desc='Mapping Folder', ncols=115, unit=' items'):
     # for root, directories, files in os.walk(path):
         sleep(0.04)
         for directory in directories:
@@ -83,7 +83,7 @@ def build_directory_tree(basedir=None, directory=None, verbose=None, debug=None,
         tOriginal.add_node(basename=str(os.path.basename(basedir)))
         tUpdated.add_node(basename=str(os.path.basename(basedir)))
 
-        for item in tqdm(sorted(directory), total=item_count, desc='Building Tree ', ncols=122, unit=' items'):
+        for item in tqdm(sorted(directory), total=item_count, desc='Building Tree ', ncols=115, unit=' items'):
         # for item in sorted(directory):
             len_aux = len(str(os.path.basename(item)))
             parent = item[:-len_aux - 1]
@@ -268,10 +268,10 @@ def rebuild_name(meta, verbose=None):
 
         elif int(file_flag) == int(FLAGS.SHOW_FLAG):
             if ename in '':
-                new_name = str(name) + ' ' + str(season) + str(episode) + '[' + str(quality) + ']' +\
+                new_name = str(name) + ' S' + str(season) + 'E'  +  str(episode) + '[' + str(quality) + ']' +\
                            str(extension)
             else:
-                new_name = str(name) + ' ' + str(season) + str(episode) + ' - ' +\
+                new_name = str(name) + ' S' + str(season) + 'E'  + str(episode) + ' - ' +\
                            str(ename) + ' - ' + '[' + str(quality) + ']' + str(extension)
 
         elif int(file_flag) == int(FLAGS.TRASH_FLAG):

@@ -134,9 +134,3 @@ class TreeRoot(object):
         for show in temp:
             self.find_show_seasons(key=show, seasons=rmod.retrieve_number_of_seasons(key=show))
 
-
-
-
-
-
-
