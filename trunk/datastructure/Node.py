@@ -1,6 +1,6 @@
 #!/usr/bin/python
 
-from Metadata import Metada
+from Metadata import Metadata
 from Metadata import ExtendedMetada
 
 class Node:
@@ -9,7 +9,7 @@ class Node:
         self.basename = basename
         self.parent_basename = None
         self.children = []
-        self.metada = Metada()
+        self.metada = Metadata()
 
     def get_identifier(self):
         return self.identifier
