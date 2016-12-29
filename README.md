@@ -1,8 +1,18 @@
 # Galung-Project
+[<img src="https://www.python.org/static/opengraph-icon-200x200.png" title="Python.org"
+align="right" width="50">](https://www.python.org/)
 
 *Read this in other languages: [English](README.md), [Spanish](README.es.md).*
 
-Galung-Project it's a concept software to help organize your stuff developed mainly in python 2.7.
+
+##### Description
+Galung-Project it's a concept software to help organize your stuff developed mainly in python 2.7
+
+Desarrollo de una plataforma de asistencia para entornos XBMC que nos facilite recuperar y obtener, tanto información como 
+meta-datos (titulo de la obra, autor, etc...) asociados a archivos multimedia de dominio público, utilizando consultas web y 
+uso de protocolos peer to peer. Constará de ciertas funcionalidades adicionales tales como sincronizar la reproducción del 
+contenido a través de la red, re-codificación y alineación de pistas de audio y vídeo.
+
 
 ## Getting Started
 
@@ -12,29 +22,26 @@ These instructions will get you a copy of the project up and running on your loc
 ## Index of Contents
 
 1. [Installation](#requirements)
-  1. [Requirements](#installation)
+  * [Requirements](#installation)
 2. [Plugins](#plugins)
 00. [License](#license)
 
 ## Requirements
+Galung-Project requires [python 2.7.x][python_download_link]  and [pip installer][pip_installer_link] installed in your machine to be able to run install.sh. 
+
+
+### Dependencies
+
+* tvdb_api 
+
+* [tvdb_api] [tvdb_api_link]
+
 
 ### Installation
 
-Galung-Project requires [pip installer](https://pip.pypa.io/en/stable/installing/) to run.
-
-Download and extract the [latest release](https://bootstrap.pypa.io/get-pip.py).
+Go to the /path/path and run install.sh, this will donwload all the modules required for the software to run propperly
 
 Install the dependencies to be able to start the software.
-
-### Plugins
-
-Galung-Project it's currently developing this plugins
-
-* filemapper
-
-Readmes, how to use them in your own application can be found here:
-
-* [/filemapper/README.md] [readme_fm_link]
 
 ```sh
 $ 
@@ -47,14 +54,30 @@ $ pip install
 $
 ```
 
-* tvdb_api 
+**[Back to index of contents](#index-of-contents)**
 
-* [tvdb_api] [tvdb_api_link]
+### Plugins
+
+Galung-Project it's currently developing this table of plugins 
+
+
+| Pluguin       | Status        | Show_Module | Movie_Module | Anime_Module |
+|:-------------:|:-------------:|:-----------:|:------------:|:------------:|
+| [FileMapper][readme_fm_link] | Developing | YES | NO | NO |
+| [ConstellationMapper][readme_cm_link] | - | - | - | - | - |
 
 
 ### License
 
+**[Back to index of contents](#index-of-contents)**
+
+
+[readme_fm_link]: <https://github.com/AsiganTheSunk/galung-project/blob/master/trunk/filemapper/README.md>
+[readme_cm_link]: <https://github.com/AsiganTheSunk/galung-project/blob/master/trunk/filemapper/README.md>
+
+[pip_installer_link]: <https://pip.pypa.io/en/stable/installing/>
+[python_download_link]: <https://www.python.org/downloads/>
 
 [tvdb_api_link]: <https://github.com/dbr/tvdb_api>
-[readme_fm_link]: <https://github.com/AsiganTheSunk/galung-project/blob/master/trunk/filemapper/README.md>
+
 
