@@ -21,11 +21,22 @@ Galung-Project it's currently developing this plugins
 
 Readmes, how to use them in your own application can be found here:
 
-* [/filemapper/README.md] [readme_fm]
+* [/filemapper/README.md] [readme_fm_link]
 
 ```sh
 $ 
+$ pip install pysrt
+$ pip install langdetect
+$ pip install pandas
+$ pip install numpy
+$ pip install tvdb_api
 $ pip install 
 $
 ```
-[readme_fm]: <https://github.com/AsiganTheSunk/galung-project/blob/master/trunk/filemapper/README.md>
+
+* tvdb_api 
+
+* [tvdb_api] [tvdb_api_link]
+
+[tvdb_api_link]: <https://github.com/dbr/tvdb_api>
+[readme_fm_link]: <https://github.com/AsiganTheSunk/galung-project/blob/master/trunk/filemapper/README.md>
