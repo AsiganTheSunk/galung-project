@@ -1,3 +1,88 @@
 # FileMapper
- 
- CocoWorld :D
+[<img src="https://www.python.org/static/opengraph-icon-200x200.png" title="Python.org"
+align="right" width="50">](https://www.python.org/)
+
+*Read this in other languages: [English](README.md), [Spanish](README.es.md).*
+
+##### Description
+FileMapper software to help organize your stuff developed mainly in python 2.7
+
+## Getting Started
+
+These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See deployment for notes on how to deploy the project on a live system
+
+## Index of Contents
+
+1. [Requirements](#installation)
+ * [Dependencies](#dependencies)
+ * [Installation](#installation)
+2. [Usage](#usage)
+3. [License](#license)
+
+## Requirements
+Galung-Project requires [python 2.7.x][python_download_link]  and [pip installer][pip_installer_link] installed in your machine to be able to run install.sh. 
+
+### Dependencies
+
+* [pysrt][pysrt_link]
+* [langdetect][langdetect_link]
+* [pandas][pandas_link]
+* [numpy][numpy_link]
+* [tvdb_api][tvdb_api_link]
+
+### Installation
+
+Go to the /path/path and run install.sh, this will donwload all the modules required for the software to run propperly
+
+Install the dependencies to be able to start the software.
+
+```sh
+$ 
+$ pip install pysrt
+$ pip install langdetect
+$ pip install pandas
+$ pip install numpy
+$ pip install tvdb_api
+$ pip install 
+$
+```
+
+**[Back to index of contents](#index-of-contents)**
+
+### Modules
+FileMapper it's currently developing this table of plugins 
+
+
+|     | Status        | Show | Movie | Anime |
+|:-------------:|:-------------:|:-----------:|:------------:|:------------:|
+| FileMapper |  Developing| YES | NO | NO |
+
+## Usage
+
+```python
+import filemapper as fm
+
+def main():
+ return
+```
+
+
+
+### License
+
+**[Back to index of contents](#index-of-contents)**
+
+
+[readme_fm_link]: <https://github.com/AsiganTheSunk/galung-project/blob/master/trunk/filemapper/README.md>
+[readme_cm_link]: <https://github.com/AsiganTheSunk/galung-project/blob/master/trunk/filemapper/README.md>
+
+[pip_installer_link]: <https://pip.pypa.io/en/stable/installing/>
+[python_download_link]: <https://www.python.org/downloads/>
+
+[tvdb_api_link]: <https://github.com/dbr/tvdb_api>
+[pysrt_link]: <https://github.com/byroot/pysrt>
+[langdetect_link]: <https://github.com/Mimino666/langdetect>
+[pandas_link]: <http://pandas.pydata.org/>
+[numpy_link]: <http://www.numpy.org/>
+
+
