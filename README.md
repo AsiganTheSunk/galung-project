@@ -1,19 +1,20 @@
 # Galung-Project
 
-*Read this in other languages: [English](README.md), [Spanish](README.es.md)
+*Read this in other languages: [English](README.md), [Spanish](README.es.md).*
 
 Galung-Project it's a concept software to help organize your stuff developed mainly in python 2.7.
 
-  - Pluguin: filemapper
-  - Pluguin: ffmpeg
+## Getting Started
+
+These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See deployment for notes on how to deploy the project on a live system
 
 
-## Table of Contents
+## Index of Contents
 
 1. [Installation](#requirements)
   1. [Requirements](#installation)
+2. [Plugins](#plugins)
 00. [License](#license)
-
 
 ## Requirements
 
