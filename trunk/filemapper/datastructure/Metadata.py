@@ -1,5 +1,4 @@
-# glob, fmatch
-
+# TODO: update default values to N/A to match the index namespace
 class Metadata:
     def __init__(self, name='', year='', ename='', season='', episode='', quality='', film_flag='', language='',
                  subtitle='', uploader='',  source='', extension='', file_flag='', audio='', codec=''):
@@ -24,12 +23,6 @@ class Metadata:
         return ExtendedMetada(self.name, self.ename, self.season, self.episode, self.quality, self.extension, self.uploader,
                               self.source, self.year, self.film_flag, self.language, self.subtitle, self.file_flag,
                               director=director, actors=actors, genre=genre, duration=duration, chapters=chapters)
-
-    def fill_empty_fields(self):
-        if self.name == '': self.name='Null'
-        if self.ename == '': self.ename='Null'
-        if self.season == '': self.name='Null'
-        if self.episode == '': self.name='Null'
 
     def get_name(self):
         return self.name

@@ -6,6 +6,14 @@ import chardet
 import re
 
 def retrieve_episode_name(show_name=str, season=str, episode=str, verbose=False):
+    '''
+    This function retrieves episode name values from a given show using tvdb_api
+    :param show_name:
+    :param season:
+    :param episode:
+    :param verbose:
+    :return:
+    '''
     try:
         t = tvdb_api.Tvdb()
         episode = t[show_name][int(season)][int(episode)]
@@ -19,6 +27,12 @@ def retrieve_episode_name(show_name=str, season=str, episode=str, verbose=False)
 
 
 def retrieve_number_of_episodes_per_season(name=None, season=None):
+    '''
+    This function retrieves number of episodes per season from a given show using tvdb_api
+    :param name:
+    :param season:
+    :return:
+    '''
     try:
         t = tvdb_api.Tvdb()
         episode_count =  len(t[name][int(season)])
@@ -30,6 +44,11 @@ def retrieve_number_of_episodes_per_season(name=None, season=None):
 
 
 def retrieve_number_of_seasons(name=None):
+    '''
+    This function retrieves number of seasons from a given show using tvdb_api
+    :param name:
+    :return:
+    '''
     try:
         t = tvdb_api.Tvdb()
         season_count = len(t[name])
@@ -51,6 +70,12 @@ def retrieve_subtitles(path=None, verbose=None):
         return subtitles
 
 def retrieve_str_language(path=None, verbose=False):
+    '''
+    This function retrieves language from a given path using re | langdetect
+    :param path:
+    :param verbose:
+    :return:
+    '''
     path = unicode(path, "utf-8")
     DetectorFactory.seed = 0
     lang = ''

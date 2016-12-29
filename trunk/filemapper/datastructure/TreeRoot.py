@@ -1,11 +1,10 @@
 from Node import Node
-from trunk.datastructure.Metadata import Metadata
+from trunk.filemapper.datastructure.Metadata import Metadata
+import os
 
-# todo crear excepciones propias del treeroot
-
+# TODO: Crear excepciones propias del treeroot
 class TreeRoot(object):
     def __init__(self):
-        self.dictionary = None
         self.nodes = []
         self.node_count = -1
 
@@ -18,7 +17,17 @@ class TreeRoot(object):
     def add_node_count(self):
         self.node_count += 1
 
-    def add_node(self, basename, metadata=None, parent_basename=None, debug=None):
+    def add_node(self, basename=str, metadata=None, parent_basename=None, debug=None):
+        '''
+        :param basename: node basename
+        :param metadata: metadata
+        :param parent_basename: node parent_basename
+        :type basename: str
+        :type metadata: Metadata
+        :type parent_basename: str
+        :return node
+        :rtype list of Nodes
+        '''
         self.add_node_count()
         if metadata is None: metadata = Metadata()
         node = Node(basename, self.node_count, metadata)
@@ -34,7 +43,15 @@ class TreeRoot(object):
         self.nodes.append(node)
         return node
 
-    def search(self, basename, parent_basename=None):
+    def search(self, basename=str, parent_basename=None):
+        '''
+        :param basename: node basename
+        :param parent_basename: node parent_basename
+        :type basename: str
+        :type parent_basename: str
+        :return node
+        :rtype list of Nodes
+        '''
         node = None
         nodelist = []
         if parent_basename is None:
@@ -48,12 +65,24 @@ class TreeRoot(object):
                     node = item
             return [node]
 
-    def tree(self, basename):
-        subtrees = self.search(basename)[0].children
+    def tree(self):
+        '''
+        :return: print list of nodes with depth
+        '''
+        subtrees = self.nodes[0].children
         for i, val in enumerate(subtrees):
              self.subtree(subtrees[i].basename, deep=1)
 
-    def subtree(self, basename, parent_basename=None, deep=int):
+    def subtree(self, basename=str, parent_basename=None, deep=int):
+        '''
+        :param basename: node basename
+        :param parent_basename: node parent_basename
+        :param deep: depth of the node in the tree
+        :type basename: str
+        :type parent_basename: str
+        :type deep int
+        :return: print list of nodes with depth
+        '''
         if parent_basename is None:
             nodelist = self.search(basename)
             print('--' + str(basename))
@@ -68,12 +97,25 @@ class TreeRoot(object):
                     self.subtree(child.basename, child.parent_basename, deep=deep + 1)
 
     def display(self):
+        '''
+        :return: print list of nodes
+        '''
         for item in self.nodes:
             print ('[ID]: ' + str(item.identifier)+' [PATH]: '+str(item.parent_basename)+' ./'+str(item.basename))
 
 
-    # todo caso de node list, como discriminar, apano para reconstruir el path devuelto
-    def get_full_path (self, path , source=None, aux=None):
+    # TODO: rehacer esta funcion usando os.path.join(a,b), por temas de portabilidad entre sistemas linux y windows
+    def get_full_path (self, path, source=None, aux=None):
+        '''
+        This function rebuilds the new path for the file in the updated library
+        :param path: basename
+        :param source: ???
+        :param aux: list of basenames
+        :type path: ???
+        :type source: ???
+        :type aux: str
+        :return: print list of nodes with depth
+        '''
         if source is None: source = path
         if aux is None: aux = ''
         node = self.search(path)

@@ -1,15 +1,14 @@
 #!/usr/bin/python
 
-import re
 import os
 import pandas as pd
 from pandas import DataFrame
 
-from trunk.datastructure.Metadata import Metadata
-from trunk.datastructure.TreeRoot import TreeRoot
+from trunk.filemapper.datastructure.Metadata import Metadata
 from trunk.filemapper import filemapper as fm
-from trunk.filemapper.retrieve import offline_retrieve_module as offrmod
+from trunk.filemapper.datastructure.TreeRoot import TreeRoot
 from trunk.filemapper.retrieve import online_retrieve_module as onrmod
+from trunk.filemapper.datastructure.FileFlags import FileFlags as FLAGS
 
 basedir = str(os.getcwd()) + '/testlibrary'
 pd.set_option('display.max_rows', 750)
@@ -68,29 +67,16 @@ def retrieve_name_series(dataframe):
 
 
 def create_main_show_directory(dataframe, current_serie=str, library=str):
-    try:
-        #if not os.path.exists(os.path.join(basedir, current_serie)):
-        #    os.makedirs(os.path.join(basedir, current_serie))
-        print ('CREATED: ' + str(current_serie))
-    except Exception as e:
-        return dataframe
-    else:
-        dataframe = add_dataframe_row(dataframe=dataframe, name=current_serie, season='N/A', episode='N/A',
-                                      fflag='15', basename=current_serie, parent=library)
+    dataframe = add_dataframe_row(dataframe=dataframe, name=current_serie, season='N/A', episode='N/A',
+                                  fflag='15', basename=current_serie, parent=library)
     return dataframe
 
 
 def create_season_directory(dataframe, current_serie=str, season=str, parent=str):
-    try:
-        new_season_directory = fm.build_season_directory_name(name=current_serie, season=str(season))
-        #if not os.path.exists(os.path.join(basedir, new_season_directory)):
-        #    os.makedirs(os.path.join(basedir, new_season_directory))
-    except Exception as e:
-        return dataframe
-    else:
-        print ('CREATED: ' + str(new_season_directory))
-        dataframe = add_dataframe_row(dataframe=dataframe, name=current_serie, season=season, episode='N/A',
-                                      fflag='2', basename=new_season_directory, parent=parent)
+    new_season_directory = fm.build_season_directory_name(name=current_serie, season=str(season))
+
+    dataframe = add_dataframe_row(dataframe=dataframe, name=current_serie, season=season, episode='N/A',
+                                  fflag='2', basename=new_season_directory, parent=parent)
     return dataframe
 
 
@@ -100,6 +86,7 @@ def retrieve_episodes(dataframe, current_serie, drop_dup=False):
     else:
         dataframe_episodes = dataframe.groupby(['name']).get_group(current_serie)
     return dataframe_episodes[dataframe_episodes.fflag == '3']
+
 
 def retrieve_episodes_directories(dataframe, current_serie, drop_dup=False):
     if drop_dup:
