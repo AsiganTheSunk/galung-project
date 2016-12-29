@@ -1,5 +1,7 @@
 # Galung-Project
 
+*Read this in other languages: [English](README.md), [Spanish](README.es.md)
+
 Galung-Project it's a concept software to help organize your stuff developed mainly in python 2.7.
 
   - Pluguin: filemapper
