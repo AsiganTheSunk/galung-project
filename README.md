@@ -11,7 +11,7 @@ Galung-Project requires [pip installer](https://pip.pypa.io/en/stable/installing
 
 Download and extract the [latest release](https://bootstrap.pypa.io/get-pip.py).
 
-Install the dependencies and devDependencies and start the software.
+Install the dependencies to be able to start the software.
 
 ### Plugins
 
@@ -28,4 +28,4 @@ $
 $ pip install 
 $
 ```
-[readme_fm]: <https://github.com/AsiganTheSunk/galung-project/new/master/trunk/filemapper/README.md>
+[readme_fm]: <https://github.com/AsiganTheSunk/galung-project/blob/master/trunk/filemapper/README.md>
