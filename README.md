@@ -64,11 +64,11 @@ $
 Galung-Project it's currently developing this table of plugins 
 
 
-| Pluguin       | Status        | Show_Module | Movie_Module | Anime_Module |
+| Pluguin       | Status        | Show | Movie | Anime |
 |:-------------:|:-------------:|:-----------:|:------------:|:------------:|
 | [FileMapper][readme_fm_link] | Developing | YES | NO | NO |
-| [ConstellationMapper][readme_cm_link] | - | - | - | - | - |
-
+| [ConstellationMapper][readme_cm_link] | Developing | - | - | - | - |
+| [FFmpeg][readme_cm_link] | Developing | - | - | - | - |
 
 **[Back to index of contents](#index-of-contents)**
 
