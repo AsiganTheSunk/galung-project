@@ -27,7 +27,8 @@ These instructions will get you a copy of the project up and running on your loc
  * [Installation](#installation)
 2. [Plugins](#plugins)
   * [FileMapper][readme_fm_link]
-3. [License](#license)
+3. [Usage](#usage)
+4. [License](#license)
 
 ## Requirements
 Galung-Project requires [python 2.7.x][python_download_link]  and [pip installer][pip_installer_link] installed in your machine to be able to run install.sh. 
@@ -58,8 +59,6 @@ $ pip install
 $
 ```
 
-**[Back to index of contents](#index-of-contents)**
-
 ### Plugins
 
 Galung-Project it's currently developing this table of plugins 
@@ -70,6 +69,12 @@ Galung-Project it's currently developing this table of plugins
 | [FileMapper][readme_fm_link] | Developing | YES | NO | NO |
 | [ConstellationMapper][readme_cm_link] | - | - | - | - | - |
 
+
+**[Back to index of contents](#index-of-contents)**
+
+### Usage
+
+**[Back to index of contents](#index-of-contents)**
 
 ### License
 
