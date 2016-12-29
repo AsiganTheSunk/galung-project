@@ -1,8 +1,7 @@
-import re
-from trunk.filemapper import retrieve_module as rmod
-from trunk.datastructure.Metadata import Metadata
-from Index import Index
 from Node import Node
+from trunk.datastructure.Metadata import Metadata
+
+# todo crear excepciones propias del treeroot
 
 class TreeRoot(object):
     def __init__(self):
@@ -40,65 +39,37 @@ class TreeRoot(object):
         nodelist = []
         if parent_basename is None:
             for item in self.nodes:
-                if item.basename in basename:
+                if item.basename == basename:
                     nodelist.append(item)
             return nodelist
         else:
             for item in self.nodes:
-                if item.basename in basename and item.parent_basename in parent_basename:
+                if item.basename == basename and item.parent_basename == parent_basename:
                     node = item
             return [node]
-
-    # todo Falta por hacer la actualizacion
-    def update_node_basename(self, basename=None, new_basename=None, parent_basename=None):
-        nodelist = self.search(basename=basename)[0]
-        #parentNode =  self.search(nodeList.parent_basename)
-        nodelist.basename= new_basename
-        for child in nodelist.children:
-            child.parent_basename = new_basename
 
     def tree(self, basename):
         subtrees = self.search(basename)[0].children
         for i, val in enumerate(subtrees):
-            self.subtree(subtrees[i].basename)
+             self.subtree(subtrees[i].basename, deep=1)
 
-    def subtree(self, basename, parent_basename=None):
+    def subtree(self, basename, parent_basename=None, deep=int):
         if parent_basename is None:
             nodelist = self.search(basename)
+            print('--' + str(basename))
             for i, val in enumerate(nodelist):
-                self.subtree(nodelist[i].basename, nodelist[i].parent_basename)
+                self.subtree(nodelist[i].basename, nodelist[i].parent_basename, deep=deep)
         else:
-            nodelist = self.search(basename, parent_basename)[0]
-            print ('identifier: '+str(nodelist.identifier), 'basename: '+str(nodelist.basename))
-            if nodelist.children is not []:
-                for child in nodelist.children:
-                    self.subtree(child.basename, child.parent_basename)
+            node = self.search(basename, parent_basename)[0]
+            string = '--'*int(deep)
+            print (str(string) + ': index: ('+str(node.identifier) + ') - [basename]: '+str(node.basename) + ' [parent]: ' + str(node.parent_basename))
+            if node.children is not []:
+                for child in node.children:
+                    self.subtree(child.basename, child.parent_basename, deep=deep + 1)
 
     def display(self):
         for item in self.nodes:
             print ('[ID]: ' + str(item.identifier)+' [PATH]: '+str(item.parent_basename)+' ./'+str(item.basename))
-
-    def find_show_seasons(self, key, seasons):
-        if key == '':
-            return
-        index = Index(keyword=key)
-        found = []
-        for item in self.nodes:
-            try:
-                for i in range(1, seasons):
-                    try:
-                        expression = key+' S0'+str(i)
-                        aux = re.search(re.escape(expression), item.basename).group(0)
-                        if aux:
-                            found.append(aux)
-                    except:
-                        continue
-                index.nodes.append(item)
-            except:
-                continue
-
-        total = (str(len(set(found))))
-        print ('[SHOW]: '+key+' [SEASONS]:('+total+'/'+str(seasons)+')')
 
 
     # todo caso de node list, como discriminar, apano para reconstruir el path devuelto
@@ -112,7 +83,6 @@ class TreeRoot(object):
             aux += '/' + str(node.basename)
             return self.get_full_path(node.parent_basename, source, aux)
 
-
         aux += '/' + str(node.basename)
         list = aux.split('/')
         temp = ''
@@ -120,17 +90,64 @@ class TreeRoot(object):
             temp += '/' + list[i]
         return temp
 
+    def update_parent_node_byindex(self, index, parent):
+        '''
+        :param index: node identifier
+        :param parent: new parent basename
+        :type index: int
+        :type parent: str
+        '''
 
-    def create_season_index (self):
-        index = Index()
-        temp_index = []
+        tnode = pnode = Node
+        for node in self.get_nodes():
+            if node.identifier == index:
+                pnode = self.search(basename=node.parent_basename)[0]
+                for child in pnode.children:
+                    if child.basename == node.basename:
+                        tnode = child
+                        pnode.remove_child(child_basename=child.basename)
+                tnode.set_parent_basename(parent)
+                node.set_parent_basename(parent)
+                new_parent = self.search(basename=parent)[0]
+                new_parent.add_child(child=tnode)
 
-        #for item in self.nodes:
-            #temp_index.append(item.get_metadata.get_name())
-        # todo Aqui tenemos aquellas series que son de nombre unico
-        temp = set(temp_index)
-        # todo Recuperar el numero de seasons
-        # de las seasons recuperadas, generar los directorios que tienen capitulos presentes
-        for show in temp:
-            self.find_show_seasons(key=show, seasons=rmod.retrieve_number_of_seasons(key=show))
 
+    def build_full_path_tree(self):
+        nodes = self.get_nodes()
+        list = []
+        for node in nodes:
+            list.append(self.get_full_path(node.basename))
+
+        return list
+
+    def tree_path(self):
+        subtrees = self.nodes[0].children
+        for i, val in enumerate(subtrees):
+             self.subtree_path(subtrees[i].basename, deep=1)
+
+    def subtree_path(self, basename, parent_basename=None, deep=int):
+        if parent_basename is None:
+            nodelist = self.search(basename)
+            for i, val in enumerate(nodelist):
+                self.subtree_path(nodelist[i].basename, nodelist[i].parent_basename, deep=deep)
+        else:
+            node = self.search(basename, parent_basename)[0]
+            print 'index('+ str(node.identifier) +') - deep: ' + str(deep) + ' - ' + self.get_full_path(node.basename)
+            if node.children is not []:
+                for child in node.children:
+                    self.subtree_path(child.basename, child.parent_basename, deep=deep + 1)
+
+
+
+
+    #
+    # def update_parent_node (self, basename, parent):
+    #     node = self.search(basename=basename)[0]                        # recupero el nodo
+    #     current_parent = node.parent_basename                           # guardo el nombre del padre actual
+    #     node.parent_basename = parent                                   # asigno new_parent_basename al parent_basename del nodo buscado
+    #
+    #     parent_node = self.search(basename=current_parent)[0]           # busco el nodo padre
+    #     self.remove_child_node (node=parent_node, basename=basename)    # elimino la aparicion del nodo hijo en su lista
+    #
+    #     new_parent = self.search(basename=parent)[0]                    # busco el nuevo nodo padre
+    #     new_parent.add_child_node(node=node)                            # inserto el nodo en su lista de hijos

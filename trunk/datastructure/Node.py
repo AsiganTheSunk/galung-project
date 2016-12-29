@@ -11,6 +11,12 @@ class Node:
         self.children = []
         self.metadata = metadata
 
+    def set_children(self, children):
+        self.children = children
+
+    def get_children(self):
+        return self.children
+
     def get_identifier(self):
         return self.identifier
 
@@ -22,6 +28,14 @@ class Node:
 
     def add_child(self, child):
         self.children.append(child)
+
+    def remove_child(self, child_basename):
+        new_child_list = []
+        for item in self.children:
+            if item.basename != child_basename:
+                new_child_list.append(item)
+        self.set_children(new_child_list)
+        return self.children
 
     def get_metadata(self):
         return self.metadata

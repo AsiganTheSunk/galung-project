@@ -6,7 +6,7 @@ import ConfigParser as configparser
 def create_config_dir():
     """Helper functions for creating a config dir."""
     home = os.path.expanduser('~')
-    queueFolder = home+'/TFG/trunk/ffmpeg/.config/'
+    queueFolder = home+'/galung-project/trunk/ffmpeg/.config/'
     if not os.path.exists(queueFolder):
         os.makedirs(queueFolder)
     return queueFolder
