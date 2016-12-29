@@ -18,6 +18,7 @@ These instructions will get you a copy of the project up and running on your loc
  * [Installation](#installation)
 2. [Usage](#usage)
 3. [License](#license)
+4. [Galung-Project][galung_project_link]
 
 ## Requirements
 Galung-Project requires [python 2.7.x][python_download_link]  and [pip installer][pip_installer_link] installed in your machine to be able to run install.sh. 
@@ -85,4 +86,5 @@ def main():
 [pandas_link]: <http://pandas.pydata.org/>
 [numpy_link]: <http://www.numpy.org/>
 
+[galung_project_link]: <https://github.com/AsiganTheSunk/galung-project/blob/master/README.md>
 
