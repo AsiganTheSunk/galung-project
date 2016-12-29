@@ -7,6 +7,16 @@ Galung-Project it's a concept software to help organize your stuff developed mai
   - Pluguin: filemapper
   - Pluguin: ffmpeg
 
+
+## Table of Contents
+
+1. [Installation](#requirements)
+  1. [Requirements](#installation)
+00. [License](#license)
+
+
+## Requirements
+
 ### Installation
 
 Galung-Project requires [pip installer](https://pip.pypa.io/en/stable/installing/) to run.
@@ -40,5 +50,10 @@ $
 
 * [tvdb_api] [tvdb_api_link]
 
+
+### License
+
+
 [tvdb_api_link]: <https://github.com/dbr/tvdb_api>
 [readme_fm_link]: <https://github.com/AsiganTheSunk/galung-project/blob/master/trunk/filemapper/README.md>
+
