@@ -21,10 +21,11 @@ These instructions will get you a copy of the project up and running on your loc
 
 ## Index of Contents
 
-1. [Installation](#requirements)
-  * [Requirements](#installation)
+1. [Installation](#installation)
+  * [Requirements](#requirements)
+  * [Dependencies](#dependencies)
 2. [Plugins](#plugins)
-00. [License](#license)
+3. [License](#license)
 
 ## Requirements
 Galung-Project requires [python 2.7.x][python_download_link]  and [pip installer][pip_installer_link] installed in your machine to be able to run install.sh. 
@@ -32,10 +33,11 @@ Galung-Project requires [python 2.7.x][python_download_link]  and [pip installer
 
 ### Dependencies
 
-* tvdb_api 
-
-* [tvdb_api] [tvdb_api_link]
-
+* [pysrt][pysrt_link]
+* [langdetect][langdetect_link]
+* [pandas][pandas_link]
+* [numpy][numpy_link]
+* [tvdb_api][tvdb_api_link]
 
 ### Installation
 
@@ -79,5 +81,8 @@ Galung-Project it's currently developing this table of plugins
 [python_download_link]: <https://www.python.org/downloads/>
 
 [tvdb_api_link]: <https://github.com/dbr/tvdb_api>
-
+[pysrt_link]: <https://github.com/byroot/pysrt>
+[langdetect_link]: <https://github.com/Mimino666/langdetect>
+[pandas_link]: <http://pandas.pydata.org/>
+[numpy_link]: <http://www.numpy.org/>
 
