@@ -67,6 +67,10 @@ def main():
  return
 ```
 
+#### TreeRoot Structure
+******************
+[<img src="https://s28.postimg.org/5xne6f7st/Untitled_Diagram_1.png" title="TreeRoot"
+align="center" height="325" width="550">](https://s28.postimg.org/5xne6f7st/Untitled_Diagram_1.png)
 
 
 ### License
