@@ -56,7 +56,7 @@ FileMapper it's currently developing this table of plugins
 
 |     | Status        | Show | Movie | Anime |
 |:-------------:|:-------------:|:-----------:|:------------:|:------------:|
-| FileMapper |  Developing| YES | NO | NO |
+| FileMapper |  Still Developing| YES | YES | YES |
 
 ## Usage
 
