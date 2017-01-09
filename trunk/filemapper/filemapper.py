@@ -7,7 +7,7 @@ from logging import basicConfig
 from logging import debug as log_debug
 from time import sleep
 from trunk.filemapper.datastructure.Metadata import Metadata
-from trunk.filemapper.datastructure.FileFlags import FileFlags as FLAGS
+from trunk.filemapper.datastructure.FileFlags import FileFlags as FFLAGS
 import trunk.filemapper.check.check_module as cmod
 import trunk.filemapper.retrieve.offline_retrieve_module as offrmod
 import trunk.filemapper.retrieve.online_retrieve_module as onrmod
@@ -21,6 +21,7 @@ tOriginal = TreeRoot()
 tUpdated = TreeRoot()
 basicConfig(filename=str(os.getcwd() + '/trunk/log/test.log'), filemode='w', format='%(filename)s %(message)s', level=DEBUG)
 
+# Added comprobation if the listed dir is empty to avoid mapping that
 def directory_mapper(path=None, verbose=None):
     '''
     This function pre-maps the contents of the directory from a given path
@@ -34,34 +35,51 @@ def directory_mapper(path=None, verbose=None):
 
     for root, directories, files in os.walk(path):
     #for root, directories, files in tqdm(os.walk(path), total=item_count, desc='Mapping Folder', ncols=115, unit=' items'):
-        sleep(0.04)
+        # sleep(0.04)
         for directory in directories:
             try:
-                if cmod.check_subtitles_directory(directory):
-                    directory_dict[str(os.path.abspath(os.path.join(root, directory)))] = FLAGS.SUBTITLE_DIRECTORY_FLAG
+                if cmod.check_main_directory_show(directory):
+                    if not os.listdir(os.path.join(root, directory)) == []:
+                        directory_dict[str(os.path.abspath(os.path.join(root, directory)))] = FFLAGS.MAIN_SHOW_DIRECTORY_FLAG
+                elif cmod.check_show_subtitles_directory(directory):
+                    directory_dict[str(os.path.abspath(os.path.join(root, directory)))] = FFLAGS.SUBTITLE_DIRECTORY_SHOW_FLAG
+                elif cmod.check_anime_subtitles_directory(directory):
+                    directory_dict[str(os.path.abspath(os.path.join(root, directory)))] = FFLAGS.SUBTITLE_DIRECTORY_ANIME_FLAG
+                elif cmod.check_film_subtitles_directory(directory):
+                    directory_dict[str(os.path.abspath(os.path.join(root, directory)))] = FFLAGS.SUBTITLE_DIRECTORY_FILM_FLAG
                 elif cmod.check_show_directory(directory):
-                    directory_dict[str(os.path.abspath(os.path.join(root, directory)))] = FLAGS.SHOW_DIRECTORY_FLAG
+                    directory_dict[str(os.path.abspath(os.path.join(root, directory)))] = FFLAGS.SHOW_DIRECTORY_FLAG
                 elif cmod.check_season_directory(directory):
-                    directory_dict[str(os.path.abspath(os.path.join(root, directory)))] = FLAGS.SEASON_DIRECTORY_FLAG
+                    if not os.listdir(os.path.join(root, directory)) == []:
+                        directory_dict[str(os.path.abspath(os.path.join(root, directory)))] = FFLAGS.SEASON_DIRECTORY_FLAG
                 elif cmod.check_film_type(directory):
-                    directory_dict[str(os.path.abspath(os.path.join(root, directory)))] = FLAGS.FILM_DIRECTORY_FLAG
+                    directory_dict[str(os.path.abspath(os.path.join(root, directory)))] = FFLAGS.FILM_DIRECTORY_FLAG
                 elif cmod.check_anime_dir(directory):
-                    directory_dict[str(os.path.abspath(os.path.join(root, directory)))] = FLAGS.ANIME_DIRECTORY_FLAG
+                    directory_dict[str(os.path.abspath(os.path.join(root, directory)))] = FFLAGS.ANIME_DIRECTORY_FLAG
+                else:
+                    directory_dict[str(os.path.abspath(os.path.join(root, directory)))] = FFLAGS.UNKOWN_FLAG
+
             except Exception as e:
                 continue
 
         for file_ in files:
             try:
-                if cmod.check_subtitles(file_):
-                    directory_dict[str(os.path.abspath(os.path.join(root, file_)))] = FLAGS.SUBTITLE_FLAG
-                elif cmod.check_unwanted(file_):
-                    directory_dict[str(os.path.abspath(os.path.join(root, file_)))] = FLAGS.TRASH_FLAG
-                elif cmod.check_season(file_):
-                    directory_dict[str(os.path.abspath(os.path.join(root, file_)))] = FLAGS.SHOW_FLAG
+                if cmod.check_unwanted(file_):
+                    continue
+                elif cmod.check_show_subtitles(file_):
+                    directory_dict[str(os.path.abspath(os.path.join(root, file_)))] = FFLAGS.SUBTITLE_SHOW_FLAG
+                elif cmod.check_film_subtitles(file_):
+                    directory_dict[str(os.path.abspath(os.path.join(root, file_)))] = FFLAGS.SUBTITLE_FILM_FLAG
+                elif cmod.check_anime_subtitles(file_):
+                    directory_dict[str(os.path.abspath(os.path.join(root, file_)))] = FFLAGS.SUBTITLE_ANIME_FLAG
+                elif cmod.check_show(file_):
+                    directory_dict[str(os.path.abspath(os.path.join(root, file_)))] = FFLAGS.SHOW_FLAG
                 elif cmod.check_film_type(file_):
-                    directory_dict[str(os.path.abspath(os.path.join(root, file_)))] = FLAGS.FILM_FLAG
+                    directory_dict[str(os.path.abspath(os.path.join(root, file_)))] = FFLAGS.FILM_FLAG
                 elif cmod.check_anime_show(file_):
-                    directory_dict[str(os.path.abspath(os.path.join(root, file_)))] = FLAGS.ANIME_FLAG
+                    directory_dict[str(os.path.abspath(os.path.join(root, file_)))] = FFLAGS.ANIME_FLAG
+                else:
+                    directory_dict[str(os.path.abspath(os.path.join(root, file_)))] = FFLAGS.UNKOWN_FLAG
             except Exception as e:
                 continue
 
@@ -88,14 +106,14 @@ def build_directory_tree(basedir=None, directory=None, verbose=None, debug=None,
         for item in sorted(directory):
             len_aux = len(str(os.path.basename(item)))
             parent = item[:-len_aux - 1]
-            metadata = retrieve_show_info(path=str(item), verbose=verbose, file_flag=directory[item], deep=deep, debug=debug)
+            metadata = retrieve_show_info(path=str(item), verbose=verbose, fflag=directory[item], deep=deep, debug=debug)
             new_basename = rebuild_name(meta=metadata, verbose=verbose)
 
             if parent in basedir:
-                parent_metadata = retrieve_show_info(path=str(parent), verbose=verbose, file_flag=FLAGS.LIBRARY_DIRECTORY_FLAG, deep=deep, debug=debug)
+                parent_metadata = retrieve_show_info(path=str(parent), verbose=verbose, fflag=FFLAGS.LIBRARY_FLAG, deep=deep, debug=debug)
                 new_parent_basename = rebuild_name(meta=parent_metadata, verbose=verbose)
             else:
-                parent_metadata = retrieve_show_info(path=str(parent), verbose=verbose, file_flag=directory[parent], deep=deep, debug=debug)
+                parent_metadata = retrieve_show_info(path=str(parent), verbose=verbose, fflag=directory[parent], deep=deep, debug=debug)
                 new_parent_basename = rebuild_name(meta=parent_metadata, verbose=verbose)
 
             tOriginal.add_node(basename=str(os.path.basename(item)), metadata=metadata, parent_basename=str(os.path.basename(parent)))
@@ -120,6 +138,7 @@ def list_directory(dict):
     '''
     for item in sorted(dict):
         message = 'item_flag: ' + dict[item], 'path: ' + item
+        print('item_flag: ' + dict[item], 'path: ' + item)
         log_debug(message)
 
 
@@ -137,12 +156,12 @@ def prettify_title(path=None):
         return new_path
 
 
-def retrieve_show_info(path=None, verbose=None, file_flag=None, deep=None, debug=None):
+def retrieve_show_info(path=None, verbose=None, fflag=None, deep=None, debug=None):
     '''
     This function retrieves info from a given path
     :param path:
     :param verbose:
-    :param file_flag:
+    :param fflag:
     :param deep:
     :param debug:
     :return:
@@ -154,55 +173,79 @@ def retrieve_show_info(path=None, verbose=None, file_flag=None, deep=None, debug
     language = ''
     try:
         aux = str(os.path.basename(path))
-        if int(file_flag) == int(FLAGS.LIBRARY_DIRECTORY_FLAG):
+        if int(fflag) == int(FFLAGS.LIBRARY_FLAG):
             name = aux
-        elif int(file_flag) == int(FLAGS.SUBTITLE_DIRECTORY_FLAG):
-            name = prettify_title(offrmod.retrieve_show_name(path=aux, verbose=verbose, file_flag=file_flag))
+
+        elif int(fflag) == int(FFLAGS.MAIN_SHOW_DIRECTORY_FLAG):
+            name = aux
+
+        elif int(fflag) == int(FFLAGS.SUBTITLE_DIRECTORY_FILM_FLAG):
+            name = prettify_title(offrmod.retrieve_film_name(path=aux, verbose=verbose))
+            year = offrmod.retrieve_film_year(path=aux, verbose=verbose)
+            subtitle = offrmod.retrieve_subtitles_directory(path=aux, verbose=verbose)
+
+        elif int(fflag) == int(FFLAGS.SUBTITLE_FILM_FLAG):
+            name = prettify_title(offrmod.retrieve_film_name(path=aux, verbose=verbose))
+            year = offrmod.retrieve_film_year(path=aux, verbose=verbose)
+            language = onrmod.retrieve_str_language(path=path, verbose=verbose)
+
+        elif int(fflag) == int(FFLAGS.SUBTITLE_DIRECTORY_SHOW_FLAG):
+            name = prettify_title(offrmod.retrieve_show_name(path=aux, verbose=verbose, fflag=fflag))
             season = offrmod.retrieve_season(path=aux, verbose=verbose)
             episode = offrmod.retrieve_episode(path=aux, verbose=verbose)
             subtitle = offrmod.retrieve_subtitles_directory(path=aux, verbose=verbose)
 
-        elif int(file_flag) == int(FLAGS.SUBTITLE_FLAG):
-            name = prettify_title(offrmod.retrieve_show_name(path=aux, verbose=verbose, file_flag=file_flag))
+        elif int(fflag) == int(FFLAGS.SUBTITLE_SHOW_FLAG):
+            name = prettify_title(offrmod.retrieve_show_name(path=aux, verbose=verbose, fflag=fflag))
             season = offrmod.retrieve_season(path=aux, verbose=verbose)
             episode = offrmod.retrieve_episode(path=aux, verbose=verbose)
             language = onrmod.retrieve_str_language(path=path, verbose=verbose)
 
-        elif int(file_flag) == int(FLAGS.SEASON_DIRECTORY_FLAG):
-            name = prettify_title(offrmod.retrieve_show_name(path=aux, verbose=verbose, file_flag=file_flag))
+        elif int(fflag) == int(FFLAGS.SUBTITLE_DIRECTORY_ANIME_FLAG):
+            name = prettify_title(offrmod.retrieve_anime_name(path=aux, verbose=verbose))
+            episode = offrmod.retrieve_anime_episode(path=aux, verbose=verbose)
+            subtitle = offrmod.retrieve_subtitles_directory(path=aux, verbose=verbose)
+
+        elif int(fflag) == int(FFLAGS.SUBTITLE_ANIME_FLAG):
+            name = prettify_title(offrmod.retrieve_anime_name(path=aux, verbose=verbose))
+            episode = offrmod.retrieve_anime_episode(path=aux, verbose=verbose)
+            language = onrmod.retrieve_str_language(path=path, verbose=verbose)
+
+        elif int(fflag) == int(FFLAGS.SEASON_DIRECTORY_FLAG):
+            name = prettify_title(offrmod.retrieve_show_name(path=aux, verbose=verbose, fflag=fflag))
             season = offrmod.retrieve_season_directory(path=aux, verbose=verbose)
 
-        elif int(file_flag) == int(FLAGS.SHOW_DIRECTORY_FLAG):
-            name = prettify_title(offrmod.retrieve_show_name(path=aux, verbose=verbose, file_flag=file_flag))
+        elif int(fflag) == int(FFLAGS.SHOW_DIRECTORY_FLAG):
+            name = prettify_title(offrmod.retrieve_show_name(path=aux, verbose=verbose, fflag=fflag))
             season = offrmod.retrieve_season(path=aux, verbose=verbose)
             episode = offrmod.retrieve_episode(path=aux, verbose=verbose)
             ename = onrmod.retrieve_episode_name(show_name=name, season=season, episode=episode, verbose=verbose)
 
-        elif int(file_flag) == int(FLAGS.SHOW_FLAG):
-            name = prettify_title(offrmod.retrieve_show_name(path=aux, verbose=verbose, file_flag=file_flag))
+        elif int(fflag) == int(FFLAGS.SHOW_FLAG):
+            name = prettify_title(offrmod.retrieve_show_name(path=aux, verbose=verbose, fflag=fflag))
             season = offrmod.retrieve_season(path=aux, verbose=verbose)
             episode = offrmod.retrieve_episode(path=aux, verbose=verbose)
             ename = onrmod.retrieve_episode_name(show_name=name, season=season, episode=episode, verbose=verbose)
 
-        elif int(file_flag) == int(FLAGS.FILM_DIRECTORY_FLAG):
+        elif int(fflag) == int(FFLAGS.FILM_DIRECTORY_FLAG):
             name = prettify_title(offrmod.retrieve_film_name(path=aux, verbose=verbose))
             year = offrmod.retrieve_film_year(path=aux, verbose=verbose)
             film_flag = str(offrmod.retrieve_film_flags(path=aux, verbose=verbose)).replace('.', ' ')
 
-        elif int(file_flag) == int(FLAGS.FILM_FLAG):
+        elif int(fflag) == int(FFLAGS.FILM_FLAG):
             name = prettify_title(offrmod.retrieve_film_name(path=aux, verbose=verbose))
             year = offrmod.retrieve_film_year(path=aux, verbose=verbose)
             film_flag = str(offrmod.retrieve_film_flags(path=aux, verbose=verbose)).replace('.', ' ')
 
-        elif int(file_flag) == int(FLAGS.ANIME_FLAG):
+        elif int(fflag) == int(FFLAGS.ANIME_FLAG):
             name = prettify_title(offrmod.retrieve_anime_name(path=aux, verbose=verbose))
             episode = offrmod.retrieve_anime_episode(path=aux, verbose=verbose)
 
-        elif int(file_flag) == int(FLAGS.ANIME_DIRECTORY_FLAG):
+        elif int(fflag) == int(FFLAGS.ANIME_DIRECTORY_FLAG):
             name = prettify_title(offrmod.retrieve_anime_name(path=aux, verbose=verbose))
             episode = offrmod.retrieve_anime_episode(path=aux, verbose=verbose)
 
-        elif int(file_flag) == int(FLAGS.UNKOWN_FLAG):
+        elif int(fflag) == int(FFLAGS.UNKOWN_FLAG):
             name = aux
 
         quality = offrmod.retrieve_quality(path=aux, verbose=verbose)
@@ -229,7 +272,7 @@ def retrieve_show_info(path=None, verbose=None, file_flag=None, deep=None, debug
         metadata.set_year(year=year)
         metadata.set_film_flag(film_flag=film_flag)
         metadata.set_subtitle(subtitle)
-        metadata.set_file_flag(file_flag=file_flag)
+        metadata.set_fflag(fflag=fflag)
 
         message = 'standard metada'
         log_debug(message)
@@ -237,7 +280,7 @@ def retrieve_show_info(path=None, verbose=None, file_flag=None, deep=None, debug
         log_debug(message)
         message = ' extended metada'
         log_debug(message)
-        message = str(audio), str(codec), str(uploader), str(source), str(file_flag), str(film_flag), str(subtitle)
+        message = str(audio), str(codec), str(uploader), str(source), str(fflag), str(film_flag), str(subtitle)
         log_debug(message)
 
     except Exception as e:
@@ -289,7 +332,7 @@ def build_show_name(name, season, episode, ename, quality, extension):
     return show_name
 
 
-def build_subtitle_directory_name(name, season, episode, subtitle):
+def build_subtitle_show_directory_name(name, season, episode, subtitle):
     '''
     This function builds a subtitle directory name
     :param name:
@@ -302,7 +345,7 @@ def build_subtitle_directory_name(name, season, episode, subtitle):
     return show_name
 
 
-def build_subtitle_name(name=str, season=str, episode=str, language=str, extension=str):
+def build_subtitle_show_name(name=str, season=str, episode=str, language=str, extension=str):
     '''
     This function builds a subtitle name
     :param name:
@@ -316,6 +359,30 @@ def build_subtitle_name(name=str, season=str, episode=str, language=str, extensi
         subtitle_name = str(name) + ' S' + str(season) + 'E'  +  str(episode) +  str(extension)
     else:
         subtitle_name = str(name) + ' S' + str(season) + 'E'  +  str(episode) + '(' + str(language) + ')' + str(extension)
+    return subtitle_name
+
+
+def build_subtitle_film_directory_name(name=str, year=str, language=str, subtitle=str):
+    '''
+    This function builds a subtitle directory name
+    :param name:
+    :param season:
+    :param episode:
+    :param subtitle:
+    :return:
+    '''
+    if language in '':
+        subtitle_name = str(name) + ' (' + str(year) + ') (' + str(subtitle) + ')'
+    else:
+        subtitle_name = str(name) + ' (' + str(year) + ') - (' + str(language) + ') - (' + str(subtitle) + ')'
+    return subtitle_name
+
+
+def build_subtitle_film_name(name=str, year=str, language=str, extension=str):
+    if language in '':
+        subtitle_name = str(name) + ' (' + str(year) + ')' + str(extension)
+    else:
+        subtitle_name = str(name) + ' (' + str(year) + ') - (' + str(language) + ')' + str(extension)
     return subtitle_name
 
 
@@ -373,8 +440,21 @@ def build_anime_name(name=str, episode=str, quality=str, extension=str):
     if quality in '':
         anime_name = str(name) + ' E' + str(episode) + str(extension)
     else:
-        anime_name = str(name) + ' E' + str(episode) + '[' + str(quality) + ']' + str(extension)
+        anime_name = str(name) + ' E' + str(episode) + ' [' + str(quality) + ']' + str(extension)
     return anime_name
+
+
+def build_anime_subtitle(name=str, episode=str, language=str, extension=str):
+    if language in '':
+        anime_subtitle = str(name) +  ' E'  +  str(episode) + str(extension)
+    else:
+        anime_subtitle = str(name) +  ' E'  +  str(episode) + '(' + str(language) + ')' + str(extension)
+    return anime_subtitle
+
+
+def build_anime_subtitle_directory(name=str, episode=str, subtitle=str):
+    anime_subtitle_directory = str(name) +  ' E'  +  str(episode) + ' (' + str(subtitle) + ')'
+    return anime_subtitle_directory
 
 
 def build_anime_directory_name(name=str, episode=str, quality=str):
@@ -388,7 +468,7 @@ def build_anime_directory_name(name=str, episode=str, quality=str):
     if quality in '':
         anime_directory_name = str(name) + ' E' + str(episode)
     else:
-        anime_directory_name = str(name) + ' E' + str(episode) + '[' + str(quality) + ']'
+        anime_directory_name = str(name) + ' E' + str(episode) + ' [' + str(quality) + ']'
     return anime_directory_name
 
 
@@ -410,42 +490,57 @@ def rebuild_name(meta, verbose=None):
     language = meta.get_language()
     film_flag = meta.get_film_flag()
     year = meta.get_year()
-    file_flag = meta.get_file_flag()
+    fflag = meta.get_fflag()
 
     try:
-        if int(file_flag) == int(FLAGS.LIBRARY_DIRECTORY_FLAG):
+        if int(fflag) == int(FFLAGS.LIBRARY_FLAG):
             new_name = build_library_name(name=name)
 
-        elif int(file_flag) == int(FLAGS.SHOW_DIRECTORY_FLAG):
+        if int(fflag) == int(FFLAGS.MAIN_SHOW_DIRECTORY_FLAG):
+            new_name = build_library_name(name=name)
+
+        elif int(fflag) == int(FFLAGS.SHOW_DIRECTORY_FLAG):
             new_name = build_show_directory_name(name=name, season=season, episode=episode, ename=ename, quality=quality)
 
-        elif int(file_flag) == int(FLAGS.SHOW_FLAG):
+        elif int(fflag) == int(FFLAGS.SHOW_FLAG):
             new_name = build_show_name(name=name, season=season, episode=episode, ename=ename, quality=quality, extension=extension)
 
         # todo Refinar
-        elif int(file_flag) == int(FLAGS.TRASH_FLAG):
+        elif int(fflag) == int(FFLAGS.IGNORE_FLAG):
             new_name = 'rm -f *.nfo/.txt!!'
 
-        elif int(file_flag) == int(FLAGS.SUBTITLE_FLAG):
-            new_name = build_subtitle_name(name=name, season=season, episode=episode,language=language, extension=extension)
+        elif int(fflag) == int(FFLAGS.SUBTITLE_SHOW_FLAG):
+            new_name = build_subtitle_show_name(name=name, season=season, episode=episode, language=language, extension=extension)
 
         # todo Refinar
-        elif int(file_flag) == int(FLAGS.SUBTITLE_DIRECTORY_FLAG):
-            new_name = build_subtitle_directory_name(name=name, season=season, episode=episode, subtitle=subtitle)
+        elif int(fflag) == int(FFLAGS.SUBTITLE_DIRECTORY_SHOW_FLAG):
+            new_name = build_subtitle_show_directory_name(name=name, season=season, episode=episode, subtitle=subtitle)
 
-        elif int(file_flag) == int(FLAGS.SEASON_DIRECTORY_FLAG):
+        elif int(fflag) == int(FFLAGS.SUBTITLE_DIRECTORY_FILM_FLAG):
+            new_name = build_subtitle_film_directory_name(name=name, year=year,language=language, subtitle=subtitle)
+
+        elif int(fflag) == int(FFLAGS.SUBTITLE_FILM_FLAG):
+            new_name = build_subtitle_film_name(name=name, year=year,language=language, extension=extension)
+
+        elif int(fflag) == int(FFLAGS.SEASON_DIRECTORY_FLAG):
             new_name = build_season_directory_name(name=name, season=season)
 
-        elif int(file_flag) == int(FLAGS.FILM_DIRECTORY_FLAG):
+        elif int(fflag) == int(FFLAGS.SUBTITLE_ANIME_FLAG):
+            new_name = build_anime_subtitle(name=name, episode=episode, language=language, extension=extension)
+
+        elif int(fflag) == int(FFLAGS.SUBTITLE_DIRECTORY_ANIME_FLAG):
+            new_name = build_anime_subtitle_directory(name=name, episode=episode, subtitle=subtitle)
+
+        elif int(fflag) == int(FFLAGS.FILM_DIRECTORY_FLAG):
             new_name = build_film_directory_name(name=name, year=year, film_flag=film_flag)
 
-        elif int(file_flag) == int(FLAGS.FILM_FLAG):
+        elif int(fflag) == int(FFLAGS.FILM_FLAG):
             new_name = build_film_name(name=name, year=year, film_flag=film_flag, extension=extension)
 
-        elif int(file_flag) == int(FLAGS.ANIME_FLAG):
+        elif int(fflag) == int(FFLAGS.ANIME_FLAG):
             new_name = build_anime_name(name=name, episode=episode, quality=quality, extension=extension)
 
-        elif int(file_flag) == int(FLAGS.ANIME_DIRECTORY_FLAG):
+        elif int(fflag) == int(FFLAGS.ANIME_DIRECTORY_FLAG):
             new_name = build_anime_directory_name(name=name, episode=episode, quality=quality)
 
     except Exception as e:

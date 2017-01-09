@@ -1,4 +1,4 @@
-from trunk.filemapper.datastructure.FileFlags import FileFlags as FLAGS
+from trunk.filemapper.datastructure.FileFlags import FileFlags as FFLAGS
 import re
 
 quality_list = ['BRRip', 'HDRip', 'BluRay', 'DvdRip', 'WEBDL']
@@ -216,7 +216,7 @@ def retrieve_subtitles_directory(path=None, verbose=None):
     else:
         if verbose:
             print ('[INFO]: SUBTITLE: ' + subtitle_directory)
-        return subtitle_directory
+        return 'subtitle'
 
 
 def retrieve_film_flags(path=None, verbose=None):
@@ -274,7 +274,7 @@ def retrieve_film_year(path=None, verbose=None):
         return film_year
 
 
-def retrieve_show_name(path=None, verbose=None, file_flag=None):
+def retrieve_show_name(path=None, verbose=None, fflag=None):
     '''
     This function retrieves show name values from a given path
     :param path:
@@ -283,7 +283,7 @@ def retrieve_show_name(path=None, verbose=None, file_flag=None):
     :return:
     '''
     try:
-        if int(file_flag) == int(FLAGS.SEASON_DIRECTORY_FLAG):
+        if int(fflag) == int(FFLAGS.SEASON_DIRECTORY_FLAG):
             aux_lenth = re.search('(\(|\[)?s(eason)?(\-|\s|\.)?(\d{1,2})(\)|\])?', path, re.IGNORECASE).group(0)
             show_name = re.search('(.*)(\(|\[)?s(eason)?(\-|\s|\.)?(\d{1,2})(\)|\])?', path, re.IGNORECASE).group(0)[:-len(aux_lenth)]
         else:
@@ -307,10 +307,10 @@ def retrieve_anime_name(path=None, verbose=None):
     '''
     try:
         header = len(re.search('\[(HorribleSubs|Krosis|Dcms-Fansubs|Ohys-Raws|PuyaSubs!)\]', path, re.IGNORECASE).group(0)) + 1
-        tail = re.search('\[(\w+.*?)\s-', path, re.IGNORECASE).group(0)
+        tail = re.search('\[(\w+.*?)\s(\-|x)', path, re.IGNORECASE).group(0)
     except Exception as e:
         try:
-            tail = re.search('\[(\w+.*?)E(pisode)(\-|\.|\s)?(\d{2,3})', path, re.IGNORECASE).group(0)
+            tail = re.search('\[(\w+.*?)E(pisode)?(x|\-|\.|\s)?(\d{2,3})', path, re.IGNORECASE).group(0)
             core = len(re.search('E(pisode)(\-|\.|\s)?(\d{2,3})', path, re.IGNORECASE).group(0))
         except Exception as e:
             name = ''
@@ -333,20 +333,29 @@ def retrieve_anime_episode(path=None, verbose=None):
     :return:
     '''
     try:
-        episode = re.search('(\-\s\d{1,3})', path, re.IGNORECASE).group(0)
+        episode = re.search('\-.?\d{1,3}', path, re.IGNORECASE).group(0)
     except Exception as e:
         try:
-            episode = re.search('E(pisode)(\-|\.|\s)?(\d{2,3})', path, re.IGNORECASE).group(0)
+            episode = re.search('Episode(\-|\s|\.)?(\d{1,3})', path, re.IGNORECASE).group(0)
         except Exception as e:
-            episode = ''
-            return episode
+            try:
+                episode = re.search('(x|E)(\d{1,3})', path, re.IGNORECASE).group(0)
+            except Exception as e:
+                episode = ''
+                return episode
+            else:
+                episode = episode[1:]
+                #print('[INFO]: ANIME EPISODE 3: ' + episode)
+                return episode
         else:
             episode = episode[8:]
+            #print('[INFO]: ANIME EPISODE 2: ' + episode)
             if verbose:
                 print('[INFO]: ANIME EPISODE: ' + episode)
             return episode
     else:
         episode = episode[2:]
+        #print('[INFO]: ANIME EPISODE 1: ' + episode)
         if verbose:
             print('[INFO]: ANIME EPISODE: ' + episode)
         return episode

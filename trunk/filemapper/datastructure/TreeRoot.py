@@ -91,7 +91,7 @@ class TreeRoot(object):
         else:
             node = self.search(basename, parent_basename)[0]
             string = '--'*int(deep)
-            print (str(string) + ': index: ('+str(node.identifier) + ') - [basename]: '+str(node.basename) + ' [parent]: ' + str(node.parent_basename))
+            print (str(string) + ': index: ('+str(node.identifier) + ') - [basename]: '+str(node.basename) )#+ ' [parent]: ' + str(node.parent_basename))
             if node.children is not []:
                 for child in node.children:
                     self.subtree(child.basename, child.parent_basename, deep=deep + 1)

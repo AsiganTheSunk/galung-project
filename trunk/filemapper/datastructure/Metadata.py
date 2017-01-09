@@ -1,7 +1,7 @@
 # TODO: update default values to N/A to match the index namespace
 class Metadata:
     def __init__(self, name='', year='', ename='', season='', episode='', quality='', film_flag='', language='',
-                 subtitle='', uploader='',  source='', extension='', file_flag='', audio='', codec=''):
+                 subtitle='', uploader='', source='', extension='', fflag='', audio='', codec=''):
 
         self.name = name
         self.ename = ename
@@ -17,11 +17,11 @@ class Metadata:
         self.subtitle = subtitle
         self.audio = audio
         self.codec = codec
-        self.file_flag = file_flag
+        self.fflag = fflag
 
     def extended_metadata(self, director='', actors='', genre='', duration='', chapters=''):
         return ExtendedMetada(self.name, self.ename, self.season, self.episode, self.quality, self.extension, self.uploader,
-                              self.source, self.year, self.film_flag, self.language, self.subtitle, self.file_flag,
+                              self.source, self.year, self.film_flag, self.language, self.subtitle, self.fflag,
                               director=director, actors=actors, genre=genre, duration=duration, chapters=chapters)
 
     def get_name(self):
@@ -60,8 +60,8 @@ class Metadata:
     def get_uploader(self):
         return self.uploader
 
-    def get_file_flag(self):
-        return self.file_flag
+    def get_fflag(self):
+        return self.fflag
 
     def set_name(self, name):
         self.name = name
@@ -105,12 +105,12 @@ class Metadata:
     def set_codec(self, codec):
         self.codec = codec
 
-    def set_file_flag(self,file_flag):
-        self.file_flag = file_flag
+    def set_fflag(self, fflag):
+        self.fflag = fflag
 
 class ExtendedMetada (Metadata):
     def __init__(self, name='', year='', ename='', season='', episode='', quality='', film_flag='',
-                 language='', subtitle='', uploader='',  source='', extension='', file_flag='',
+                 language='', subtitle='', uploader='', source='', extension='', fflag='',
                  director='', actors='', genre='', duration='', chapters=''):
 
         self.director = director
@@ -120,8 +120,8 @@ class ExtendedMetada (Metadata):
         self.chapters = chapters
 
         Metadata.__init__(self, name=name, year=year, ename=ename, season=season, episode=episode, quality=quality,
-                          film_flag=film_flag, language=language, subtitle=subtitle, uploader=uploader,  source=source,
-                          extension=extension, file_flag=file_flag)
+                          film_flag=film_flag, language=language, subtitle=subtitle, uploader=uploader, source=source,
+                          extension=extension, fflag=fflag)
 
     def get_director(self):
         return self.director

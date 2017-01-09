@@ -4,6 +4,31 @@ import tvdb_api
 import pysrt
 import chardet
 import re
+import imdb
+
+
+def retrieve_show_genre(show_name=str, verbose=False):
+    try:
+        t = tvdb_api.Tvdb()
+        show_genres = t[show_name]['genre']
+        show_genre = show_genres[1:-1].split('|')[0]
+    except Exception as e:
+        show_genre = ''
+        return show_genre
+    else:
+        if verbose:
+            print ('[INFO]: EPISODE_NAME: ' + show_genre)
+        return show_genre
+
+def retrieve_film_gerne(movie_name=str):
+    try:
+        m = imdb.IMDb()
+        movie = m.search_movie(movie_name)[0].movieID
+        movie_genre = m.get_movie(unicode(movie))['genre'][0]
+    except Exception as e:
+        return 'N/O'
+    else:
+        return movie_genre
 
 def retrieve_episode_name(show_name=str, season=str, episode=str, verbose=False):
     '''

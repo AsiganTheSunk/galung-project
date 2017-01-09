@@ -15,18 +15,17 @@ build-movie:
 	
 	#Directory, Subdirectory, File: Default Test (Mp3)
 	mkdir -p ~/galung-project/testlibrary/'Littlerock.2010.BRRip.XviD.MP3-RARBG'
-	mkdir -p ~/galung-project/testlibrary/'Littlerock.2010.BRRip.XviD.MP3-RARBG'/'subs'
-	mkdir -p ~/galung-project/testlibrary/'Littlerock.2010.BRRip.XviD.MP3-RARBG'/'sub'
-	touch ~/galung-project/testlibrary/'Littlerock.2010.BRRip.XviD.MP3-RARBG'/'sub'/'Littlerock.2010(english).str'
+	mkdir -p ~/galung-project/testlibrary/'Littlerock.2010.BRRip.XviD.MP3-RARBG'/'Littlerock.2010(subtitle)'
+	touch ~/galung-project/testlibrary/'Littlerock.2010.BRRip.XviD.MP3-RARBG'/'Littlerock.2010(subtitle)'/'Littlerock.2010(english).srt'
 	touch ~/galung-project/testlibrary/'Littlerock.2010.BRRip.XviD.MP3-RARBG'/'Littlerock.2010.BRRip.XviD.MP3-RARBG.mkv'
 	
 	#Directory, Subdirectory, File: Default Test (EXTENDED.CUT,BRRip, XviD)
 	mkdir -p ~/galung-project/testlibrary/'Were.the.Millers.2013.EXTENDED.CUT.BRRip.XviD.MP3-RARBG'
-	mkdir -p ~/galung-project/testlibrary/'Were.the.Millers.2013.EXTENDED.CUT.BRRip.XviD.MP3-RARBG'/'sub'
-	touch ~/galung-project/testlibrary/'Were.the.Millers.2013.EXTENDED.CUT.BRRip.XviD.MP3-RARBG'/'sub'/'Were.the.Millers.2013(english).str'
+	mkdir -p ~/galung-project/testlibrary/'Were.the.Millers.2013.EXTENDED.CUT.BRRip.XviD.MP3-RARBG'/'Were.the.Millers.2013.(subtitle)'
+	touch ~/galung-project/testlibrary/'Were.the.Millers.2013.EXTENDED.CUT.BRRip.XviD.MP3-RARBG'/'Were.the.Millers.2013.(subtitle)'/'Were.the.Millers.2013(english).srt'
 	touch ~/galung-project/testlibrary/'Were.the.Millers.2013.EXTENDED.CUT.BRRip.XviD.MP3-RARBG'/'System.nfo'
 	touch ~/galung-project/testlibrary/'Were.the.Millers.2013.EXTENDED.CUT.BRRip.XviD.MP3-RARBG'/'Readme.txt'
-	touch ~/galung-project/testlibrary/'Were.the.Millers.2013.EXTENDED.CUT.BRRip.XviD.MP3-RARBG'/'RARBG.mkv'
+	touch ~/galung-project/testlibrary/'Were.the.Millers.2013.EXTENDED.CUT.BRRip.XviD.MP3-RARBG'/'RARBG.com'
 	touch ~/galung-project/testlibrary/'Were.the.Millers.2013.EXTENDED.CUT.BRRip.XviD.MP3-RARBG'/'Were.the.Millers.2013.EXTENDED.CUT.BRRip.XviD.MP3-RARBG.mkv'
 
 	#Directory, File: Unkonw Movie
@@ -35,10 +34,16 @@ build-movie:
 
 build-serie:
 	#Directory, File: Default Test
+	mkdir -p ~/galung-project/testlibrary/'Game Of Thrones'
+	mkdir -p ~/galung-project/testlibrary/'WestWorld'
+	
 	mkdir -p ~/galung-project/testlibrary/'Game.of.Thrones.S06.1080p.BluRay.x264-ROVERS[rartv]'
 	touch ~/galung-project/testlibrary/'Game.of.Thrones.S06.1080p.BluRay.x264-ROVERS[rartv]'/'Game.of.Thrones.S06E01.1080p.BluRay.x264-ROVERS[rartv].mkv'
 	touch ~/galung-project/testlibrary/'Game.of.Thrones.S06.1080p.BluRay.x264-ROVERS[rartv]'/'Game.of.Thrones.S06E02.1080p.BluRay.x264-ROVERS[rartv].mkv'
 	touch ~/galung-project/testlibrary/'Game.of.Thrones.S06.1080p.BluRay.x264-ROVERS[rartv]'/'Game.of.Thrones.S06E03.1080p.BluRay.x264-ROVERS[rartv].mkv'
+	touch ~/galung-project/testlibrary/'Game.of.Thrones.S06.1080p.BluRay.x264-ROVERS[rartv]'/'system.nfo'
+	touch ~/galung-project/testlibrary/'Game.of.Thrones.S06.1080p.BluRay.x264-ROVERS[rartv]'/'system.txt'
+	touch ~/galung-project/testlibrary/'Game.of.Thrones.S06.1080p.BluRay.x264-ROVERS[rartv]'/'system.com'	
 	
 	#Directory, Subdirectory, File: Default Test
 	#mkdir -p ~/galung-project/testlibrary/'Game.of.Thrones-season2'/
@@ -51,65 +56,69 @@ build-serie:
 	mkdir -p ~/galung-project/testlibrary/'Game.of.Thrones [Season 1]'/'Game.Of.Thrones.S01E03.1080p.BluRay.x265-PODO[rartv]'/
 	touch ~/galung-project/testlibrary/'Game.of.Thrones [Season 1]'/'Game.Of.Thrones.S01E03.1080p.BluRay.x265-PODO[rartv]'/'Game.Of.Thrones.S01E03.1080p.mkv'
 	mkdir -p ~/galung-project/testlibrary/'Game.of.Thrones [Season 1]'/'Game.Of.Thrones.S01E03.1080p.BluRay.x265-PODO[rartv]'/'Game.Of.Thrones.S01E03.subtitles'
-	touch ~/galung-project/testlibrary/'Game.of.Thrones [Season 1]'/'Game.Of.Thrones.S01E03.1080p.BluRay.x265-PODO[rartv]'/'Game.Of.Thrones.S01E03.subtitles'/'Game.Of.Thrones.s01.e03(english).srt'
+	touch ~/galung-project/testlibrary/'Game.of.Thrones [Season 1]'/'Game.Of.Thrones.S01E03.1080p.BluRay.x265-PODO[rartv]'/'Game.Of.Thrones.S01E03.subtitles'/'Game.Of.Thrones.s01e03(english).srt'
 	
 	#Directory, File: Retrieving Lost Episode Test
 	mkdir -p ~/galung-project/testlibrary/'Game.Of.Thrones.S01E05.1080p.BluRay.x265-PODO[rartv]'/
 	touch ~/galung-project/testlibrary/'Game.Of.Thrones.S01E05.1080p.BluRay.x265-PODO[rartv]'/'Game.Of.Thrones.S01E05.1080p.mkv'
-	mkdir -p ~/galung-project/testlibrary/'Game.Of.Thrones.S01E05.1080p.BluRay.x265-PODO[rartv]'/'Game.Of.Thrones.S01.E05.subtitles'
-	touch ~/galung-project/testlibrary/'Game.Of.Thrones.S01E05.1080p.BluRay.x265-PODO[rartv]'/'Game.Of.Thrones.S01.E05.subtitles'/'Game.Of.Thrones.S01.E05(english).srt'
-	touch ~/galung-project/testlibrary/'Game.Of.Thrones.S01E05.1080p.BluRay.x265-PODO[rartv]'/'Game.Of.Thrones.S01.E05.subtitles'/'Game.Of.Thrones.S01.E05(es).srt'
+	mkdir -p ~/galung-project/testlibrary/'Game.Of.Thrones.S01E05.1080p.BluRay.x265-PODO[rartv]'/'Game.Of.Thrones.S01E05.subtitles'
+	touch ~/galung-project/testlibrary/'Game.Of.Thrones.S01E05.1080p.BluRay.x265-PODO[rartv]'/'Game.Of.Thrones.S01E05.subtitles'/'Game.Of.Thrones.S01E05(english).srt'
+	touch ~/galung-project/testlibrary/'Game.Of.Thrones.S01E05.1080p.BluRay.x265-PODO[rartv]'/'Game.Of.Thrones.S01E05.subtitles'/'Game.Of.Thrones.S01E05(es).srt'
 	
 	#Directory, File: Default
 	mkdir -p ~/galung-project/testlibrary/'Teen.Wolf.S01E05.1080p.BluRay.x265-PODO[rartv]'/
 	touch ~/galung-project/testlibrary/'Teen.Wolf.S01E05.1080p.BluRay.x265-PODO[rartv]'/'Teen.Wolf.S01E05.1080p.mkv'
 	mkdir -p ~/galung-project/testlibrary/'Teen.Wolf.S01E05.1080p.BluRay.x265-PODO[rartv]'/'Teen.Wolf.S01E05.subtitles'
-	#touch ~/galung-project/testlibrary/'Teen.Wolf.S01E05.1080p.BluRay.x265-PODO[rartv]'/'Teen.Wolf.S01E05.subtitles'/'Teen.Wolf.S01.E05(english).srt'
-	#touch ~/galung-project/testlibrary/'Teen.Wolf.S01E05.1080p.BluRay.x265-PODO[rartv]'/'Teen.Wolf.S01E05.subtitles'/'Teen.Wolf.S01.E05(es).srt'
-
+	#touch ~/galung-project/testlibrary/'Teen.Wolf.S01E05.1080p.BluRay.x265-PODO[rartv]'/'Teen.Wolf.S01E05.subtitles'/'Teen.Wolf.S01E05(english).srt'
+	#touch ~/galung-project/testlibrary/'Teen.Wolf.S01E05.1080p.BluRay.x265-PODO[rartv]'/'Teen.Wolf.S01E05.subtitles'/'Teen.Wolf.S01E05(es).srt'
+	
 	#Directory, File: Retrieving Repetead Lost Episode Test
 	#mkdir -p ~/galung-project/testlibrary/'Game.Of.Thrones.S01E01.1080p.BluRay.x265-PODO[rartv]'/'Game.Of.Thrones.S01E01.1080p.mkv'
 	
 	#Directory, Subdirectory, File: Unkonwn Show
 	#mkdir -p ~/galung-project/testlibrary/'Krystal-The.Black Stripper-S02E01-The.dAy.0f.7he stripper.720p[rartv]'
-
 	#touch ~/galung-project/testlibrary/'Krystal-The.Black Stripper-S02E01-The.dAy.0f.7he stripper.720p[rartv]'/'System.nfo'
 	#touch ~/galung-project/testlibrary/'Krystal-The.Black Stripper-S02E01-The.dAy.0f.7he stripper.720p[rartv]'/'rartv.txt'
 	#mkdir -p ~/galung-project/testlibrary/'Krystal-The.Black Stripper-S02E01-The.dAy.0f.7he stripper.720p[rartv]'/'sub'
 	#touch ~/galung-project/testlibrary/'Krystal-The.Black Stripper-S02E01-The.dAy.0f.7he stripper.720p[rartv]'/'sub'/'Krystal-The.Black Stripper-S02E01(es).srt'
-	
+		
 build-anime:
 	mkdir -p ~/galung-project/testlibrary/'[PuyaSubs!] Yuri!!! On ICE - 11 [720p][663F641B]'/
 	touch ~/galung-project/testlibrary/'[PuyaSubs!] Yuri!!! On ICE - 11 [720p][663F641B]'/'[PuyaSubs!] Yuri!!! On ICE - 11 [720p][663F641B].mkv'
-	mkdir -p ~/galung-project/testlibrary/'[PuyaSubs!] Yuri!!! On ICE - 11 [720p][663F641B]'/'subs'/
-	touch ~/galung-project/testlibrary/'[PuyaSubs!] Yuri!!! On ICE - 11 [720p][663F641B]'/'subs'/'subtitles_(eng).srt'
+	mkdir -p ~/galung-project/testlibrary/'[PuyaSubs!] Yuri!!! On ICE - 11 [720p][663F641B]'/'[PuyaSubs!] Yuri!!! On ICE - 11 subtitle'/
+	touch ~/galung-project/testlibrary/'[PuyaSubs!] Yuri!!! On ICE - 11 [720p][663F641B]'/'[PuyaSubs!] Yuri!!! On ICE - 11 subtitle'/'[PuyaSubs!] Yuri!!! On ICE - 11(spanish).srt'
 	
 	mkdir -p ~/galung-project/testlibrary/'[Krosis] Getsuyoubi no Tawawa - 10 [1E0FA286]'/
 	touch ~/galung-project/testlibrary/'[Krosis] Getsuyoubi no Tawawa - 10 [1E0FA286]'/'[Krosis] Getsuyoubi no Tawawa - 10 [1E0FA286].mkv'
-	mkdir -p ~/galung-project/testlibrary/'[Krosis] Getsuyoubi no Tawawa - 10 [1E0FA286]'/'subs'/
-	touch ~/galung-project/testlibrary/'[Krosis] Getsuyoubi no Tawawa - 10 [1E0FA286]'/'subs'/'subtitles.(eng).srt'
+	mkdir -p ~/galung-project/testlibrary/'[Krosis] Getsuyoubi no Tawawa - 10 [1E0FA286]'/'[Krosis] Getsuyoubi no Tawawa - 10 subtitle'/
+	touch ~/galung-project/testlibrary/'[Krosis] Getsuyoubi no Tawawa - 10 [1E0FA286]'/'[Krosis] Getsuyoubi no Tawawa - 10 subtitle'/'[Krosis] Getsuyoubi no Tawawa - 10(eng).srt'
 	
 	mkdir -p ~/galung-project/testlibrary/'[HorribleSubs] One Piece - 768 [1080p]'/
 	touch ~/galung-project/testlibrary/'[HorribleSubs] One Piece - 768 [1080p]'/'[HorribleSubs] One Piece - 768 [1080p].mkv'
-	mkdir -p ~/galung-project/testlibrary/'[HorribleSubs] One Piece - 768 [1080p]'/'subs'/
-	touch ~/galung-project/testlibrary/'[HorribleSubs] One Piece - 768 [1080p]'/'subs'/'subtitles_coco(eng).srt'
-	
+	mkdir -p ~/galung-project/testlibrary/'[HorribleSubs] One Piece - 768 [1080p]'/'[HorribleSubs] One Piece - 768 subtitle'/
+	touch ~/galung-project/testlibrary/'[HorribleSubs] One Piece - 768 [1080p]'/'[HorribleSubs] One Piece - 768 subtitle'/'[HorribleSubs] One Piece - 768(eng).srt'
+
+	mkdir -p ~/galung-project/testlibrary/'[HorribleSubs] One Piece x769 [1080p]'/
+	touch ~/galung-project/testlibrary/'[HorribleSubs] One Piece x769 [1080p]'/'[HorribleSubs] One Piece x769 [1080p].mkv'
+	mkdir -p ~/galung-project/testlibrary/'[HorribleSubs] One Piece x769 [1080p]'/'[HorribleSubs] One Piece x769 subtitle'/
+	touch ~/galung-project/testlibrary/'[HorribleSubs] One Piece x769 [1080p]'/'[HorribleSubs] One Piece x769 subtitle'/'[HorribleSubs] One Piece x769(eng).srt'
+
 	mkdir -p ~/galung-project/testlibrary/'[Ohys-Raws] Detective Conan - 842 (NTV 1280x720 x264 AAC)'/
 	touch ~/galung-project/testlibrary/'[Ohys-Raws] Detective Conan - 842 (NTV 1280x720 x264 AAC)'/'[Ohys-Raws] Detective Conan - 842 (NTV 1280x720 x264 AAC).mp4'
-	mkdir -p ~/galung-project/testlibrary/'[Ohys-Raws] Detective Conan - 842 (NTV 1280x720 x264 AAC)'/'subs'/
-	touch ~/galung-project/testlibrary/'[Ohys-Raws] Detective Conan - 842 (NTV 1280x720 x264 AAC)'/'subs'/'subtitles(eng).srt'
+	mkdir -p ~/galung-project/testlibrary/'[Ohys-Raws] Detective Conan - 842 (NTV 1280x720 x264 AAC)'/'[Ohys-Raws] Detective Conan - 842 subtitle'/
+	touch ~/galung-project/testlibrary/'[Ohys-Raws] Detective Conan - 842 (NTV 1280x720 x264 AAC)'/'[Ohys-Raws] Detective Conan - 842 subtitle'/'[Ohys-Raws] Detective Conan - 842(eng).srt'
 	
 	#CASO PARTICULAR DEL PUTO ANIME con Episode
 	mkdir -p ~/galung-project/testlibrary/'[Dcms-Fansubs] Detective Conan Episode 840 [1080p]'/
 	touch ~/galung-project/testlibrary/'[Dcms-Fansubs] Detective Conan Episode 840 [1080p]'/'[Dcms-Fansubs] Detective Conan Episode 840 [1080p].mkv'
-	mkdir -p ~/galung-project/testlibrary/'[Dcms-Fansubs] Detective Conan Episode 840 [1080p]'/'subs'/
-	touch ~/galung-project/testlibrary/'[Dcms-Fansubs] Detective Conan Episode 840 [1080p]'/'subs'/'subtitles_coco(eng).srt'
+	mkdir -p ~/galung-project/testlibrary/'[Dcms-Fansubs] Detective Conan Episode 840 [1080p]'/'[Dcms-Fansubs] Detective Conan Episode 840 subtitle'/
+	touch ~/galung-project/testlibrary/'[Dcms-Fansubs] Detective Conan Episode 840 [1080p]'/'[Dcms-Fansubs] Detective Conan Episode 840 subtitle'/'[Dcms-Fansubs] Detective Conan Episode 840(eng).srt'
 	
 	#Number on name
 	mkdir -p ~/galung-project/testlibrary/'[HorribleSubs] Mob Psycho 100 - 12 [1080p]'/
-	touch ~/galung-project/testlibrary/'[HorribleSubs] Mob Psycho 100 - 12 [1080p]'/'Mob Psycho 100 - 12 [1080p].mkv'
-	mkdir -p ~/galung-project/testlibrary/'[HorribleSubs] Mob Psycho 100 - 12 [1080p]'/'subs'/
-	touch ~/galung-project/testlibrary/'[HorribleSubs] Mob Psycho 100 - 12 [1080p]'/'subs'/'subtitles(eng).srt'
+	touch ~/galung-project/testlibrary/'[HorribleSubs] Mob Psycho 100 - 12 [1080p]'/'[HorribleSubs] Mob Psycho 100 - 12 [1080p].mkv'
+	mkdir -p ~/galung-project/testlibrary/'[HorribleSubs] Mob Psycho 100 - 12 [1080p]'/'[HorribleSubs] Mob Psycho 100 - 12 subs'/
+	touch ~/galung-project/testlibrary/'[HorribleSubs] Mob Psycho 100 - 12 [1080p]'/'[HorribleSubs] Mob Psycho 100 - 12 subs'/'[HorribleSubs] Mob Psycho 100 - 12 (eng).srt'
 
 build-subs:
 	cp -ar ~/galung-project/subs ~/galung-project/testlibrary/
