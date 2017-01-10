@@ -58,6 +58,21 @@ FileMapper it's currently developing this table of plugins
 |:-------------:|:-------------:|:-----------:|:------------:|:------------:|
 | FileMapper |  Still Developing| YES | YES | YES |
 
+### Recognized Formats
+
+Anime Format:
+
+**[_< Uploader >_ ]** : **_< Anime Name >_** : **_< (Episode | Ep | E | x | - ) 000 >_** : **_< Episode Name >_** : **_< Quality >_**
+
+Movie Format:
+
+ **_< Movie Name >_** : **_< ( Year ) >_** : **_< Movie Flag >_** : **_< Quality >_**
+
+Show Format:
+ 
+  **_< Show Name >_** : **_< E00S00 >_** : **_< Episode Name >_** : **_< Quality >_**
+
+
 ## Usage
 
 ```python
