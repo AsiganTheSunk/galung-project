@@ -6,13 +6,12 @@ align="right" width="50">](https://www.python.org/)
 
 
 ##### Description
-Galung-Project it's a concept software to help organize your stuff developed mainly in python 2.7
+Galung-Project it's a concept software to help organize your multimedia content, this program it's being developed mainly in python 2.7
 
-Desarrollo de una plataforma de asistencia para entornos XBMC que nos facilite recuperar y obtener, tanto información como 
-meta-datos (titulo de la obra, autor, etc...) asociados a archivos multimedia de dominio público, utilizando consultas web y 
-uso de protocolos peer to peer. Constará de ciertas funcionalidades adicionales tales como sincronizar la reproducción del 
-contenido a través de la red, re-codificación y alineación de pistas de audio y vídeo.
-
+Development of the assistance platform for xmbc enviroments where the application excells on helping you retrieve information about the
+multimedia content, also known as metadata about public multimedia files using (http/https) requests and peer to peer protocols. It also
+containts some aditional features such as sincronize reproduction of some content throught the network, re-codec and audio video aligment
+on multimedia files .mkv and .mp4.
 
 ## Getting Started
 
@@ -49,14 +48,19 @@ Go to the /path/path and run install.sh, this will donwload all the modules requ
 Install the dependencies to be able to start the software.
 
 ```sh
-$ 
-$ pip install pysrt
-$ pip install langdetect
-$ pip install pandas
-$ pip install numpy
-$ pip install tvdb_api
-$ pip install 
-$
+ 
+python-mal (0.1.7)
+pandas (0.19.2)
+pysrt (1.1.1)
+requests (2.13.0)
+beautifulsoup4 (4.5.3)
+enum (0.4.6)
+Cython (0.25.2)
+IMDbPY (5.1.1)
+langdetect (1.0.7)
+logging (0.4.9.6)
+
+
 ```
 
 ### Plugins
@@ -66,7 +70,7 @@ Galung-Project it's currently developing this table of plugins
 
 | Pluguin       | Status        | Show | Movie | Anime |
 |:-------------:|:-------------:|:-----------:|:------------:|:------------:|
-| [FileMapper][readme_fm_link] | Developing | YES | NO | NO |
+| [FileMapper][readme_fm_link] | Developing | Yes | Yes |  |
 | [ConstellationMapper][readme_cm_link] | Developing | - | - | - | - |
 | [FFmpeg][readme_cm_link] | Developing | - | - | - | - |
 
@@ -92,4 +96,3 @@ Galung-Project it's currently developing this table of plugins
 [langdetect_link]: <https://github.com/Mimino666/langdetect>
 [pandas_link]: <http://pandas.pydata.org/>
 [numpy_link]: <http://www.numpy.org/>
-

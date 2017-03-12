@@ -1,0 +1,10 @@
+python-mal==0.1.7
+pandas==0.19.2
+pysrt==1.1.1
+requests==2.13.0
+beautifulsoup4==4.5.3
+enum==0.4.6
+Cython==0.25.2
+IMDbPY==5.1.1
+langdetect==1.0.7
+logging==0.4.9.6
