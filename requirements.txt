@@ -8,3 +8,4 @@ Cython==0.25.2
 IMDbPY==5.1.1
 langdetect==1.0.7
 logging==0.4.9.6
+tvdb_api==1.10

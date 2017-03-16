@@ -1,75 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="74a5c984-2091-423a-ac2a-cc1d911b7786" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/galung-project.iml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/modules.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/vcs.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/main/test/__init__.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/main/test/test_constellation/__init__.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/main/test/test_ffmpeg/__init__.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/main/test/test_filemapper/__init__.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/main/test/test_filemapper/test_filemapper_check.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/main/test/test_filemapper/test_filemapper_filemapper.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/main/test/test_filemapper/test_filemapper_metadata.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/main/test/test_filemapper/test_filemapper_pandas.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/main/test/test_filemapper/test_filemapper_retrieve_offline.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/main/test/test_filemapper/test_filemapper_retrieve_online.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/main/test/test_filemapper/test_filemapper_tree_root.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/main/test/test_libtorrent/__init__.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/main/test/test_utils/__init__.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/main/test/test_webparser/__init__.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/main/utils/__init__.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/main/webparser/__init__.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/setup.py" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/trunk/main.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/trunk/makefile" afterPath="" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/trunk/__init__.py" afterPath="$PROJECT_DIR$/main/libtorrent/__init__.py" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/trunk/addon/__init__.py" afterPath="$PROJECT_DIR$/main/filemapper/validate/__init__.py" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/trunk/addon/addon.py" afterPath="$PROJECT_DIR$/main/addon/addon.py" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/trunk/addon/addon.xml" afterPath="$PROJECT_DIR$/main/addon/addon.xml" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/trunk/addon/fanart.jpg" afterPath="$PROJECT_DIR$/main/addon/fanart.jpg" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/trunk/addon/icon.png" afterPath="$PROJECT_DIR$/main/addon/icon.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/trunk/costellationmapper/__init__.py" afterPath="$PROJECT_DIR$/main/filemapper/retrieve/__init__.py" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/trunk/ffmpeg/.config/ffmpeg.ini" afterPath="$PROJECT_DIR$/main/ffmpeg/.config/ffmpeg.ini" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/trunk/ffmpeg/__init__.py" afterPath="$PROJECT_DIR$/main/filemapper/pandas/__init__.py" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/trunk/ffmpeg/configuration.py" afterPath="$PROJECT_DIR$/main/ffmpeg/configuration.py" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/trunk/ffmpeg/x265.py" afterPath="$PROJECT_DIR$/main/ffmpeg/x265.py" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/trunk/filemapper/README.md" afterPath="$PROJECT_DIR$/main/filemapper/README.md" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/trunk/filemapper/__init__.py" afterPath="$PROJECT_DIR$/main/filemapper/datastructure/__init__.py" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/trunk/filemapper/check/__init__.py" afterPath="$PROJECT_DIR$/main/filemapper/datastructure/Library.py" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/trunk/filemapper/check/check_module.py" afterPath="$PROJECT_DIR$/main/filemapper/check/check_module.py" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/trunk/filemapper/datastructure/FileFlags.py" afterPath="$PROJECT_DIR$/main/filemapper/datastructure/FileFlags.py" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/trunk/filemapper/datastructure/Metadata.py" afterPath="$PROJECT_DIR$/main/filemapper/datastructure/Metadata.py" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/trunk/filemapper/datastructure/Node.py" afterPath="$PROJECT_DIR$/main/filemapper/datastructure/Node.py" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/trunk/filemapper/datastructure/TreeRoot.py" afterPath="$PROJECT_DIR$/main/filemapper/datastructure/TreeRoot.py" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/trunk/filemapper/datastructure/__init__.py" afterPath="$PROJECT_DIR$/main/filemapper/check/__init__.py" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/trunk/filemapper/filemapper.py" afterPath="$PROJECT_DIR$/main/filemapper/filemapper.py" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/trunk/filemapper/filemapper_cc.py" afterPath="$PROJECT_DIR$/main/filemapper/filemapper_cc.py" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/trunk/filemapper/pandas/__init__.py" afterPath="$PROJECT_DIR$/main/filemapper/__init__.py" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/trunk/filemapper/pandas/pandas_module.py" afterPath="$PROJECT_DIR$/main/filemapper/pandas/pandas_module.py" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/trunk/filemapper/retrieve/__init__.py" afterPath="$PROJECT_DIR$/main/ffmpeg/__init__.py" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/trunk/filemapper/retrieve/offline_retrieve_module.py" afterPath="$PROJECT_DIR$/main/filemapper/retrieve/offline_retrieve_module.py" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/trunk/filemapper/retrieve/online_retrieve_module.py" afterPath="$PROJECT_DIR$/main/filemapper/retrieve/online_retrieve_module.py" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/trunk/filemapper/validate/__init__.py" afterPath="$PROJECT_DIR$/main/costellationmapper/constellationmapper.py" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/trunk/filemapper/validate/validate_module.py" afterPath="$PROJECT_DIR$/main/filemapper/validate/validate_module.py" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/trunk/libtorrent/Magnet2Torrent.py" afterPath="$PROJECT_DIR$/main/libtorrent/Magnet2Torrent.py" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/trunk/libtorrent/SimpleTorrentClient.py" afterPath="$PROJECT_DIR$/main/libtorrent/SimpleTorrentClient.py" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/trunk/libtorrent/__init__.py" afterPath="$PROJECT_DIR$/main/costellationmapper/__init__.py" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/trunk/libtorrent/unique_trackers.txt" afterPath="$PROJECT_DIR$/main/libtorrent/unique_trackers.txt" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/trunk/log/test.log" afterPath="$PROJECT_DIR$/main/log/test.log" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/trunk/utils/Color.py" afterPath="$PROJECT_DIR$/main/utils/Color.py" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/trunk/utils/SpeedService.py" afterPath="$PROJECT_DIR$/main/utils/SpeedService.py" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/trunk/utils/__init__.py" afterPath="$PROJECT_DIR$/main/addon/__init__.py" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/trunk/webparser/__init__.py" afterPath="$PROJECT_DIR$/main/__init__.py" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/trunk/webparser/kat_lib.py" afterPath="$PROJECT_DIR$/main/webparser/kat_lib.py" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/trunk/webparser/katcc.py" afterPath="$PROJECT_DIR$/main/webparser/katcc.py" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/trunk/webparser/rarbg_lib.py" afterPath="$PROJECT_DIR$/main/webparser/rarbg_lib.py" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/trunk/webparser/thepiratebay.py" afterPath="$PROJECT_DIR$/main/webparser/thepiratebay.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/README.es.md" afterPath="$PROJECT_DIR$/README.es.md" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/README.md" afterPath="$PROJECT_DIR$/README.md" />
-    </list>
+    <list default="true" id="74a5c984-2091-423a-ac2a-cc1d911b7786" name="Default" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -83,51 +15,33 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="test_filemapper_retrieve_offline.py" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/main/test/test_filemapper/test_filemapper_retrieve_offline.py">
+      <file leaf-file-name="kat_lib.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/main/webparser/kat_lib.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="15">
-              <caret line="166" column="1" lean-forward="true" selection-start-line="166" selection-start-column="1" selection-end-line="166" selection-end-column="1" />
+            <state relative-caret-position="119">
+              <caret line="30" column="79" lean-forward="false" selection-start-line="30" selection-start-column="79" selection-end-line="30" selection-end-column="79" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="test_filemapper_tree_root.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/main/test/test_filemapper/test_filemapper_tree_root.py">
+      <file leaf-file-name="rarbg_lib.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/main/webparser/rarbg_lib.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="615">
-              <caret line="41" column="0" lean-forward="false" selection-start-line="41" selection-start-column="0" selection-end-line="41" selection-end-column="0" />
-              <folding />
+            <state relative-caret-position="565">
+              <caret line="40" column="59" lean-forward="false" selection-start-line="40" selection-start-column="59" selection-end-line="40" selection-end-column="59" />
+              <folding>
+                <element signature="e#20#35#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="test_filemapper_metadata.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/main/test/test_filemapper/test_filemapper_metadata.py">
+      <file leaf-file-name="TreeRoot.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/main/filemapper/datastructure/TreeRoot.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="615">
-              <caret line="41" column="22" lean-forward="false" selection-start-line="41" selection-start-column="22" selection-end-line="41" selection-end-column="22" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="test_filemapper_filemapper.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/main/test/test_filemapper/test_filemapper_filemapper.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="test_filemapper_pandas.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/main/test/test_filemapper/test_filemapper_pandas.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="30">
-              <caret line="2" column="10" lean-forward="false" selection-start-line="2" selection-start-column="10" selection-end-line="2" selection-end-column="10" />
+            <state relative-caret-position="315">
+              <caret line="119" column="22" lean-forward="true" selection-start-line="119" selection-start-column="22" selection-end-line="119" selection-end-column="22" />
               <folding />
             </state>
           </provider>
@@ -200,13 +114,14 @@
         <option value="$PROJECT_DIR$/main/test/test_filemapper/test_filemapper_pandas.py" />
         <option value="$PROJECT_DIR$/main/test/test_filemapper/test_filemapper_retrieve_offline.py" />
         <option value="$PROJECT_DIR$/requirements.txt" />
+        <option value="$PROJECT_DIR$/main/webparser/rarbg_lib.py" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds">
     <option name="x" value="-1" />
     <option name="width" value="1602" />
-    <option name="height" value="779" />
+    <option name="height" value="875" />
   </component>
   <component name="ProjectLevelVcsManager">
     <ConfirmationsSetting value="2" id="Add" />
@@ -226,7 +141,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
@@ -254,13 +168,72 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="galung-project" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="galung-project" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="webparser" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="galung-project" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="galung-project" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="filemapper" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="galung-project" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="galung-project" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="filemapper" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="datastructure" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
-    <property name="settings.editor.selected.configurable" value="configurable.group.appearance" />
+    <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
     <property name="settings.editor.splitter.proportion" value="0.28109697" />
   </component>
   <component name="PyConsoleOptionsProvider">
@@ -455,12 +428,12 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-1" y="0" width="1602" height="779" extended-state="6" />
-    <editor active="false" />
+    <frame x="-1" y="0" width="1602" height="875" extended-state="6" />
+    <editor active="true" />
     <layout>
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.15375" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.15125" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.27366865" sideWeight="0.5025" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.27331606" sideWeight="0.5025" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -482,30 +455,15 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="1" />
+      <option name="time" value="2" />
     </breakpoint-manager>
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/main/test/test_filemapper/test_filemapper_check.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="4335">
-          <caret line="289" column="80" lean-forward="false" selection-start-line="289" selection-start-column="80" selection-end-line="289" selection-end-column="80" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/main/filemapper/retrieve/online_retrieve_module.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1965">
-          <caret line="131" column="0" lean-forward="false" selection-start-line="131" selection-start-column="0" selection-end-line="131" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/main/filemapper/retrieve/offline_retrieve_module.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1185">
           <caret line="79" column="30" lean-forward="false" selection-start-line="79" selection-start-column="30" selection-end-line="79" selection-end-column="30" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -513,7 +471,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1560">
           <caret line="104" column="72" lean-forward="false" selection-start-line="104" selection-start-column="72" selection-end-line="104" selection-end-column="72" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -535,7 +492,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="45">
           <caret line="3" column="2" lean-forward="false" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="2" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -647,20 +603,6 @@
     <entry file="file://$PROJECT_DIR$/__init__.py" />
     <entry file="file://$PROJECT_DIR$/trunk/main.py" />
     <entry file="file://$PROJECT_DIR$/trunk/makefile" />
-    <entry file="file://$PROJECT_DIR$/setup.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="225">
-          <caret line="15" column="0" lean-forward="true" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/main.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="14" column="0" lean-forward="true" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/main/filemapper/filemapper_cc.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -672,13 +614,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="244">
           <caret line="418" column="31" lean-forward="true" selection-start-line="418" selection-start-column="31" selection-end-line="418" selection-end-column="31" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/main/filemapper/datastructure/FileFlags.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="4" column="4" lean-forward="false" selection-start-line="4" selection-start-column="4" selection-end-line="4" selection-end-column="4" />
         </state>
       </provider>
     </entry>
@@ -731,13 +666,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/main/filemapper/filemapper.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="38" column="29" lean-forward="false" selection-start-line="38" selection-start-column="29" selection-end-line="38" selection-end-column="29" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/main/filemapper/datastructure/Library.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="270">
@@ -770,7 +698,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="615">
           <caret line="41" column="0" lean-forward="false" selection-start-line="41" selection-start-column="0" selection-end-line="41" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -778,7 +705,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="615">
           <caret line="41" column="22" lean-forward="false" selection-start-line="41" selection-start-column="22" selection-end-line="41" selection-end-column="22" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -786,7 +712,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -794,7 +719,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="30">
           <caret line="2" column="10" lean-forward="false" selection-start-line="2" selection-start-column="10" selection-end-line="2" selection-end-column="10" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -810,15 +734,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="210">
           <caret line="118" column="42" lean-forward="true" selection-start-line="118" selection-start-column="42" selection-end-line="118" selection-end-column="42" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/main/filemapper/datastructure/TreeRoot.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="15">
-          <caret line="128" column="0" lean-forward="false" selection-start-line="128" selection-start-column="0" selection-end-line="128" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -826,15 +741,67 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="236">
           <caret line="123" column="59" lean-forward="false" selection-start-line="123" selection-start-column="59" selection-end-line="123" selection-end-column="59" />
-          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/main/test/test_filemapper/test_filemapper_retrieve_offline.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="15">
-          <caret line="166" column="1" lean-forward="true" selection-start-line="166" selection-start-column="1" selection-end-line="166" selection-end-column="1" />
+        <state relative-caret-position="2490">
+          <caret line="166" column="1" lean-forward="false" selection-start-line="166" selection-start-column="1" selection-end-line="166" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/setup.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="225">
+          <caret line="15" column="0" lean-forward="true" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/main/filemapper/filemapper.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="135">
+          <caret line="9" column="71" lean-forward="true" selection-start-line="9" selection-start-column="71" selection-end-line="9" selection-end-column="71" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/main/filemapper/datastructure/FileFlags.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="135">
+          <caret line="9" column="4" lean-forward="false" selection-start-line="9" selection-start-column="4" selection-end-line="9" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/main.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="630">
+          <caret line="46" column="10" lean-forward="true" selection-start-line="39" selection-start-column="0" selection-end-line="46" selection-end-column="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/main/filemapper/datastructure/TreeRoot.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="315">
+          <caret line="119" column="22" lean-forward="true" selection-start-line="119" selection-start-column="22" selection-end-line="119" selection-end-column="22" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/main/webparser/kat_lib.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="30" column="79" lean-forward="false" selection-start-line="30" selection-start-column="79" selection-end-line="30" selection-end-column="79" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/main/webparser/rarbg_lib.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="565">
+          <caret line="40" column="59" lean-forward="false" selection-start-line="40" selection-start-column="59" selection-end-line="40" selection-end-column="59" />
+          <folding>
+            <element signature="e#20#35#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
