@@ -23,10 +23,10 @@ These instructions will get you a copy of the project up and running on your loc
 ## Index of Contents
 
 1. [Requirements](#installation)
-..* [Dependencies](#dependencies)
-..* [Installation](#installation)
+   * [Dependencies](#dependencies)
+   * [Installation](#installation)
 2. [Plugins](#plugins)
-..* [FileMapper][readme_fm_link]
+   * [FileMapper][readme_fm_link]
 3. [Usage](#usage)
 4. [License](#license)
 
