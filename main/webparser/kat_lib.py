@@ -2,7 +2,8 @@
 
 import requests
 from bs4 import BeautifulSoup
-from libtorrent.SimpleClientTorrent import st_client
+#from libtorrent.SimpleClientTorrent import st_client
+import sys
 
 from main.libtorrent.Magnet2Torrent import m2t_create
 
@@ -73,17 +74,17 @@ def kat_parser(content):
     return
     #return (df)
 
-def main (search):
-    content = kat_usearch (search)
-    data_frame = kat_parser (content)
-    print "-------------------------------------------------\n"
+# def main (search):
+#     content = kat_usearch (search)
+#     data_frame = kat_parser (content)
+#     print "-------------------------------------------------\n"
+#
+#     try:
+#         magnet_number = raw_input ("Selecciona un Numero de Indice de Torrent [0 a N]: ")
+#     except KeyboardInterrupt:
+#         sys.exit(0)
     
-    try:
-        magnet_number = raw_input ("Selecciona un Numero de Indice de Torrent [0 a N]: ")
-    except KeyboardInterrupt:
-        sys.exit(0)
-    
-    magnet = data_frame['tmagnet'][int(magnet_number)]
-    tname = "testCOCO"
-    torrent = m2t_create (magnet, tname)
-    st_client (torrent)
+    # magnet = data_frame['tmagnet'][int(magnet_number)]
+    # tname = "testCOCO"
+    # torrent = m2t_create (magnet, tname)
+    # st_client (torrent)
